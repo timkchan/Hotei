@@ -15,7 +15,58 @@
 		D8A4753D1E421F54006CAFEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8A4753C1E421F54006CAFEA /* Assets.xcassets */; };
 		D8A475401E421F54006CAFEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8A4753E1E421F54006CAFEA /* LaunchScreen.storyboard */; };
 		D8E00E371E658CF8003D2E4C /* hotei.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8E00E351E658CF8003D2E4C /* hotei.xcdatamodeld */; };
+		D8EDBFA21E65EA1000CE05F9 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8EDBFA01E65EA1000CE05F9 /* Interface.storyboard */; };
+		D8EDBFA41E65EA1000CE05F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8EDBFA31E65EA1000CE05F9 /* Assets.xcassets */; };
+		D8EDBFAB1E65EA1100CE05F9 /* HoteiW Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D8EDBFAA1E65EA1100CE05F9 /* HoteiW Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D8EDBFB21E65EA1100CE05F9 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EDBFB11E65EA1100CE05F9 /* InterfaceController.swift */; };
+		D8EDBFB41E65EA1100CE05F9 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EDBFB31E65EA1100CE05F9 /* ExtensionDelegate.swift */; };
+		D8EDBFB61E65EA1100CE05F9 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EDBFB51E65EA1100CE05F9 /* NotificationController.swift */; };
+		D8EDBFB81E65EA1100CE05F9 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EDBFB71E65EA1100CE05F9 /* ComplicationController.swift */; };
+		D8EDBFBA1E65EA1100CE05F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8EDBFB91E65EA1100CE05F9 /* Assets.xcassets */; };
+		D8EDBFBE1E65EA1100CE05F9 /* HoteiW.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D8EDBF9E1E65EA1000CE05F9 /* HoteiW.app */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D8EDBFAC1E65EA1100CE05F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8A475281E421F54006CAFEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8EDBFA91E65EA1100CE05F9;
+			remoteInfo = "HoteiW Extension";
+		};
+		D8EDBFBC1E65EA1100CE05F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8A475281E421F54006CAFEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8EDBF9D1E65EA1000CE05F9;
+			remoteInfo = HoteiW;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D8EDBFC41E65EA1100CE05F9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D8EDBFAB1E65EA1100CE05F9 /* HoteiW Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8EDBFC61E65EA1100CE05F9 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				D8EDBFBE1E65EA1100CE05F9 /* HoteiW.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D824E3661E646E8100727B05 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
@@ -28,10 +79,29 @@
 		D8A4753F1E421F54006CAFEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8A475411E421F54006CAFEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8E00E361E658CF8003D2E4C /* hotei.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hotei.xcdatamodel; sourceTree = "<group>"; };
+		D8EDBF9E1E65EA1000CE05F9 /* HoteiW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoteiW.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8EDBFA11E65EA1000CE05F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		D8EDBFA31E65EA1000CE05F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D8EDBFA51E65EA1000CE05F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8EDBFAA1E65EA1100CE05F9 /* HoteiW Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HoteiW Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8EDBFB01E65EA1100CE05F9 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		D8EDBFB11E65EA1100CE05F9 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		D8EDBFB31E65EA1100CE05F9 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		D8EDBFB51E65EA1100CE05F9 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		D8EDBFB71E65EA1100CE05F9 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		D8EDBFB91E65EA1100CE05F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D8EDBFBB1E65EA1100CE05F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D8A4752D1E421F54006CAFEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8EDBFA71E65EA1100CE05F9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,6 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				D8A475321E421F54006CAFEA /* Hotei */,
+				D8EDBF9F1E65EA1000CE05F9 /* HoteiW */,
+				D8EDBFAE1E65EA1100CE05F9 /* HoteiW Extension */,
 				D8A475311E421F54006CAFEA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				D8A475301E421F54006CAFEA /* Hotei.app */,
+				D8EDBF9E1E65EA1000CE05F9 /* HoteiW.app */,
+				D8EDBFAA1E65EA1100CE05F9 /* HoteiW Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,6 +147,38 @@
 			path = Hotei;
 			sourceTree = "<group>";
 		};
+		D8EDBF9F1E65EA1000CE05F9 /* HoteiW */ = {
+			isa = PBXGroup;
+			children = (
+				D8EDBFA01E65EA1000CE05F9 /* Interface.storyboard */,
+				D8EDBFA31E65EA1000CE05F9 /* Assets.xcassets */,
+				D8EDBFA51E65EA1000CE05F9 /* Info.plist */,
+			);
+			path = HoteiW;
+			sourceTree = "<group>";
+		};
+		D8EDBFAE1E65EA1100CE05F9 /* HoteiW Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D8EDBFB11E65EA1100CE05F9 /* InterfaceController.swift */,
+				D8EDBFB31E65EA1100CE05F9 /* ExtensionDelegate.swift */,
+				D8EDBFB51E65EA1100CE05F9 /* NotificationController.swift */,
+				D8EDBFB71E65EA1100CE05F9 /* ComplicationController.swift */,
+				D8EDBFB91E65EA1100CE05F9 /* Assets.xcassets */,
+				D8EDBFBB1E65EA1100CE05F9 /* Info.plist */,
+				D8EDBFAF1E65EA1100CE05F9 /* Supporting Files */,
+			);
+			path = "HoteiW Extension";
+			sourceTree = "<group>";
+		};
+		D8EDBFAF1E65EA1100CE05F9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D8EDBFB01E65EA1100CE05F9 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,15 +189,51 @@
 				D8A4752C1E421F54006CAFEA /* Sources */,
 				D8A4752D1E421F54006CAFEA /* Frameworks */,
 				D8A4752E1E421F54006CAFEA /* Resources */,
+				D8EDBFC61E65EA1100CE05F9 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D8EDBFBD1E65EA1100CE05F9 /* PBXTargetDependency */,
 			);
 			name = Hotei;
 			productName = Hotei;
 			productReference = D8A475301E421F54006CAFEA /* Hotei.app */;
 			productType = "com.apple.product-type.application";
+		};
+		D8EDBF9D1E65EA1000CE05F9 /* HoteiW */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8EDBFC51E65EA1100CE05F9 /* Build configuration list for PBXNativeTarget "HoteiW" */;
+			buildPhases = (
+				D8EDBF9C1E65EA1000CE05F9 /* Resources */,
+				D8EDBFC41E65EA1100CE05F9 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8EDBFAD1E65EA1100CE05F9 /* PBXTargetDependency */,
+			);
+			name = HoteiW;
+			productName = HoteiW;
+			productReference = D8EDBF9E1E65EA1000CE05F9 /* HoteiW.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		D8EDBFA91E65EA1100CE05F9 /* HoteiW Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8EDBFC31E65EA1100CE05F9 /* Build configuration list for PBXNativeTarget "HoteiW Extension" */;
+			buildPhases = (
+				D8EDBFA61E65EA1100CE05F9 /* Sources */,
+				D8EDBFA71E65EA1100CE05F9 /* Frameworks */,
+				D8EDBFA81E65EA1100CE05F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HoteiW Extension";
+			productName = "HoteiW Extension";
+			productReference = D8EDBFAA1E65EA1100CE05F9 /* HoteiW Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -104,6 +246,16 @@
 				ORGANIZATIONNAME = AppBee;
 				TargetAttributes = {
 					D8A4752F1E421F54006CAFEA = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 26YF898FTD;
+						ProvisioningStyle = Automatic;
+					};
+					D8EDBF9D1E65EA1000CE05F9 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 26YF898FTD;
+						ProvisioningStyle = Automatic;
+					};
+					D8EDBFA91E65EA1100CE05F9 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 26YF898FTD;
 						ProvisioningStyle = Automatic;
@@ -124,6 +276,8 @@
 			projectRoot = "";
 			targets = (
 				D8A4752F1E421F54006CAFEA /* Hotei */,
+				D8EDBF9D1E65EA1000CE05F9 /* HoteiW */,
+				D8EDBFA91E65EA1100CE05F9 /* HoteiW Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -136,6 +290,23 @@
 				D8A475401E421F54006CAFEA /* LaunchScreen.storyboard in Resources */,
 				D8A4753D1E421F54006CAFEA /* Assets.xcassets in Resources */,
 				D8A4753B1E421F54006CAFEA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8EDBF9C1E65EA1000CE05F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8EDBFA41E65EA1000CE05F9 /* Assets.xcassets in Resources */,
+				D8EDBFA21E65EA1000CE05F9 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8EDBFA81E65EA1100CE05F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8EDBFBA1E65EA1100CE05F9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,7 +325,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D8EDBFA61E65EA1100CE05F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8EDBFB61E65EA1100CE05F9 /* NotificationController.swift in Sources */,
+				D8EDBFB81E65EA1100CE05F9 /* ComplicationController.swift in Sources */,
+				D8EDBFB41E65EA1100CE05F9 /* ExtensionDelegate.swift in Sources */,
+				D8EDBFB21E65EA1100CE05F9 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D8EDBFAD1E65EA1100CE05F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8EDBFA91E65EA1100CE05F9 /* HoteiW Extension */;
+			targetProxy = D8EDBFAC1E65EA1100CE05F9 /* PBXContainerItemProxy */;
+		};
+		D8EDBFBD1E65EA1100CE05F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8EDBF9D1E65EA1000CE05F9 /* HoteiW */;
+			targetProxy = D8EDBFBC1E65EA1100CE05F9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D8A475391E421F54006CAFEA /* Main.storyboard */ = {
@@ -171,6 +366,14 @@
 				D8A4753F1E421F54006CAFEA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D8EDBFA01E65EA1000CE05F9 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8EDBFA11E65EA1000CE05F9 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -295,6 +498,76 @@
 			};
 			name = Release;
 		};
+		D8EDBFBF1E65EA1100CE05F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 26YF898FTD;
+				IBSC_MODULE = HoteiW_Extension;
+				INFOPLIST_FILE = HoteiW/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appbee.Hotei.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		D8EDBFC01E65EA1100CE05F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 26YF898FTD;
+				IBSC_MODULE = HoteiW_Extension;
+				INFOPLIST_FILE = HoteiW/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appbee.Hotei.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
+		D8EDBFC11E65EA1100CE05F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = 26YF898FTD;
+				INFOPLIST_FILE = "HoteiW Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appbee.Hotei.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		D8EDBFC21E65EA1100CE05F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = 26YF898FTD;
+				INFOPLIST_FILE = "HoteiW Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appbee.Hotei.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -315,6 +588,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D8EDBFC31E65EA1100CE05F9 /* Build configuration list for PBXNativeTarget "HoteiW Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8EDBFC11E65EA1100CE05F9 /* Debug */,
+				D8EDBFC21E65EA1100CE05F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D8EDBFC51E65EA1100CE05F9 /* Build configuration list for PBXNativeTarget "HoteiW" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8EDBFBF1E65EA1100CE05F9 /* Debug */,
+				D8EDBFC01E65EA1100CE05F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
