@@ -7,31 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D824E3671E646E8100727B05 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824E3661E646E8100727B05 /* CustomCell.swift */; };
-		D8A475341E421F54006CAFEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A475331E421F54006CAFEA /* AppDelegate.swift */; };
-		D8A475361E421F54006CAFEA /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A475351E421F54006CAFEA /* FirstViewController.swift */; };
-		D8A475381E421F54006CAFEA /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A475371E421F54006CAFEA /* SecondViewController.swift */; };
-		D8A4753B1E421F54006CAFEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8A475391E421F54006CAFEA /* Main.storyboard */; };
-		D8A4753D1E421F54006CAFEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8A4753C1E421F54006CAFEA /* Assets.xcassets */; };
-		D8A475401E421F54006CAFEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8A4753E1E421F54006CAFEA /* LaunchScreen.storyboard */; };
-		D8E00E371E658CF8003D2E4C /* hotei.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8E00E351E658CF8003D2E4C /* hotei.xcdatamodeld */; };
+		D8E00E451E658D37003D2E4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E00E441E658D37003D2E4C /* AppDelegate.swift */; };
+		D8E00E471E658D37003D2E4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E00E461E658D37003D2E4C /* ViewController.swift */; };
+		D8E00E4A1E658D37003D2E4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E00E481E658D37003D2E4C /* Main.storyboard */; };
+		D8E00E4D1E658D37003D2E4C /* deletable.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8E00E4B1E658D37003D2E4C /* deletable.xcdatamodeld */; };
+		D8E00E4F1E658D37003D2E4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8E00E4E1E658D37003D2E4C /* Assets.xcassets */; };
+		D8E00E521E658D37003D2E4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E00E501E658D37003D2E4C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D824E3661E646E8100727B05 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
-		D8A475301E421F54006CAFEA /* Hotei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hotei.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8A475331E421F54006CAFEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D8A475351E421F54006CAFEA /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; usesTabs = 1; };
-		D8A475371E421F54006CAFEA /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		D8A4753A1E421F54006CAFEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D8A4753C1E421F54006CAFEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D8A4753F1E421F54006CAFEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D8A475411E421F54006CAFEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8E00E361E658CF8003D2E4C /* hotei.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hotei.xcdatamodel; sourceTree = "<group>"; };
+		D8E00E411E658D37003D2E4C /* deletable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = deletable.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8E00E441E658D37003D2E4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D8E00E461E658D37003D2E4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D8E00E491E658D37003D2E4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D8E00E4C1E658D37003D2E4C /* deletable.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = deletable.xcdatamodel; sourceTree = "<group>"; };
+		D8E00E4E1E658D37003D2E4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D8E00E511E658D37003D2E4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D8E00E531E658D37003D2E4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D8A4752D1E421F54006CAFEA /* Frameworks */ = {
+		D8E00E3E1E658D37003D2E4C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,76 +37,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D8A475271E421F54006CAFEA = {
+		D8E00E381E658D37003D2E4C = {
 			isa = PBXGroup;
 			children = (
-				D8A475321E421F54006CAFEA /* Hotei */,
-				D8A475311E421F54006CAFEA /* Products */,
+				D8E00E431E658D37003D2E4C /* deletable */,
+				D8E00E421E658D37003D2E4C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		D8A475311E421F54006CAFEA /* Products */ = {
+		D8E00E421E658D37003D2E4C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D8A475301E421F54006CAFEA /* Hotei.app */,
+				D8E00E411E658D37003D2E4C /* deletable.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D8A475321E421F54006CAFEA /* Hotei */ = {
+		D8E00E431E658D37003D2E4C /* deletable */ = {
 			isa = PBXGroup;
 			children = (
-				D8A475331E421F54006CAFEA /* AppDelegate.swift */,
-				D8A475351E421F54006CAFEA /* FirstViewController.swift */,
-				D8A475371E421F54006CAFEA /* SecondViewController.swift */,
-				D8A475391E421F54006CAFEA /* Main.storyboard */,
-				D824E3661E646E8100727B05 /* CustomCell.swift */,
-				D8E00E351E658CF8003D2E4C /* hotei.xcdatamodeld */,
-				D8A4753C1E421F54006CAFEA /* Assets.xcassets */,
-				D8A4753E1E421F54006CAFEA /* LaunchScreen.storyboard */,
-				D8A475411E421F54006CAFEA /* Info.plist */,
+				D8E00E441E658D37003D2E4C /* AppDelegate.swift */,
+				D8E00E461E658D37003D2E4C /* ViewController.swift */,
+				D8E00E481E658D37003D2E4C /* Main.storyboard */,
+				D8E00E4E1E658D37003D2E4C /* Assets.xcassets */,
+				D8E00E501E658D37003D2E4C /* LaunchScreen.storyboard */,
+				D8E00E531E658D37003D2E4C /* Info.plist */,
+				D8E00E4B1E658D37003D2E4C /* deletable.xcdatamodeld */,
 			);
-			path = Hotei;
+			path = deletable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D8A4752F1E421F54006CAFEA /* Hotei */ = {
+		D8E00E401E658D37003D2E4C /* deletable */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D8A475441E421F54006CAFEA /* Build configuration list for PBXNativeTarget "Hotei" */;
+			buildConfigurationList = D8E00E561E658D37003D2E4C /* Build configuration list for PBXNativeTarget "deletable" */;
 			buildPhases = (
-				D8A4752C1E421F54006CAFEA /* Sources */,
-				D8A4752D1E421F54006CAFEA /* Frameworks */,
-				D8A4752E1E421F54006CAFEA /* Resources */,
+				D8E00E3D1E658D37003D2E4C /* Sources */,
+				D8E00E3E1E658D37003D2E4C /* Frameworks */,
+				D8E00E3F1E658D37003D2E4C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Hotei;
-			productName = Hotei;
-			productReference = D8A475301E421F54006CAFEA /* Hotei.app */;
+			name = deletable;
+			productName = deletable;
+			productReference = D8E00E411E658D37003D2E4C /* deletable.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D8A475281E421F54006CAFEA /* Project object */ = {
+		D8E00E391E658D37003D2E4C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = AppBee;
 				TargetAttributes = {
-					D8A4752F1E421F54006CAFEA = {
+					D8E00E401E658D37003D2E4C = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 26YF898FTD;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = D8A4752B1E421F54006CAFEA /* Build configuration list for PBXProject "Hotei" */;
+			buildConfigurationList = D8E00E3C1E658D37003D2E4C /* Build configuration list for PBXProject "deletable" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -118,57 +112,55 @@
 				en,
 				Base,
 			);
-			mainGroup = D8A475271E421F54006CAFEA;
-			productRefGroup = D8A475311E421F54006CAFEA /* Products */;
+			mainGroup = D8E00E381E658D37003D2E4C;
+			productRefGroup = D8E00E421E658D37003D2E4C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D8A4752F1E421F54006CAFEA /* Hotei */,
+				D8E00E401E658D37003D2E4C /* deletable */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D8A4752E1E421F54006CAFEA /* Resources */ = {
+		D8E00E3F1E658D37003D2E4C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8A475401E421F54006CAFEA /* LaunchScreen.storyboard in Resources */,
-				D8A4753D1E421F54006CAFEA /* Assets.xcassets in Resources */,
-				D8A4753B1E421F54006CAFEA /* Main.storyboard in Resources */,
+				D8E00E521E658D37003D2E4C /* LaunchScreen.storyboard in Resources */,
+				D8E00E4F1E658D37003D2E4C /* Assets.xcassets in Resources */,
+				D8E00E4A1E658D37003D2E4C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D8A4752C1E421F54006CAFEA /* Sources */ = {
+		D8E00E3D1E658D37003D2E4C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8A475381E421F54006CAFEA /* SecondViewController.swift in Sources */,
-				D8A475341E421F54006CAFEA /* AppDelegate.swift in Sources */,
-				D8E00E371E658CF8003D2E4C /* hotei.xcdatamodeld in Sources */,
-				D824E3671E646E8100727B05 /* CustomCell.swift in Sources */,
-				D8A475361E421F54006CAFEA /* FirstViewController.swift in Sources */,
+				D8E00E471E658D37003D2E4C /* ViewController.swift in Sources */,
+				D8E00E451E658D37003D2E4C /* AppDelegate.swift in Sources */,
+				D8E00E4D1E658D37003D2E4C /* deletable.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D8A475391E421F54006CAFEA /* Main.storyboard */ = {
+		D8E00E481E658D37003D2E4C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D8A4753A1E421F54006CAFEA /* Base */,
+				D8E00E491E658D37003D2E4C /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		D8A4753E1E421F54006CAFEA /* LaunchScreen.storyboard */ = {
+		D8E00E501E658D37003D2E4C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D8A4753F1E421F54006CAFEA /* Base */,
+				D8E00E511E658D37003D2E4C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -176,7 +168,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		D8A475421E421F54006CAFEA /* Debug */ = {
+		D8E00E541E658D37003D2E4C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -226,7 +218,7 @@
 			};
 			name = Debug;
 		};
-		D8A475431E421F54006CAFEA /* Release */ = {
+		D8E00E551E658D37003D2E4C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -269,27 +261,27 @@
 			};
 			name = Release;
 		};
-		D8A475451E421F54006CAFEA /* Debug */ = {
+		D8E00E571E658D37003D2E4C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 26YF898FTD;
-				INFOPLIST_FILE = Hotei/Info.plist;
+				INFOPLIST_FILE = deletable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appbee.Hotei;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appbee.deletable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		D8A475461E421F54006CAFEA /* Release */ = {
+		D8E00E581E658D37003D2E4C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 26YF898FTD;
-				INFOPLIST_FILE = Hotei/Info.plist;
+				INFOPLIST_FILE = deletable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appbee.Hotei;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appbee.deletable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -298,38 +290,37 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D8A4752B1E421F54006CAFEA /* Build configuration list for PBXProject "Hotei" */ = {
+		D8E00E3C1E658D37003D2E4C /* Build configuration list for PBXProject "deletable" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D8A475421E421F54006CAFEA /* Debug */,
-				D8A475431E421F54006CAFEA /* Release */,
+				D8E00E541E658D37003D2E4C /* Debug */,
+				D8E00E551E658D37003D2E4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D8A475441E421F54006CAFEA /* Build configuration list for PBXNativeTarget "Hotei" */ = {
+		D8E00E561E658D37003D2E4C /* Build configuration list for PBXNativeTarget "deletable" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D8A475451E421F54006CAFEA /* Debug */,
-				D8A475461E421F54006CAFEA /* Release */,
+				D8E00E571E658D37003D2E4C /* Debug */,
+				D8E00E581E658D37003D2E4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D8E00E351E658CF8003D2E4C /* hotei.xcdatamodeld */ = {
+		D8E00E4B1E658D37003D2E4C /* deletable.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D8E00E361E658CF8003D2E4C /* hotei.xcdatamodel */,
+				D8E00E4C1E658D37003D2E4C /* deletable.xcdatamodel */,
 			);
-			currentVersion = D8E00E361E658CF8003D2E4C /* hotei.xcdatamodel */;
-			path = hotei.xcdatamodeld;
+			currentVersion = D8E00E4C1E658D37003D2E4C /* deletable.xcdatamodel */;
+			path = deletable.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = D8A475281E421F54006CAFEA /* Project object */;
+	rootObject = D8E00E391E658D37003D2E4C /* Project object */;
 }
