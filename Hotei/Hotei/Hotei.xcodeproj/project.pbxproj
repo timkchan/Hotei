@@ -596,6 +596,7 @@
 				D8EDBFC21E65EA1100CE05F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8EDBFC51E65EA1100CE05F9 /* Build configuration list for PBXNativeTarget "HoteiW" */ = {
 			isa = XCConfigurationList;
@@ -604,6 +605,7 @@
 				D8EDBFC01E65EA1100CE05F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
