@@ -45,7 +45,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = "\( history[indexPath.row].dateTime) \(history[indexPath.row].nameOfActivities)"
+        cell.textLabel?.text = history[indexPath.row].activity!.name
         return cell
     }
 

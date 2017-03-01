@@ -24,6 +24,10 @@
 		D8EDBFB81E65EA1100CE05F9 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EDBFB71E65EA1100CE05F9 /* ComplicationController.swift */; };
 		D8EDBFBA1E65EA1100CE05F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8EDBFB91E65EA1100CE05F9 /* Assets.xcassets */; };
 		D8EDBFBE1E65EA1100CE05F9 /* HoteiW.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D8EDBF9E1E65EA1000CE05F9 /* HoteiW.app */; };
+		D8FEB8981E67173600E19F8E /* Activities+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEB8941E67173600E19F8E /* Activities+CoreDataClass.swift */; };
+		D8FEB8991E67173600E19F8E /* Activities+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEB8951E67173600E19F8E /* Activities+CoreDataProperties.swift */; };
+		D8FEB89A1E67173600E19F8E /* History+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEB8961E67173600E19F8E /* History+CoreDataClass.swift */; };
+		D8FEB89B1E67173600E19F8E /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEB8971E67173600E19F8E /* History+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +95,10 @@
 		D8EDBFB71E65EA1100CE05F9 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		D8EDBFB91E65EA1100CE05F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8EDBFBB1E65EA1100CE05F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8FEB8941E67173600E19F8E /* Activities+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activities+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D8FEB8951E67173600E19F8E /* Activities+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activities+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D8FEB8961E67173600E19F8E /* History+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "History+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D8FEB8971E67173600E19F8E /* History+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "History+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +147,7 @@
 				D8A475371E421F54006CAFEA /* SecondViewController.swift */,
 				D8A475391E421F54006CAFEA /* Main.storyboard */,
 				D824E3661E646E8100727B05 /* CustomCell.swift */,
-				D8E00E351E658CF8003D2E4C /* hotei.xcdatamodeld */,
+				D8FEB89C1E67174000E19F8E /* CoreData */,
 				D8A4753C1E421F54006CAFEA /* Assets.xcassets */,
 				D8A4753E1E421F54006CAFEA /* LaunchScreen.storyboard */,
 				D8A475411E421F54006CAFEA /* Info.plist */,
@@ -177,6 +185,18 @@
 				D8EDBFB01E65EA1100CE05F9 /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D8FEB89C1E67174000E19F8E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D8FEB8941E67173600E19F8E /* Activities+CoreDataClass.swift */,
+				D8FEB8951E67173600E19F8E /* Activities+CoreDataProperties.swift */,
+				D8FEB8961E67173600E19F8E /* History+CoreDataClass.swift */,
+				D8FEB8971E67173600E19F8E /* History+CoreDataProperties.swift */,
+				D8E00E351E658CF8003D2E4C /* hotei.xcdatamodeld */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +339,10 @@
 			files = (
 				D8A475381E421F54006CAFEA /* SecondViewController.swift in Sources */,
 				D8A475341E421F54006CAFEA /* AppDelegate.swift in Sources */,
+				D8FEB8991E67173600E19F8E /* Activities+CoreDataProperties.swift in Sources */,
+				D8FEB8981E67173600E19F8E /* Activities+CoreDataClass.swift in Sources */,
+				D8FEB89A1E67173600E19F8E /* History+CoreDataClass.swift in Sources */,
+				D8FEB89B1E67173600E19F8E /* History+CoreDataProperties.swift in Sources */,
 				D8E00E371E658CF8003D2E4C /* hotei.xcdatamodeld in Sources */,
 				D824E3671E646E8100727B05 /* CustomCell.swift in Sources */,
 				D8A475361E421F54006CAFEA /* FirstViewController.swift in Sources */,
