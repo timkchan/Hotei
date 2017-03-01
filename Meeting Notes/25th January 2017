@@ -1,6 +1,0 @@
-Emotional Tracking Application:
-- Emotion {Score, Text}
-- Activities {Database of Common Activities, Recently Completed}
-- Location {GPS}
-- Time {Day, Time}
-- Suggestions {Short Term and Long Term Goals}
