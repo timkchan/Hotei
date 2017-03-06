@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mmv-RI-I51">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -232,6 +232,63 @@ Sad</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="749.27536231884062" y="359.51086956521743"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="K4b-eE-aBj">
+            <objects>
+                <viewController id="mmv-RI-I51" customClass="LoginViewController" customModule="Hotei" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1My-am-Ryq"/>
+                        <viewControllerLayoutGuide type="bottom" id="VJc-ER-ahK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rt7-Wb-Pya">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uoY-3f-FIG">
+                                <rect key="frame" x="112" y="249.33333333333331" width="191" height="29.999999999999943"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="191" id="we7-A6-IRE"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Hotei" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfx-b0-fmL">
+                                <rect key="frame" x="100" y="169" width="214" height="32.333333333333343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="214" id="GYk-SQ-xVB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSP-Bo-gri">
+                                <rect key="frame" x="188" y="301.33333333333331" width="38" height="30"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginBtn:" destination="mmv-RI-I51" eventType="touchUpInside" id="BZe-Rj-XlU"/>
+                                    <segue destination="49e-Tb-3d3" kind="show" id="1CJ-CL-gQt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uoY-3f-FIG" firstAttribute="top" secondItem="bfx-b0-fmL" secondAttribute="bottom" constant="48" id="GSq-zz-oPh"/>
+                            <constraint firstItem="iSP-Bo-gri" firstAttribute="centerX" secondItem="Rt7-Wb-Pya" secondAttribute="centerX" id="LGM-bA-KOG"/>
+                            <constraint firstItem="bfx-b0-fmL" firstAttribute="centerX" secondItem="Rt7-Wb-Pya" secondAttribute="centerX" id="Tdc-Ch-IMz"/>
+                            <constraint firstItem="iSP-Bo-gri" firstAttribute="top" secondItem="uoY-3f-FIG" secondAttribute="bottom" constant="22" id="egI-Pc-I9O"/>
+                            <constraint firstItem="uoY-3f-FIG" firstAttribute="centerX" secondItem="Rt7-Wb-Pya" secondAttribute="centerX" id="gDj-HE-n60"/>
+                            <constraint firstItem="bfx-b0-fmL" firstAttribute="top" secondItem="1My-am-Ryq" secondAttribute="bottom" constant="149" id="jYO-Wb-Zqr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="userName" destination="uoY-3f-FIG" id="Wb7-Fo-OhW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WK9-66-Daq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-875.36231884057975" y="0.0"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

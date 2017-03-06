@@ -14,6 +14,7 @@
 		D8A4753B1E421F54006CAFEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8A475391E421F54006CAFEA /* Main.storyboard */; };
 		D8A4753D1E421F54006CAFEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8A4753C1E421F54006CAFEA /* Assets.xcassets */; };
 		D8A475401E421F54006CAFEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8A4753E1E421F54006CAFEA /* LaunchScreen.storyboard */; };
+		D8B715021E6E024B00FD93B2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B715011E6E024B00FD93B2 /* LoginViewController.swift */; };
 		D8E00E371E658CF8003D2E4C /* hotei.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8E00E351E658CF8003D2E4C /* hotei.xcdatamodeld */; };
 		D8EDBFA21E65EA1000CE05F9 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8EDBFA01E65EA1000CE05F9 /* Interface.storyboard */; };
 		D8EDBFA41E65EA1000CE05F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8EDBFA31E65EA1000CE05F9 /* Assets.xcassets */; };
@@ -82,6 +83,7 @@
 		D8A4753C1E421F54006CAFEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8A4753F1E421F54006CAFEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8A475411E421F54006CAFEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8B715011E6E024B00FD93B2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D8E00E361E658CF8003D2E4C /* hotei.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hotei.xcdatamodel; sourceTree = "<group>"; };
 		D8EDBF9E1E65EA1000CE05F9 /* HoteiW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoteiW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8EDBFA11E65EA1000CE05F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				D8A475331E421F54006CAFEA /* AppDelegate.swift */,
+				D8B715011E6E024B00FD93B2 /* LoginViewController.swift */,
 				D8A475351E421F54006CAFEA /* FirstViewController.swift */,
 				D8A475371E421F54006CAFEA /* SecondViewController.swift */,
 				D8A475391E421F54006CAFEA /* Main.storyboard */,
@@ -345,6 +348,7 @@
 				D8FEB89B1E67173600E19F8E /* History+CoreDataProperties.swift in Sources */,
 				D8E00E371E658CF8003D2E4C /* hotei.xcdatamodeld in Sources */,
 				D824E3671E646E8100727B05 /* CustomCell.swift in Sources */,
+				D8B715021E6E024B00FD93B2 /* LoginViewController.swift in Sources */,
 				D8A475361E421F54006CAFEA /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
