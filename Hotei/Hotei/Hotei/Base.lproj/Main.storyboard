@@ -233,10 +233,41 @@ Sad</string>
             </objects>
             <point key="canvasLocation" x="749.27536231884062" y="359.51086956521743"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="tkt-nL-uQs">
+            <objects>
+                <viewController id="NU2-ff-a5x" customClass="HeartMonitorViewController" customModule="Hotei" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a6v-vd-foK"/>
+                        <viewControllerLayoutGuide type="bottom" id="hjT-CM-uU2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dfy-49-hfy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqc-5D-sSU">
+                                <rect key="frame" x="186" y="180" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="i9l-9P-wzM"/>
+                    <connections>
+                        <outlet property="bpmLabel" destination="oqc-5D-sSU" id="ifd-02-rFl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PMI-HM-umX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1322" y="1065"/>
+        </scene>
         <!--Profile-->
         <scene sceneID="6jk-Fd-JET">
             <objects>
-                <viewController title="Profile" id="GMB-OG-tps" sceneMemberID="viewController">
+                <viewController title="Profile" id="GMB-OG-tps" customClass="ProfileViewController" customModule="Hotei" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ccS-SZ-5IC"/>
                         <viewControllerLayoutGuide type="bottom" id="Mkz-9E-a5Y"/>
@@ -250,7 +281,11 @@ Sad</string>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Profile" id="RIK-Hb-XDb">
-                                        <barButtonItem key="rightBarButtonItem" title="Log out" id="Iaf-NS-TPR"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Log out" id="Iaf-NS-TPR">
+                                            <connections>
+                                                <action selector="logoutBtn:" destination="GMB-OG-tps" id="lai-zW-FJH"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -258,10 +293,13 @@ Sad</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="E7F-sr-F2d"/>
+                    <connections>
+                        <segue destination="mmv-RI-I51" kind="show" identifier="logoutSegue" id="Ak8-kK-8BG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E5p-eu-FSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="731" y="1053"/>
+            <point key="canvasLocation" x="0.0" y="766"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="K4b-eE-aBj">
@@ -298,7 +336,6 @@ Sad</string>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginBtn:" destination="mmv-RI-I51" eventType="touchUpInside" id="BZe-Rj-XlU"/>
-                                    <segue destination="49e-Tb-3d3" kind="show" identifier="loginSegue" animates="NO" id="1CJ-CL-gQt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -314,6 +351,7 @@ Sad</string>
                     </view>
                     <connections>
                         <outlet property="userName" destination="uoY-3f-FIG" id="Wb7-Fo-OhW"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="loginSegue" id="3qe-bq-Lmt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WK9-66-Daq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -334,6 +372,7 @@ Sad</string>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="GMB-OG-tps" kind="relationship" relationship="viewControllers" id="aa9-xy-gfH"/>
+                        <segue destination="NU2-ff-a5x" kind="relationship" relationship="viewControllers" id="S3r-BP-G9M"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

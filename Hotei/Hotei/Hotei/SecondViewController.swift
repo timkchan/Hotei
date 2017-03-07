@@ -15,7 +15,10 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // Context for CoreDate
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    // Variable to store history loaded from CoreData.
     var history : [History] = []
+    
+    // Function to fetch history from coreData
     func getData() {
         do {
             try history = context.fetch(History.fetchRequest())
@@ -35,6 +38,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        // Fetch data and load into tableView.
         getData()
         tableView2.reloadData()
     }

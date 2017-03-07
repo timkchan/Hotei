@@ -10,46 +10,57 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    // User Defaults for UserID
     let defaults = UserDefaults.standard
 
+    // Storing UserID
     @IBOutlet weak var userName: UITextField!
+    
+    // When Login button is tapped.
     @IBAction func loginBtn(_ sender: UIButton) {
         
-        // Unwrap and bind name
+        // Unwrap and bind name.
+        // Do nothing if name is not entered.
         guard let name = userName.text, name != "" else {
             print("Name enpty")
             return
         }
 
-        // Compute User ID
+        // Compute User ID.
         let userID = abs(name.hash)
         
         // Save userID to UserDefault
         defaults.set(userID, forKey: "userID")
         
-        // Perform Segue
+        // Perform Segue to Activity page
+        print("userID: \(userID)")
         performSegue(withIdentifier: "loginSegue", sender: sender)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
 
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        print("Auto Login Try")
-        performSegue(withIdentifier: "loginSegue", sender: self)
 
+    override func viewDidAppear(_ animated: Bool) {
+        print("Trying Auto Login")
+        // If user has logged in (userID exist in UserDefaults)
+        login()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // Function to AutoLogin (if user hasn't signed out)
+    func login() {
+        if let userID = defaults.object(forKey: "userID") {
+            print("Logged in!")
+            print("userID: \(userID)")
+            performSegue(withIdentifier: "loginSegue", sender: self)
+        } else {
+            print("userID: not set")
+        }
     }
+
     
     // Tap away to hide keyboard.
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -67,24 +78,6 @@ class LoginViewController: UIViewController {
     
 
     // MARK: - Navigation
-
-    // Stop performing segue automatically
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        print("checking")
-        if identifier == "loginSegue" {
-            print("checking")
-            // If user has logged in (userIF exist in UserDefaults)
-            if let userID = defaults.object(forKey: "userID") {
-                print("userID: \(userID)")
-                return true
-            } else {
-                print("userID: not set")
-                return false
-            }
-        }
-        return true
-    }
-    
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

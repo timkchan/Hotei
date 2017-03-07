@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		D824E3671E646E8100727B05 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824E3661E646E8100727B05 /* CustomCell.swift */; };
+		D82A31821E6ED333006FE6F6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82A31811E6ED333006FE6F6 /* ProfileViewController.swift */; };
+		D82A31841E6EFDC1006FE6F6 /* HeartMonitorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82A31831E6EFDC1006FE6F6 /* HeartMonitorViewController.swift */; };
+		D82A31871E6EFE9D006FE6F6 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82A31861E6EFE9D006FE6F6 /* CoreBluetooth.framework */; };
 		D8A475341E421F54006CAFEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A475331E421F54006CAFEA /* AppDelegate.swift */; };
 		D8A475361E421F54006CAFEA /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A475351E421F54006CAFEA /* FirstViewController.swift */; };
 		D8A475381E421F54006CAFEA /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A475371E421F54006CAFEA /* SecondViewController.swift */; };
@@ -75,6 +78,9 @@
 
 /* Begin PBXFileReference section */
 		D824E3661E646E8100727B05 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		D82A31811E6ED333006FE6F6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D82A31831E6EFDC1006FE6F6 /* HeartMonitorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartMonitorViewController.swift; sourceTree = "<group>"; };
+		D82A31861E6EFE9D006FE6F6 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		D8A475301E421F54006CAFEA /* Hotei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hotei.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A475331E421F54006CAFEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8A475351E421F54006CAFEA /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; usesTabs = 1; };
@@ -108,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D82A31871E6EFE9D006FE6F6 /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +128,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D82A31851E6EFE9C006FE6F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D82A31861E6EFE9D006FE6F6 /* CoreBluetooth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D8A475271E421F54006CAFEA = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +143,7 @@
 				D8EDBF9F1E65EA1000CE05F9 /* HoteiW */,
 				D8EDBFAE1E65EA1100CE05F9 /* HoteiW Extension */,
 				D8A475311E421F54006CAFEA /* Products */,
+				D82A31851E6EFE9C006FE6F6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +165,8 @@
 				D8A475351E421F54006CAFEA /* FirstViewController.swift */,
 				D8A475371E421F54006CAFEA /* SecondViewController.swift */,
 				D824E3661E646E8100727B05 /* CustomCell.swift */,
+				D82A31811E6ED333006FE6F6 /* ProfileViewController.swift */,
+				D82A31831E6EFDC1006FE6F6 /* HeartMonitorViewController.swift */,
 				D8A475391E421F54006CAFEA /* Main.storyboard */,
 				D8FEB89C1E67174000E19F8E /* CoreData */,
 				D8A4753C1E421F54006CAFEA /* Assets.xcassets */,
@@ -344,8 +362,10 @@
 				D8A475341E421F54006CAFEA /* AppDelegate.swift in Sources */,
 				D8FEB8991E67173600E19F8E /* Activities+CoreDataProperties.swift in Sources */,
 				D8FEB8981E67173600E19F8E /* Activities+CoreDataClass.swift in Sources */,
+				D82A31841E6EFDC1006FE6F6 /* HeartMonitorViewController.swift in Sources */,
 				D8FEB89A1E67173600E19F8E /* History+CoreDataClass.swift in Sources */,
 				D8FEB89B1E67173600E19F8E /* History+CoreDataProperties.swift in Sources */,
+				D82A31821E6ED333006FE6F6 /* ProfileViewController.swift in Sources */,
 				D8E00E371E658CF8003D2E4C /* hotei.xcdatamodeld in Sources */,
 				D824E3671E646E8100727B05 /* CustomCell.swift in Sources */,
 				D8B715021E6E024B00FD93B2 /* LoginViewController.swift in Sources */,
