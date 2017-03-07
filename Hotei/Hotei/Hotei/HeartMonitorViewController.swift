@@ -178,7 +178,7 @@ class HeartMonitorViewController: UIViewController, CBCentralManagerDelegate, CB
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         print("--- didDiscover peripheral")
         
-        if let localName = advertisementData[CBAdvertisementDataLocalNameKey] as? String{
+        if let localName = advertisementData[CBAdvertisementDataLocalNameKey] as? String {
             print("--- found heart rate monitor named \(localName)")
             self.centralManager.stopScan()
             connectingPeripheral = peripheral
