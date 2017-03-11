@@ -8,21 +8,28 @@
 
 import UIKit
 import CoreBluetooth
+import WatchConnectivity
 
 
 /*
 source: https://github.com/jayliew/bluetoothPolarH7Swift/blob/master/bluetoothPolarH7/ViewController.swift#L10
 */
  
-class HeartMonitorViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
+class HeartMonitorViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate, WCSessionDelegate {
     @IBOutlet weak var bpmLabel: UILabel!
     @IBOutlet weak var deviceInfo: UITextView!
     @IBOutlet weak var stressState: UISwitch!
     @IBOutlet weak var exportDataButton: UIButton!
     @IBOutlet weak var submitButton: UIButton!
     
+    @IBOutlet weak var stepCount: UILabel!
+    
+    
     var centralManager:CBCentralManager!
     var connectingPeripheral:CBPeripheral!
+    
+    var session: WCSession!
+    
     
     let POLARH7_HRM_HEART_RATE_SERVICE_UUID = "180D"
     let POLARH7_HRM_DEVICE_INFO_SERVICE_UUID = "180A"
@@ -131,6 +138,13 @@ class HeartMonitorViewController: UIViewController, CBCentralManagerDelegate, CB
         self.centralManager = centralManager;
         
         self.deviceInfo.text = String(format:"%@\n%@\n%@\n", self.connected,self.bodyData, self.manufacturer)
+        
+        if(WCSession.isSupported()){
+            self.session = WCSession.default()
+            self.session.delegate = self //assign delegate methods to view controller
+            self.session.activate()
+            
+        }
 
     }
     
@@ -356,5 +370,22 @@ class HeartMonitorViewController: UIViewController, CBCentralManagerDelegate, CB
             }
         }
     }
+    
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        self.stepCount.text = message["count"]! as? String
+    }
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+
+    }
+    
  
 }

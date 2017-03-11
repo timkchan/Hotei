@@ -2,7 +2,7 @@
 //  History+CoreDataProperties.swift
 //  Hotei
 //
-//  Created by Tim Kit Chan on 01/03/2017.
+//  Created by Akshay  on 11/03/2017.
 //  Copyright © 2017 AppBee. All rights reserved.
 //
 
@@ -18,6 +18,7 @@ extension History {
 
     @NSManaged public var dateTime: NSDate?
     @NSManaged public var rating: Int16
+    @NSManaged public var userID: Int32
     @NSManaged public var activity: Activities?
 
 }

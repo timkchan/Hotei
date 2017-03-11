@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Activities" representedClassName=".Activities" syncable="YES">
-        <attribute name="frequency" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" defaultValueString="None" syncable="YES"/>
         <relationship name="history" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="History" inverseName="activity" inverseEntity="History" syncable="YES"/>
     </entity>
     <entity name="History" representedClassName=".History" syncable="YES">
         <attribute name="dateTime" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="rating" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="activity" maxCount="1" deletionRule="Nullify" destinationEntity="Activities" inverseName="history" inverseEntity="Activities" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Activities" positionX="-36" positionY="-16" width="128" height="88"/>
-        <element name="History" positionX="-234" positionY="-16" width="128" height="88"/>
+        <element name="Activities" positionX="-47" positionY="5" width="128" height="73"/>
+        <element name="History" positionX="-234" positionY="-16" width="128" height="103"/>
     </elements>
 </model>

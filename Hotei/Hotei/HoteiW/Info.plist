@@ -23,10 +23,11 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>com.appbee.Hotei</string>
+	<string>com.Gar1G.Hotei</string>
 	<key>WKWatchKitApp</key>
 	<true/>
 </dict>

@@ -14,8 +14,22 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HoteiW" customModuleProvider="target">
                     <items>
-                        <label alignment="left" text="NotABot" id="WCh-2r-QxG"/>
+                        <label alignment="left" text="labelX" id="I0z-8M-83x"/>
+                        <label alignment="left" text="labelY" id="2Wq-SC-KCc"/>
+                        <label alignment="left" text="labelZ" id="NTx-qx-8KB"/>
+                        <label alignment="left" text="steps" id="BDd-4a-Ze0"/>
+                        <button width="1" alignment="left" title="Send" id="EAu-H3-0S2">
+                            <connections>
+                                <action selector="sendData" destination="AgC-eL-Hgc" id="GdM-Hp-3mC"/>
+                            </connections>
+                        </button>
                     </items>
+                    <connections>
+                        <outlet property="labelX" destination="I0z-8M-83x" id="83u-KX-Pp9"/>
+                        <outlet property="labelY" destination="2Wq-SC-KCc" id="6qN-kP-WOT"/>
+                        <outlet property="labelZ" destination="NTx-qx-8KB" id="02Z-fs-Vhp"/>
+                        <outlet property="stepCount" destination="BDd-4a-Ze0" id="QYl-Ai-6dS"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>

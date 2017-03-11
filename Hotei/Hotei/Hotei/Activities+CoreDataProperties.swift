@@ -2,7 +2,7 @@
 //  Activities+CoreDataProperties.swift
 //  Hotei
 //
-//  Created by Tim Kit Chan on 01/03/2017.
+//  Created by Akshay  on 11/03/2017.
 //  Copyright © 2017 AppBee. All rights reserved.
 //
 
@@ -16,7 +16,6 @@ extension Activities {
         return NSFetchRequest<Activities>(entityName: "Activities");
     }
 
-    @NSManaged public var frequency: Int32
     @NSManaged public var name: String?
     @NSManaged public var history: NSSet?
 

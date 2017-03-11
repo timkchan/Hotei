@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import UserNotifications
+
 
 class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -29,6 +31,8 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        emotionNotificationAction()
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -39,6 +43,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewWillAppear(_ animated: Bool) {
         // Fetch data and load into tableView.
+        
         getData()
         tableView2.reloadData()
     }
@@ -51,6 +56,31 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = UITableViewCell()
         cell.textLabel?.text = history[indexPath.row].activity!.name
         return cell
+    }
+    
+    func emotionNotificationAction(){
+        let content = UNMutableNotificationContent()
+        content.title = "How Are You Feeling?"
+        content.sound = UNNotificationSound.default()
+        content.body = " "
+        content.categoryIdentifier = "emotionRequest"
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3600, repeats: true)
+        
+        let request = UNNotificationRequest(identifier: "timeUp", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+    
+    func stressNotification(_ activity: String, verb: String){
+        let content = UNMutableNotificationContent()
+        content.title = "You Seem Stressed"
+        content.body = "Why don't you try \(verb + activity)"
+        content.categoryIdentifier = "stressDetection"
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.5, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "stress", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
 
 

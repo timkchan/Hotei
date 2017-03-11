@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { granted, error in
+        })
+        
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        
+        let happy = UNNotificationAction(identifier: "happy", title: "😄" )
+        let neutral = UNNotificationAction(identifier: "neutral", title: "😐")
+        let sad = UNNotificationAction(identifier: "sad", title: "😔")
+        
+        let emotionRequest = UNNotificationCategory(identifier: "emotionRequest", actions: [happy, neutral, sad], intentIdentifiers: [], options: [])
+        
+        UNUserNotificationCenter.current().setNotificationCategories([emotionRequest])
         // Override point for customization after application launch.
         return true
     }

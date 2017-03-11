@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F43044B1E72E0DD00424B35 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F43044A1E72E0DD00424B35 /* HealthKit.framework */; };
+		6FEBD2711E740D0D00C9D5DA /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD2701E740D0D00C9D5DA /* WatchSessionManager.swift */; };
+		6FEBD2841E74862000C9D5DA /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD2821E74862000C9D5DA /* History+CoreDataProperties.swift */; };
+		6FEBD2851E74862000C9D5DA /* Activities+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD2831E74862000C9D5DA /* Activities+CoreDataProperties.swift */; };
 		D824E3671E646E8100727B05 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824E3661E646E8100727B05 /* CustomCell.swift */; };
 		D82A31821E6ED333006FE6F6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82A31811E6ED333006FE6F6 /* ProfileViewController.swift */; };
 		D82A31841E6EFDC1006FE6F6 /* HeartMonitorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82A31831E6EFDC1006FE6F6 /* HeartMonitorViewController.swift */; };
@@ -29,9 +33,7 @@
 		D8EDBFBA1E65EA1100CE05F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8EDBFB91E65EA1100CE05F9 /* Assets.xcassets */; };
 		D8EDBFBE1E65EA1100CE05F9 /* HoteiW.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D8EDBF9E1E65EA1000CE05F9 /* HoteiW.app */; };
 		D8FEB8981E67173600E19F8E /* Activities+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEB8941E67173600E19F8E /* Activities+CoreDataClass.swift */; };
-		D8FEB8991E67173600E19F8E /* Activities+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEB8951E67173600E19F8E /* Activities+CoreDataProperties.swift */; };
 		D8FEB89A1E67173600E19F8E /* History+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEB8961E67173600E19F8E /* History+CoreDataClass.swift */; };
-		D8FEB89B1E67173600E19F8E /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FEB8971E67173600E19F8E /* History+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6F40F9D41E72C8EF00FB14C6 /* HoteiW Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HoteiW Extension.entitlements"; sourceTree = "<group>"; };
+		6F40F9D71E72C93800FB14C6 /* Hotei.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hotei.entitlements; sourceTree = "<group>"; };
+		6F43044A1E72E0DD00424B35 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		6FEBD2701E740D0D00C9D5DA /* WatchSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
+		6FEBD2821E74862000C9D5DA /* History+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "History+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6FEBD2831E74862000C9D5DA /* Activities+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activities+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D824E3661E646E8100727B05 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		D82A31811E6ED333006FE6F6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D82A31831E6EFDC1006FE6F6 /* HeartMonitorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartMonitorViewController.swift; sourceTree = "<group>"; };
@@ -104,9 +112,7 @@
 		D8EDBFB91E65EA1100CE05F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8EDBFBB1E65EA1100CE05F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8FEB8941E67173600E19F8E /* Activities+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activities+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D8FEB8951E67173600E19F8E /* Activities+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activities+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D8FEB8961E67173600E19F8E /* History+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "History+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D8FEB8971E67173600E19F8E /* History+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "History+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F43044B1E72E0DD00424B35 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +138,7 @@
 		D82A31851E6EFE9C006FE6F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6F43044A1E72E0DD00424B35 /* HealthKit.framework */,
 				D82A31861E6EFE9D006FE6F6 /* CoreBluetooth.framework */,
 			);
 			name = Frameworks;
@@ -160,6 +168,7 @@
 		D8A475321E421F54006CAFEA /* Hotei */ = {
 			isa = PBXGroup;
 			children = (
+				6F40F9D71E72C93800FB14C6 /* Hotei.entitlements */,
 				D8A475331E421F54006CAFEA /* AppDelegate.swift */,
 				D8B715011E6E024B00FD93B2 /* LoginViewController.swift */,
 				D8A475351E421F54006CAFEA /* FirstViewController.swift */,
@@ -168,6 +177,7 @@
 				D82A31811E6ED333006FE6F6 /* ProfileViewController.swift */,
 				D82A31831E6EFDC1006FE6F6 /* HeartMonitorViewController.swift */,
 				D8A475391E421F54006CAFEA /* Main.storyboard */,
+				6FEBD2701E740D0D00C9D5DA /* WatchSessionManager.swift */,
 				D8FEB89C1E67174000E19F8E /* CoreData */,
 				D8A4753C1E421F54006CAFEA /* Assets.xcassets */,
 				D8A4753E1E421F54006CAFEA /* LaunchScreen.storyboard */,
@@ -189,6 +199,7 @@
 		D8EDBFAE1E65EA1100CE05F9 /* HoteiW Extension */ = {
 			isa = PBXGroup;
 			children = (
+				6F40F9D41E72C8EF00FB14C6 /* HoteiW Extension.entitlements */,
 				D8EDBFB11E65EA1100CE05F9 /* InterfaceController.swift */,
 				D8EDBFB31E65EA1100CE05F9 /* ExtensionDelegate.swift */,
 				D8EDBFB51E65EA1100CE05F9 /* NotificationController.swift */,
@@ -211,10 +222,10 @@
 		D8FEB89C1E67174000E19F8E /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				6FEBD2821E74862000C9D5DA /* History+CoreDataProperties.swift */,
+				6FEBD2831E74862000C9D5DA /* Activities+CoreDataProperties.swift */,
 				D8FEB8941E67173600E19F8E /* Activities+CoreDataClass.swift */,
-				D8FEB8951E67173600E19F8E /* Activities+CoreDataProperties.swift */,
 				D8FEB8961E67173600E19F8E /* History+CoreDataClass.swift */,
-				D8FEB8971E67173600E19F8E /* History+CoreDataProperties.swift */,
 				D8E00E351E658CF8003D2E4C /* hotei.xcdatamodeld */,
 			);
 			name = CoreData;
@@ -288,18 +299,28 @@
 				TargetAttributes = {
 					D8A4752F1E421F54006CAFEA = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 26YF898FTD;
+						DevelopmentTeam = WH8NU3AA25;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 0;
+							};
+						};
 					};
 					D8EDBF9D1E65EA1000CE05F9 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 26YF898FTD;
+						DevelopmentTeam = WH8NU3AA25;
 						ProvisioningStyle = Automatic;
 					};
 					D8EDBFA91E65EA1100CE05F9 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 26YF898FTD;
+						DevelopmentTeam = WH8NU3AA25;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit.watchos = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -360,14 +381,15 @@
 			files = (
 				D8A475381E421F54006CAFEA /* SecondViewController.swift in Sources */,
 				D8A475341E421F54006CAFEA /* AppDelegate.swift in Sources */,
-				D8FEB8991E67173600E19F8E /* Activities+CoreDataProperties.swift in Sources */,
 				D8FEB8981E67173600E19F8E /* Activities+CoreDataClass.swift in Sources */,
 				D82A31841E6EFDC1006FE6F6 /* HeartMonitorViewController.swift in Sources */,
 				D8FEB89A1E67173600E19F8E /* History+CoreDataClass.swift in Sources */,
-				D8FEB89B1E67173600E19F8E /* History+CoreDataProperties.swift in Sources */,
 				D82A31821E6ED333006FE6F6 /* ProfileViewController.swift in Sources */,
+				6FEBD2711E740D0D00C9D5DA /* WatchSessionManager.swift in Sources */,
 				D8E00E371E658CF8003D2E4C /* hotei.xcdatamodeld in Sources */,
+				6FEBD2841E74862000C9D5DA /* History+CoreDataProperties.swift in Sources */,
 				D824E3671E646E8100727B05 /* CustomCell.swift in Sources */,
+				6FEBD2851E74862000C9D5DA /* Activities+CoreDataProperties.swift in Sources */,
 				D8B715021E6E024B00FD93B2 /* LoginViewController.swift in Sources */,
 				D8A475361E421F54006CAFEA /* FirstViewController.swift in Sources */,
 			);
@@ -524,11 +546,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 26YF898FTD;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = WH8NU3AA25;
 				INFOPLIST_FILE = Hotei/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appbee.Hotei;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Gar1G.Hotei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -537,10 +562,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 26YF898FTD;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = WH8NU3AA25;
 				INFOPLIST_FILE = Hotei/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appbee.Hotei;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Gar1G.Hotei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -551,10 +577,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 26YF898FTD;
+				DEVELOPMENT_TEAM = WH8NU3AA25;
 				IBSC_MODULE = HoteiW_Extension;
 				INFOPLIST_FILE = HoteiW/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.appbee.Hotei.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Gar1G.Hotei.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -569,10 +595,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 26YF898FTD;
+				DEVELOPMENT_TEAM = WH8NU3AA25;
 				IBSC_MODULE = HoteiW_Extension;
 				INFOPLIST_FILE = HoteiW/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.appbee.Hotei.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Gar1G.Hotei.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -586,11 +612,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				DEVELOPMENT_TEAM = 26YF898FTD;
+				CODE_SIGN_ENTITLEMENTS = "HoteiW Extension/HoteiW Extension.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = WH8NU3AA25;
 				INFOPLIST_FILE = "HoteiW Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appbee.Hotei.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Gar1G.Hotei.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -603,10 +633,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				DEVELOPMENT_TEAM = 26YF898FTD;
+				CODE_SIGN_ENTITLEMENTS = "HoteiW Extension/HoteiW Extension.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = WH8NU3AA25;
 				INFOPLIST_FILE = "HoteiW Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appbee.Hotei.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Gar1G.Hotei.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
