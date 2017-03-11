@@ -8,12 +8,14 @@
 
 import UIKit
 
+var userID: Int = 0
+
 class LoginViewController: UIViewController {
     
     // User Defaults for UserID
     let defaults = UserDefaults.standard
 
-    // Storing UserID
+    // Storing User Name
     @IBOutlet weak var userName: UITextField!
     
     // When Login button is tapped.
@@ -27,7 +29,7 @@ class LoginViewController: UIViewController {
         }
 
         // Compute User ID.
-        let userID = abs(name.hash)
+        userID = abs(name.hash)
         
         // Save userID to UserDefault
         defaults.set(userID, forKey: "userID")
@@ -52,7 +54,8 @@ class LoginViewController: UIViewController {
     
     // Function to AutoLogin (if user hasn't signed out)
     func login() {
-        if let userID = defaults.object(forKey: "userID") {
+        if let id = defaults.object(forKey: "userID") as? Int {
+            userID = id
             print("Logged in!")
             print("userID: \(userID)")
             performSegue(withIdentifier: "loginSegue", sender: self)

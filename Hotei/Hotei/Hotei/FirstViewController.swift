@@ -51,19 +51,8 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 		}
 	}
 	
-    // List of activities and their description and image
-    var activityDescriptions = [1488276342, 1487376342, 1488300342, 1481376342, 1488376342, 1485322342, 1488457342]
-
-	
-	// Reference time since 1970 to generate fake last done.
-	let dateRed = 1488376342
-	
-
-
-	
     // TableView Object (Showing list of activities)
     @IBOutlet weak var tableView: UITableView!
-    
 	
     
     // UIButton control for hapiness level
@@ -76,6 +65,11 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 		history.activity = Activities.doActivity(name: currentActivity, context: context)
 		history.rating = Int16(sender.tag)
 		(UIApplication.shared.delegate as! AppDelegate).saveContext()
+		
+		// Post the record to server (userID is decleared in to top of FirstViewController)
+		postToDataBase(UserId: userID, activity: currentActivity, Rating: sender.tag)
+		
+		//Update the frequency count on Activity view.
 		tableView.reloadData()
 		
 		// Print for debug
@@ -84,11 +78,44 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         print("Doing: ", currentActivity)
 		print("Times so far: ", String(Int((history.activity?.frequency)!)))
     }
-    
-    // Activity being selected by the user
+	
+	// Function to POST user activity record
+	func postToDataBase(UserId: Int, activity: String, Rating: Int) {
+		
+		let json: [String: Any] = ["UserId": UserId,
+		                           "Activity": activity,
+		                           "Rating": Rating]
+		
+		let jsonData = try? JSONSerialization.data(withJSONObject: json)
+		
+		// create post request
+		let url = URL(string: "http://hoteiapi20170303100733.azurewebsites.net/UserPerformActivity")!
+		var request = URLRequest(url: url)
+		request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")  // the request is JSON
+		request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
+		request.httpMethod = "POST"
+		
+		// insert json data to the request
+		request.httpBody = jsonData
+		
+		let task = URLSession.shared.dataTask(with: request) { data, response, error in
+			guard let data = data, error == nil else {
+				print(error?.localizedDescription ?? "No data")
+				return
+			}
+			let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+			if let responseJSON = responseJSON as? [String: Any] {
+				print(responseJSON)
+			}
+		}
+		task.resume()
+	}
+
+	
+	
+    // Activity currently being selected by the user
     var currentActivity = "None"
 	
-
 	
 	override func viewWillAppear(_ animated: Bool) {
 		print("Prepare to init Activities Database")
