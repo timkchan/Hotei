@@ -7,25 +7,27 @@
 //
 
 import UIKit
+import CoreData
 
 class InitialPreferenceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var activityChoices = [Activities]()
+    var preferences = [String]()
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     
-    @IBOutlet weak var tableView: UITableView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         activityChoices = initActivitiesInDataBase()
-        
+        self.tbView.allowsMultipleSelection = true
         print(activityChoices.count)
     }
     
@@ -56,36 +58,54 @@ class InitialPreferenceViewController: UIViewController, UITableViewDelegate, UI
     
     // MARK: - Table view data source
     
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    
-        return 0
+        return activityChoices.count
     }
     
     
-    func   tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+    @IBOutlet weak var tbView: UITableView!
+    
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        // Configure the cell...
+        let cell = self.tbView.dequeueReusableCell(withIdentifier: "preferenceCell", for: indexPath) as! InitialTableViewCell
+        cell.activityImage.image = UIImage(named: activityChoices[indexPath.row].name!)
+        cell.activityLabel.text = activityChoices[indexPath.row].name!
+        cell.accessoryType = cell.isSelected ? .checkmark : .none
+        cell.selectionStyle = .none // to prevent cells from being "highlighted"
+        
+        
+        
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        
-        return indexPath
-        
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        tableView.cellForRow(at: indexPath)?.selectionStyle = .gray
+        preferences.append(activityChoices[indexPath.row].name!)
+        print(activityChoices[indexPath.row].name!)
     }
     
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType = .none
+        self.preferences.remove(at: preferences.index(of: activityChoices[indexPath.row].name!)!)
+    }
+    
+    
+    
+    
+//    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+//        
+//        return indexPath
+//        
+//    }
+//    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        
+//    }
+//    
     
     /*
      // Override to support conditional editing of the table view.

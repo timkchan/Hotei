@@ -26,6 +26,8 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 		var activities : [Activities] = []
 		try? activities = context.fetch(Activities.fetchRequest())
 		
+		print(activities.count)
+		
 		if activities.count > 0 {
 			
 			print("Database: Activities not empty")
@@ -65,7 +67,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 		// Creating History entry and saving it
 		let history = History(context: context)
 		history.dateTime = date as NSDate
-		history.activity = Activities.doActivity(name: currentActivity, context: context)
+		history.activity = currentActivity
 		history.rating = Int16(sender.tag)
 		history.userID = id
 		(UIApplication.shared.delegate as! AppDelegate).saveContext()
