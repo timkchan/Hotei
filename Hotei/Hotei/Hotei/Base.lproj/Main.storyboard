@@ -152,7 +152,7 @@ Sad</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.27536231884062" y="-320.38043478260875"/>
+            <point key="canvasLocation" x="793" y="0.0"/>
         </scene>
         <!--Initial Preference View Controller-->
         <scene sceneID="9sx-DQ-79r">
@@ -218,7 +218,7 @@ Sad</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zG-8W-Nr9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1521.7391304347827" y="-436.14130434782612"/>
+            <point key="canvasLocation" x="1574" y="0.0"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="wg7-f3-ORb">
@@ -285,7 +285,7 @@ Sad</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.27536231884062" y="359.51086956521743"/>
+            <point key="canvasLocation" x="749" y="775"/>
         </scene>
         <!--Item-->
         <scene sceneID="tkt-nL-uQs">
@@ -350,7 +350,7 @@ Sad</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PMI-HM-umX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1321.7391304347827" y="1064.6739130434783"/>
+            <point key="canvasLocation" x="0.0" y="775"/>
         </scene>
         <!--Profile-->
         <scene sceneID="6jk-Fd-JET">
@@ -387,7 +387,7 @@ Sad</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E5p-eu-FSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-496" y="1013"/>
+            <point key="canvasLocation" x="-875" y="776"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="K4b-eE-aBj">
