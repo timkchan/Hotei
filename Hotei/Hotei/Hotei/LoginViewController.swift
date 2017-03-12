@@ -16,7 +16,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var errorMessage: UILabel!
     
     @IBAction func registerButton(_ sender: UIButton) {
-        
+        self.loadingSign.isHidden = false;
+        self.loadingSign.startAnimating();
         // Unwrap and bind name.
         // Do nothing if name is not entered.
         guard let name = userName.text, name != "" else {
@@ -33,6 +34,7 @@ class LoginViewController: UIViewController {
         completeLogin(userURL: userURL, sender: sender)
 
     }
+    @IBOutlet weak var loadingSign: UIActivityIndicatorView!
     
     // Storing UserID
     @IBOutlet weak var userName: UITextField!
@@ -45,7 +47,8 @@ class LoginViewController: UIViewController {
     
     // When Login button is tapped.
     @IBAction func loginBtn(_ sender: UIButton) {
-        
+        self.loadingSign.isHidden = false;
+        self.loadingSign.startAnimating();
         // Unwrap and bind name.
         // Do nothing if name is not entered.
         guard let name = userName.text, name != "" else {
@@ -113,6 +116,8 @@ class LoginViewController: UIViewController {
                             self.performSegue(withIdentifier: "loginSegue", sender: sender)
                         }
                     }
+                    self.loadingSign.isHidden = true;
+                    self.loadingSign.stopAnimating();
                 }
                 
             }
@@ -135,9 +140,13 @@ class LoginViewController: UIViewController {
         
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
 
     override func viewDidAppear(_ animated: Bool) {
+        self.loadingSign.isHidden = true;
         print("Trying Auto Login")
         // If user has logged in (userID exist in UserDefaults)
         //login()
