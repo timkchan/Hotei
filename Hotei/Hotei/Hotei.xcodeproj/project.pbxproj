@@ -11,6 +11,9 @@
 		6FEBD2711E740D0D00C9D5DA /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD2701E740D0D00C9D5DA /* WatchSessionManager.swift */; };
 		6FEBD2841E74862000C9D5DA /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD2821E74862000C9D5DA /* History+CoreDataProperties.swift */; };
 		6FEBD2851E74862000C9D5DA /* Activities+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD2831E74862000C9D5DA /* Activities+CoreDataProperties.swift */; };
+		6FEBD2871E7599BF00C9D5DA /* InitialPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD2861E7599BF00C9D5DA /* InitialPreferenceViewController.swift */; };
+		6FEBD2891E759A4D00C9D5DA /* somwthingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD2881E759A4D00C9D5DA /* somwthingTableViewController.swift */; };
+		6FEBD28B1E759C6900C9D5DA /* InitialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD28A1E759C6900C9D5DA /* InitialTableViewCell.swift */; };
 		D824E3671E646E8100727B05 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824E3661E646E8100727B05 /* CustomCell.swift */; };
 		D82A31821E6ED333006FE6F6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82A31811E6ED333006FE6F6 /* ProfileViewController.swift */; };
 		D82A31841E6EFDC1006FE6F6 /* HeartMonitorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82A31831E6EFDC1006FE6F6 /* HeartMonitorViewController.swift */; };
@@ -85,6 +88,9 @@
 		6FEBD2701E740D0D00C9D5DA /* WatchSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
 		6FEBD2821E74862000C9D5DA /* History+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "History+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6FEBD2831E74862000C9D5DA /* Activities+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activities+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6FEBD2861E7599BF00C9D5DA /* InitialPreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialPreferenceViewController.swift; sourceTree = "<group>"; };
+		6FEBD2881E759A4D00C9D5DA /* somwthingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = somwthingTableViewController.swift; sourceTree = "<group>"; };
+		6FEBD28A1E759C6900C9D5DA /* InitialTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTableViewCell.swift; sourceTree = "<group>"; };
 		D824E3661E646E8100727B05 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		D82A31811E6ED333006FE6F6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D82A31831E6EFDC1006FE6F6 /* HeartMonitorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartMonitorViewController.swift; sourceTree = "<group>"; };
@@ -174,9 +180,12 @@
 				D8A475351E421F54006CAFEA /* FirstViewController.swift */,
 				D8A475371E421F54006CAFEA /* SecondViewController.swift */,
 				D824E3661E646E8100727B05 /* CustomCell.swift */,
+				6FEBD28A1E759C6900C9D5DA /* InitialTableViewCell.swift */,
 				D82A31811E6ED333006FE6F6 /* ProfileViewController.swift */,
 				D82A31831E6EFDC1006FE6F6 /* HeartMonitorViewController.swift */,
 				D8A475391E421F54006CAFEA /* Main.storyboard */,
+				6FEBD2861E7599BF00C9D5DA /* InitialPreferenceViewController.swift */,
+				6FEBD2881E759A4D00C9D5DA /* somwthingTableViewController.swift */,
 				6FEBD2701E740D0D00C9D5DA /* WatchSessionManager.swift */,
 				D8FEB89C1E67174000E19F8E /* CoreData */,
 				D8A4753C1E421F54006CAFEA /* Assets.xcassets */,
@@ -381,6 +390,9 @@
 			files = (
 				D8A475381E421F54006CAFEA /* SecondViewController.swift in Sources */,
 				D8A475341E421F54006CAFEA /* AppDelegate.swift in Sources */,
+				6FEBD28B1E759C6900C9D5DA /* InitialTableViewCell.swift in Sources */,
+				6FEBD2871E7599BF00C9D5DA /* InitialPreferenceViewController.swift in Sources */,
+				6FEBD2891E759A4D00C9D5DA /* somwthingTableViewController.swift in Sources */,
 				D8FEB8981E67173600E19F8E /* Activities+CoreDataClass.swift in Sources */,
 				D82A31841E6EFDC1006FE6F6 /* HeartMonitorViewController.swift in Sources */,
 				D8FEB89A1E67173600E19F8E /* History+CoreDataClass.swift in Sources */,

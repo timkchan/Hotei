@@ -24,9 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.shared.applicationIconBadgeNumber = 0
         
-        let happy = UNNotificationAction(identifier: "happy", title: "😄" )
-        let neutral = UNNotificationAction(identifier: "neutral", title: "😐")
-        let sad = UNNotificationAction(identifier: "sad", title: "😔")
+        let happy = UNNotificationAction(identifier: "happy", title: "Happy" )
+        let neutral = UNNotificationAction(identifier: "neutral", title: "Ok")
+        let sad = UNNotificationAction(identifier: "sad", title: "Sad")
         
         let emotionRequest = UNNotificationCategory(identifier: "emotionRequest", actions: [happy, neutral, sad], intentIdentifiers: [], options: [])
         

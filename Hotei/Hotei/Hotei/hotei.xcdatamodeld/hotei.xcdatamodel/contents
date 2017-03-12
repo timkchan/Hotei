@@ -11,7 +11,7 @@
         <relationship name="activity" maxCount="1" deletionRule="Nullify" destinationEntity="Activities" inverseName="history" inverseEntity="Activities" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Activities" positionX="-47" positionY="5" width="128" height="73"/>
         <element name="History" positionX="-234" positionY="-16" width="128" height="103"/>
+        <element name="Activities" positionX="-18" positionY="-9" width="128" height="75"/>
     </elements>
 </model>

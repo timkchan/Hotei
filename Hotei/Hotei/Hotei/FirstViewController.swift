@@ -80,7 +80,6 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 		
 		let frequency = histData.count
 		
-		let uid = id
 		//fetchRequest.predicate = NSPredicate(format: "firstName == %@", firstName)
 
 		

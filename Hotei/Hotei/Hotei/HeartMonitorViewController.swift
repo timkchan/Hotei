@@ -387,5 +387,10 @@ class HeartMonitorViewController: UIViewController, CBCentralManagerDelegate, CB
 
     }
     
+    
+    
+    
+    
+    
  
 }
