@@ -16,7 +16,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var errorMessage: UILabel!
     
     @IBAction func registerButton(_ sender: UIButton) {
-        
+        self.loadingSign.isHidden = false;
+        self.loadingSign.startAnimating();
         // Unwrap and bind name.
         // Do nothing if name is not entered.
         guard let name = userName.text, name != "" else {
@@ -36,6 +37,12 @@ class LoginViewController: UIViewController {
     }
     
     // Storing UserID
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    @IBOutlet weak var loadingSign: UIActivityIndicatorView!
     @IBOutlet weak var userName: UITextField!
     
     @IBOutlet weak var password: UITextField!
@@ -46,7 +53,8 @@ class LoginViewController: UIViewController {
     
     // When Login button is tapped.
     @IBAction func loginBtn(_ sender: UIButton) {
-        
+        self.loadingSign.isHidden = false;
+        self.loadingSign.startAnimating();
         // Unwrap and bind name.
         // Do nothing if name is not entered.
         guard let name = userName.text, name != "" else {
@@ -114,6 +122,8 @@ class LoginViewController: UIViewController {
                             self.performSegue(withIdentifier: "loginSegue", sender: sender)
                         }
                     }
+                    self.loadingSign.isHidden = true;
+                    self.loadingSign.stopAnimating();
                 }
                 
             }
@@ -132,6 +142,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.loadingSign.isHidden = true;
         // Do any additional setup after loading the view.
         
     }
@@ -140,6 +151,7 @@ class LoginViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         print("Trying Auto Login")
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         // If user has logged in (userID exist in UserDefaults)
         //login()
     }
