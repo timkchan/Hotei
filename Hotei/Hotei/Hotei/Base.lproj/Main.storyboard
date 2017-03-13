@@ -20,7 +20,7 @@
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6dh-hC-iZy">
@@ -31,7 +31,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="chA-4d-jfH" id="LKY-Sg-v8v">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ocs-wj-EWM">
@@ -72,33 +72,17 @@
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="bAS-N3-NUf"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Wfh-wx-nVC">
-                                <rect key="frame" x="231" y="593" width="192" height="101"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="101" id="I64-LK-7oU"/>
-                                    <constraint firstAttribute="width" constant="192" id="pKt-yx-Ezz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <state key="normal">
-                                    <string key="title">    ☹️
-Happy</string>
-                                </state>
-                                <connections>
-                                    <action selector="hapinessLevel:" destination="9pv-A4-QxB" eventType="touchUpInside" id="BCC-rN-2R4"/>
-                                </connections>
-                            </button>
                             <navigationBar opaque="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUK-V8-SFj">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="cjz-R4-C5F"/>
                                 </constraints>
-                                <color key="barTintColor" red="0.31372549020000001" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
-                                    <navigationItem title="Add" id="9sQ-wf-BIt"/>
+                                    <navigationItem title="Add Activity" id="9sQ-wf-BIt"/>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="GY5-dQ-ts1">
-                                <rect key="frame" x="141" y="593" width="132" height="101"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="GY5-dQ-ts1">
+                                <rect key="frame" x="141" y="586" width="132" height="101"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="101" id="Kgq-1Z-A7q"/>
                                     <constraint firstAttribute="width" constant="132" id="k2z-jr-G6l"/>
@@ -127,6 +111,21 @@ Sad</string>
                                     <action selector="hapinessLevel:" destination="9pv-A4-QxB" eventType="touchUpInside" id="c0A-0a-IsR"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Wfh-wx-nVC">
+                                <rect key="frame" x="231" y="586" width="192" height="101"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="101" id="I64-LK-7oU"/>
+                                    <constraint firstAttribute="width" constant="192" id="pKt-yx-Ezz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal">
+                                    <string key="title">    ☹️
+Happy</string>
+                                </state>
+                                <connections>
+                                    <action selector="hapinessLevel:" destination="9pv-A4-QxB" eventType="touchUpInside" id="BCC-rN-2R4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -145,7 +144,7 @@ Sad</string>
                             <constraint firstAttribute="bottomMargin" secondItem="GY5-dQ-ts1" secondAttribute="bottom" constant="42" id="zaP-wX-aDL"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Activities" selectedImage="second" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Activities" image="table-tennis-7" selectedImage="table-tennis-7" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="tableView" destination="6dh-hC-iZy" id="ziO-Ak-eCL"/>
                     </connections>
@@ -229,18 +228,18 @@ Sad</string>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="102.33333333333331" y="347.33333333333331" width="209.33333333333337" height="41.333333333333371"/>
+                                <rect key="frame" x="102.33333333333331" y="323" width="209.33333333333337" height="41.333333333333314"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="99.333333333333314" y="396.66666666666669" width="215" height="17"/>
+                                <rect key="frame" x="99.333333333333314" y="372.33333333333331" width="215" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -287,7 +286,7 @@ Sad</string>
             </objects>
             <point key="canvasLocation" x="749" y="775"/>
         </scene>
-        <!--Item-->
+        <!--Heart Monitor View Controller-->
         <scene sceneID="tkt-nL-uQs">
             <objects>
                 <viewController id="NU2-ff-a5x" customClass="HeartMonitorViewController" customModule="Hotei" customModuleProvider="target" sceneMemberID="viewController">
@@ -296,7 +295,7 @@ Sad</string>
                         <viewControllerLayoutGuide type="bottom" id="hjT-CM-uU2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dfy-49-hfy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqc-5D-sSU">
@@ -338,7 +337,7 @@ Sad</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="i9l-9P-wzM"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="i9l-9P-wzM"/>
                     <connections>
                         <outlet property="bpmLabel" destination="oqc-5D-sSU" id="ifd-02-rFl"/>
                         <outlet property="deviceInfo" destination="Zbw-wU-dPV" id="ZhO-r9-hse"/>
@@ -361,7 +360,7 @@ Sad</string>
                         <viewControllerLayoutGuide type="bottom" id="Mkz-9E-a5Y"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Miz-y7-RTl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tNP-gN-rKe">
@@ -380,7 +379,7 @@ Sad</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="E7F-sr-F2d"/>
+                    <tabBarItem key="tabBarItem" title="Account" image="circle-user-7" id="E7F-sr-F2d"/>
                     <connections>
                         <segue destination="mmv-RI-I51" kind="show" identifier="logoutSegue" id="Ak8-kK-8BG"/>
                     </connections>
@@ -503,10 +502,9 @@ Sad</string>
             <objects>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
@@ -521,7 +519,8 @@ Sad</string>
         </scene>
     </scenes>
     <resources>
+        <image name="circle-user-7" width="30" height="30"/>
         <image name="logoinv" width="133" height="189"/>
-        <image name="second" width="30" height="30"/>
+        <image name="table-tennis-7" width="30" height="30"/>
     </resources>
 </document>
