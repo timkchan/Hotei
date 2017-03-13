@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UNUserNotificationCenter.current().setNotificationCategories([emotionRequest])
         // Override point for customization after application launch.
+
         return true
     }
 

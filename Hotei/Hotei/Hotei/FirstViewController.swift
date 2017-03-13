@@ -8,11 +8,12 @@
 import UIKit
 import CoreData
 
-class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 	
 	let def = UserDefaults.standard
 	var id: Int32 = 0
 	
+    @IBOutlet weak var searchBar: UISearchBar!
 	
 	// Context for CoreDate
 	let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -56,82 +57,39 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 		}
 	}
 	
+	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
+		
+		if searchText.isEmpty{
+			try? activities = context.fetch(Activities.fetchRequest())
+		}
+			
+		else{
+			activities = activities.filter({(act) -> Bool in
+				return (act.name?.lowercased().contains(searchText.lowercased()))!
+			})
+			
+			if activities.isEmpty{
+				
+				let act1 = Activities(context: context)
+				act1.setAll(name: "Add Activity")
+				
+				activities = [act1]
+
+			}
+			
+		}
+		self.tableView.reloadData()
+		
+	}
+
+	
 	// TableView Object (Showing list of activities)
 	@IBOutlet weak var tableView: UITableView!
 	
 	
-	// UIButton control for hapiness level
-	@IBAction func hapinessLevel(_ sender: UIButton) {
-		let date = Date()
-		if(currentActivity != "None"){
-
-		// Creating History entry and saving it
-		let history = History(context: context)
-		history.dateTime = date as NSDate
-		history.activity = currentActivity
-		history.rating = Int16(sender.tag)
-		history.userID = id
-		(UIApplication.shared.delegate as! AppDelegate).saveContext()
-		
-		// Post the record to server (userID is decleared in to top of FirstViewController)
-		// Don't post to activity database is currentActitivty is none, this will save locally but not on db
-			postToDataBase(UserId: id, activity: currentActivity, Rating: sender.tag)
-		}
-		
-		
-		
-		//fetchRequest.predicate = NSPredicate(format: "firstName == %@", firstName)
-
-		
-		// Print for debug
-		print("Time: ", date)
-		print("Happiness: ", sender.tag)
-		print("Doing: ", currentActivity)
-		print("User Id", id)
-		//print("Times so far: ", String(Int((history.activity?.frequency)!)))
-	}
-	
-	// Function to POST user activity record
-	func postToDataBase(UserId: Int32, activity: String, Rating: Int) {
-		
-		let json: [String: Any] = ["UserId": UserId,
-		                           "Activity": activity,
-		                           "Rating": Rating]
-		
-		let jsonData = try? JSONSerialization.data(withJSONObject: json)
-		
-		// create post request
-		let url = URL(string: "http://hoteiapi20170303100733.azurewebsites.net/UserPerformActivity")!
-		var request = URLRequest(url: url)
-		request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")  // the request is JSON
-		request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
-		request.httpMethod = "POST"
-		
-		// insert json data to the request
-		request.httpBody = jsonData
-		
-		let task = URLSession.shared.dataTask(with: request) { data, response, error in
-			guard let data = data, error == nil else {
-				print(error?.localizedDescription ?? "No data")
-				return
-			}
-			let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-			if let responseJSON = responseJSON as? [String: Any] {
-				print(responseJSON)
-			}
-		}
-		task.resume()
-	}
-	
-	
-	
-	// Activity currently being selected by the user
-	var currentActivity = "None"
 	
 	
 	override func viewWillAppear(_ animated: Bool) {
-		print("Prepare to init Activities Database")
-		
 		id = def.object(forKey: "userID") as! Int32
 		activities = initActivitiesInDataBase()
 	}
@@ -141,10 +99,6 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 		// Do any additional setup after loading the view, typically from a nib.
 	}
 	
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
-	}
 	
 	// Number of Rows
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -154,29 +108,27 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 	// Return Cells
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomCell
-		cell.photo.image = UIImage(named: activities[indexPath.row].name!)
-		cell.nameLabel.text = activities[indexPath.row].name
+		cell.textLabel?.text = activities[indexPath.row].name
 		return cell
 	}
-	
-	// Deselect activity if selected
-	func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-		if let indexPathForSelectedRow = tableView.indexPathForSelectedRow {
-			if (indexPathForSelectedRow == indexPath) {
-				tableView.deselectRow(at: indexPath, animated: false)
-				print("Deselected: ", currentActivity)
-				currentActivity = "None"
-				return nil
-			}
-		}
-		return indexPath
-	}
-	
-	// If activity is selected, updated currentActivity
+
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		currentActivity = activities[indexPath.row].name!
-		print("Selected: ", currentActivity)
+		
+
+		
+		let popovervc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbpopupid") as! PopUpViewController
+		popovervc.id = id
+		popovervc.currentActivity = activities[indexPath.row].name
+		self.addChildViewController(popovervc)
+		popovervc.view.frame = self.view.frame
+		self.view.addSubview(popovervc.view)
+		popovervc.didMove(toParentViewController: self)
+		
+		
+		
+		
 	}
+
 	
 	
 }
