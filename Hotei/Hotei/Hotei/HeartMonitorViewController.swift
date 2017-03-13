@@ -368,8 +368,12 @@ class HeartMonitorViewController: UIViewController, CBCentralManagerDelegate, CB
             default:
                 print("--- something other than 2A37 uuid characteristic")
             }
+            
         }
     }
+    
+    
+    
     
     
     func sessionDidDeactivate(_ session: WCSession) {
@@ -386,6 +390,8 @@ class HeartMonitorViewController: UIViewController, CBCentralManagerDelegate, CB
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
 
     }
+    
+    
     
     
     

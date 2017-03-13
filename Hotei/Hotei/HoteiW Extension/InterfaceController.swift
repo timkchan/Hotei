@@ -77,33 +77,35 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, CLLocationM
         locationManager.requestAlwaysAuthorization()
         
         if(CMMotionActivityManager.isActivityAvailable()){
-            self.activityManager.startActivityUpdates(to: OperationQueue.main, withHandler: {(data: CMMotionActivity!) -> Void in
-                
-                if(data.stationary){
-                    self.stepCount.setText("Stationary")
+            self.activityManager.startActivityUpdates(to: OperationQueue.main) {
+                data in
+                DispatchQueue.main.async {
+                    if (data?.running)! {
+                        self.stepCount.setText("Running")
+                    } else if (data?.cycling)! {
+                        self.stepCount.setText("Cycling")
+                    } else if (data?.walking)! {
+                        self.stepCount.setText("Walking")
+                    } else if (data?.stationary)! {
+                        self.stepCount.setText("Stationary")
+                    } else {
+                        self.stepCount.setText("Lazy")
+                    }
                 }
-                else if(data.walking){
-                    self.stepCount.setText("Walking")
-                }
-                else if(data.running){
-                    self.stepCount.setText("Running")
-                }
-                
-                
-            } as! CMMotionActivityHandler)
+            }
         }
         
         
-//        if(CMPedometer.isPaceAvailable()){
-//            
-//            corePedometer.startUpdates(from: startDate, withHandler: {(data:CMPedometerData?, error: Error?) -> Void in
-//                
-//                if(error == nil){
-//                    self.stepCount.setText("\(data!.numberOfSteps)")
-//                }
-//
-//            } )
-//        }
+        if(CMPedometer.isPaceAvailable()){
+            
+            corePedometer.startUpdates(from: startDate, withHandler: {(data:CMPedometerData?, error: Error?) -> Void in
+                
+                if(error == nil){
+                    self.stepCount.setText("\(data!.numberOfSteps)")
+                }
+
+            } )
+        }
         
         
         
