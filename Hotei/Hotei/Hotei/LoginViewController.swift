@@ -70,9 +70,9 @@ class LoginViewController: UIViewController {
         // Save userID to UserDefault
         
         
-//        // Perform Segue to Activity page
-//        print("userID: \(userID)")
-//        performSegue(withIdentifier: "loginSegue", sender: sender)
+        // Perform Segue to Activity page
+        print("userID: \(userID)")
+        performSegue(withIdentifier: "loginSegue", sender: sender)
     }
     
     
@@ -149,7 +149,7 @@ class LoginViewController: UIViewController {
         self.loadingSign.isHidden = true;
         print("Trying Auto Login")
         // If user has logged in (userID exist in UserDefaults)
-        //login()
+        login()
     }
     
     // Function to AutoLogin (if user hasn't signed out)

@@ -45,10 +45,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, CLLocationM
     
     
     
-//    func initWCSession(){
-//        session.delegate = self
-//        session.activate()
-//    }
+
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
     }
@@ -77,21 +74,25 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, CLLocationM
         locationManager.requestAlwaysAuthorization()
         
         if(CMMotionActivityManager.isActivityAvailable()){
-            self.activityManager.startActivityUpdates(to: OperationQueue.main, withHandler: {(data: CMMotionActivity!) -> Void in
-                
-                if(data.stationary){
-                    self.stepCount.setText("Stationary")
+            self.activityManager.startActivityUpdates(to: OperationQueue.main) {
+                data in
+                DispatchQueue.main.async {
+                    if (data?.running)! {
+                        self.stepCount.setText("Running")
+                    } else if (data?.cycling)! {
+                        self.stepCount.setText("Cycling")
+                    } else if (data?.walking)! {
+                        self.stepCount.setText("Walking")
+                    } else if (data?.stationary)! {
+                        self.stepCount.setText("Stationary")
+                    } else {
+                        self.stepCount.setText("Lazy")
+                    }
                 }
-                else if(data.walking){
-                    self.stepCount.setText("Walking")
-                }
-                else if(data.running){
-                    self.stepCount.setText("Running")
-                }
-                
-                
-            } as! CMMotionActivityHandler)
+            }
         }
+        
+        //self.stepCount.setText("Walking")
         
         
 //        if(CMPedometer.isPaceAvailable()){
@@ -107,29 +108,22 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, CLLocationM
         
         
         
-        if(motionManager.isAccelerometerAvailable){
-            let handler:CMAccelerometerHandler = {(data: CMAccelerometerData?, error: Error?) -> Void in
-                
-                self.labelX.setText(String(format: "%.2f", data!.acceleration.x))
-                self.labelY.setText(String(format: "%.2f", data!.acceleration.y))
-                self.labelZ.setText(String(format: "%.2f", data!.acceleration.z))
-            }
-            
-            motionManager.startAccelerometerUpdates(to: OperationQueue.current!, withHandler: handler)
-            
-//            motionManager.startAccelerometerUpdates(to: OperationQueue.current!){ (data, error) in
+//        if(motionManager.isAccelerometerAvailable){
+//            let handler:CMAccelerometerHandler = {(data: CMAccelerometerData?, error: Error?) -> Void in
 //                
-//                if let myData = data{
-//                    //print(myData)
-//                }
-//                
+//                self.labelX.setText(String(format: "%.2f", data!.acceleration.x))
+//                self.labelY.setText(String(format: "%.2f", data!.acceleration.y))
+//                self.labelZ.setText(String(format: "%.2f", data!.acceleration.z))
 //            }
-        }
-        else{
-            self.labelX.setText("not available")
-            self.labelY.setText("not available")
-            self.labelZ.setText("not available")
-        }
+//            
+//            motionManager.startAccelerometerUpdates(to: OperationQueue.current!, withHandler: handler)
+//            
+//        }
+//        else{
+//            self.labelX.setText("not available")
+//            self.labelY.setText("not available")
+//            self.labelZ.setText("not available")
+//        }
     }
     
     override func didDeactivate() {
@@ -138,5 +132,20 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, CLLocationM
         //motionManager.stopAccelerometerUpdates()
         
     }
+    
+    // Function when an message is received
+//    private func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: @escaping ([String : AnyObject]) -> Void) {
+//        print("msg received")
+//        //handle received message
+//        if let value = message["isExercising"] as? String {
+//            //use this to present immediately on the screen
+//            DispatchQueue.main.async {
+//                self.labelZ.setText("HI")
+//            }
+//        }
+//
+//        //send a reply
+//        replyHandler(["isExercising":false as AnyObject])
+//    }
 
 }

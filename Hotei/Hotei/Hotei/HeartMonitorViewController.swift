@@ -379,15 +379,39 @@ class HeartMonitorViewController: UIViewController, CBCentralManagerDelegate, CB
 
     }
     
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         self.stepCount.text = message["count"]! as? String
+
     }
+
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        print(isExercising())
+    }
     
+    // Check if user is exercising by asking apple watch
+    func isExercising () -> Bool {
+        
+        //Send Message to WatchKit
+        let messageToSend = ["isExercising":"Is user exercising?"]
+        var value = false
+        session.sendMessage(messageToSend, replyHandler: { replyMessage in
+            //handle the reply
+            value = (replyMessage["isExercising"] as? Bool)!
+            //use dispatch_asynch to present immediately on screen
+            DispatchQueue.main.async {
+                print(value)
+            }
+        }, errorHandler: {error in
+            // catch any errors here
+            print(error)
+        })
+        return value
+    }
     
     
     
