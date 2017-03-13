@@ -21,8 +21,10 @@ class PopUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        //self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
         self.showAnimate()
+        self.view.layer.cornerRadius = 8.0
+        self.view.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
 
