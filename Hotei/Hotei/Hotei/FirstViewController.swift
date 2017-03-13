@@ -175,6 +175,10 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 		return indexPath
 	}
 	
+	override var preferredStatusBarStyle: UIStatusBarStyle {
+		return .lightContent
+	}
+	
 	// If activity is selected, updated currentActivity
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		currentActivity = activities[indexPath.row].name!

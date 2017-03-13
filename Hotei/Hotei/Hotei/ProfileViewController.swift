@@ -13,6 +13,8 @@ class ProfileViewController: UIViewController {
     let defaults = UserDefaults.standard
     var loggedIn = true
     
+    @IBOutlet var profilePicture: UIView!
+    
     @IBAction func logoutBtn(_ sender: UIBarButtonItem) {
         print("Logging out")
         defaults.removeObject(forKey: "userID")
