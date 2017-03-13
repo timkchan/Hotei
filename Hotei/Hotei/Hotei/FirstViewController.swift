@@ -63,7 +63,8 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 	// UIButton control for hapiness level
 	@IBAction func hapinessLevel(_ sender: UIButton) {
 		let date = Date()
-		
+		if(currentActivity != "None"){
+
 		// Creating History entry and saving it
 		let history = History(context: context)
 		history.dateTime = date as NSDate
@@ -73,14 +74,11 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 		(UIApplication.shared.delegate as! AppDelegate).saveContext()
 		
 		// Post the record to server (userID is decleared in to top of FirstViewController)
-		postToDataBase(UserId: id, activity: currentActivity, Rating: sender.tag)
-		
-		var histData : [History] = []
-		try? histData = context.fetch(History.fetchRequest())
-		
+		// Don't post to activity database is currentActitivty is none, this will save locally but not on db
+			postToDataBase(UserId: id, activity: currentActivity, Rating: sender.tag)
+		}
 		
 		
-		let frequency = histData.count
 		
 		//fetchRequest.predicate = NSPredicate(format: "firstName == %@", firstName)
 
@@ -89,7 +87,6 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 		print("Time: ", date)
 		print("Happiness: ", sender.tag)
 		print("Doing: ", currentActivity)
-		print("Frequency", frequency)
 		print("User Id", id)
 		//print("Times so far: ", String(Int((history.activity?.frequency)!)))
 	}

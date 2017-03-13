@@ -31,6 +31,7 @@ class LoginViewController: UIViewController {
         defaults.set(userID, forKey: "userID")
         
         completeLogin(userURL: userURL, sender: sender)
+        
 
     }
     
@@ -106,7 +107,7 @@ class LoginViewController: UIViewController {
                     default:
                         //case 0
                         if(status == 0){
-                            self.performSegue(withIdentifier: "loginSegue", sender: self)
+                            self.performSegue(withIdentifier: "coldstart", sender: self)
                             
                         }
                         else{

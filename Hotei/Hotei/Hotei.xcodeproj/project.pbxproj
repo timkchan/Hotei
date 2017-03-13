@@ -13,6 +13,8 @@
 		6FEBD28B1E759C6900C9D5DA /* InitialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD28A1E759C6900C9D5DA /* InitialTableViewCell.swift */; };
 		6FEBD28E1E75A9B300C9D5DA /* Activities+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD28C1E75A9B300C9D5DA /* Activities+CoreDataProperties.swift */; };
 		6FEBD28F1E75A9B300C9D5DA /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD28D1E75A9B300C9D5DA /* History+CoreDataProperties.swift */; };
+		91B629B41E763C0D00476D28 /* HomeUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B629B31E763C0D00476D28 /* HomeUserViewController.swift */; };
+		91B629B61E76409500476D28 /* EmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B629B51E76409500476D28 /* EmotionViewController.swift */; };
 		D824E3671E646E8100727B05 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824E3661E646E8100727B05 /* CustomCell.swift */; };
 		D82A31821E6ED333006FE6F6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82A31811E6ED333006FE6F6 /* ProfileViewController.swift */; };
 		D82A31841E6EFDC1006FE6F6 /* HeartMonitorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82A31831E6EFDC1006FE6F6 /* HeartMonitorViewController.swift */; };
@@ -89,6 +91,8 @@
 		6FEBD28A1E759C6900C9D5DA /* InitialTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTableViewCell.swift; sourceTree = "<group>"; };
 		6FEBD28C1E75A9B300C9D5DA /* Activities+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activities+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6FEBD28D1E75A9B300C9D5DA /* History+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "History+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		91B629B31E763C0D00476D28 /* HomeUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeUserViewController.swift; sourceTree = "<group>"; };
+		91B629B51E76409500476D28 /* EmotionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionViewController.swift; sourceTree = "<group>"; };
 		D824E3661E646E8100727B05 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		D82A31811E6ED333006FE6F6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D82A31831E6EFDC1006FE6F6 /* HeartMonitorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartMonitorViewController.swift; sourceTree = "<group>"; };
@@ -183,11 +187,13 @@
 				D82A31831E6EFDC1006FE6F6 /* HeartMonitorViewController.swift */,
 				D8A475391E421F54006CAFEA /* Main.storyboard */,
 				6FEBD2861E7599BF00C9D5DA /* InitialPreferenceViewController.swift */,
+				91B629B51E76409500476D28 /* EmotionViewController.swift */,
 				6FEBD2701E740D0D00C9D5DA /* WatchSessionManager.swift */,
 				D8FEB89C1E67174000E19F8E /* CoreData */,
 				D8A4753C1E421F54006CAFEA /* Assets.xcassets */,
 				D8A4753E1E421F54006CAFEA /* LaunchScreen.storyboard */,
 				D8A475411E421F54006CAFEA /* Info.plist */,
+				91B629B31E763C0D00476D28 /* HomeUserViewController.swift */,
 			);
 			path = Hotei;
 			sourceTree = "<group>";
@@ -306,6 +312,7 @@
 					D8A4752F1E421F54006CAFEA = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = WH8NU3AA25;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.HealthKit = {
@@ -393,12 +400,14 @@
 				D8FEB8981E67173600E19F8E /* Activities+CoreDataClass.swift in Sources */,
 				D82A31841E6EFDC1006FE6F6 /* HeartMonitorViewController.swift in Sources */,
 				D8FEB89A1E67173600E19F8E /* History+CoreDataClass.swift in Sources */,
+				91B629B61E76409500476D28 /* EmotionViewController.swift in Sources */,
 				D82A31821E6ED333006FE6F6 /* ProfileViewController.swift in Sources */,
 				6FEBD2711E740D0D00C9D5DA /* WatchSessionManager.swift in Sources */,
 				D8E00E371E658CF8003D2E4C /* hotei.xcdatamodeld in Sources */,
 				D824E3671E646E8100727B05 /* CustomCell.swift in Sources */,
 				D8B715021E6E024B00FD93B2 /* LoginViewController.swift in Sources */,
 				6FEBD28E1E75A9B300C9D5DA /* Activities+CoreDataProperties.swift in Sources */,
+				91B629B41E763C0D00476D28 /* HomeUserViewController.swift in Sources */,
 				D8A475361E421F54006CAFEA /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,6 +563,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = WH8NU3AA25;
 				INFOPLIST_FILE = Hotei/Info.plist;
@@ -562,6 +572,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -570,6 +581,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = WH8NU3AA25;
 				INFOPLIST_FILE = Hotei/Info.plist;
