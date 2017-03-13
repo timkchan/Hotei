@@ -23,34 +23,34 @@ let json: [String: Any] = ["UserId": 0002,
                            "Activity": "archery",
                            "Rating": 3.0]
 
-let jsonData = try? JSONSerialization.data(withJSONObject: json)
-
-// create post request
-let url = URL(string: "http://hoteiapi20170303100733.azurewebsites.net/UserPerformActivity")!
-var request = URLRequest(url: url)
-request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")  // the request is JSON
-request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
-request.httpMethod = "POST"
-
-// insert json data to the request
-request.httpBody = jsonData
-
-let task = URLSession.shared.dataTask(with: request) { data, response, error in
-    guard let data = data, error == nil else {
-        print(error?.localizedDescription ?? "No data")
-        return
-    }
-    let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-    if let responseJSON = responseJSON as? [String: Any] {
-        print(responseJSON)
-        print("good")
-    }
-    if let response = response {
-        print(response)
-    }
-}
-
-task.resume()
+//let jsonData = try? JSONSerialization.data(withJSONObject: json)
+//
+//// create post request
+//let url = URL(string: "http://hoteiapi20170303100733.azurewebsites.net/UserPerformActivity")!
+//var request = URLRequest(url: url)
+//request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")  // the request is JSON
+//request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
+//request.httpMethod = "POST"
+//
+//// insert json data to the request
+//request.httpBody = jsonData
+//
+//let task = URLSession.shared.dataTask(with: request) { data, response, error in
+//    guard let data = data, error == nil else {
+//        print(error?.localizedDescription ?? "No data")
+//        return
+//    }
+//    let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+//    if let responseJSON = responseJSON as? [String: Any] {
+//        print(responseJSON)
+//        print("good")
+//    }
+//    if let response = response {
+//        print(response)
+//    }
+//}
+//
+//task.resume()
 
 
 //
