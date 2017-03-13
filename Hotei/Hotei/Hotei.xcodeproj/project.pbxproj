@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0115BC9B1E76DFF50000F2B7 /* InitPrefTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0115BC9A1E76DFF50000F2B7 /* InitPrefTableViewController.swift */; };
 		6F43044B1E72E0DD00424B35 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F43044A1E72E0DD00424B35 /* HealthKit.framework */; };
 		6FEBD2711E740D0D00C9D5DA /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD2701E740D0D00C9D5DA /* WatchSessionManager.swift */; };
-		6FEBD2871E7599BF00C9D5DA /* InitialPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD2861E7599BF00C9D5DA /* InitialPreferenceViewController.swift */; };
 		6FEBD28B1E759C6900C9D5DA /* InitialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD28A1E759C6900C9D5DA /* InitialTableViewCell.swift */; };
 		6FEBD28E1E75A9B300C9D5DA /* Activities+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD28C1E75A9B300C9D5DA /* Activities+CoreDataProperties.swift */; };
 		6FEBD28F1E75A9B300C9D5DA /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD28D1E75A9B300C9D5DA /* History+CoreDataProperties.swift */; };
@@ -83,11 +83,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0115BC9A1E76DFF50000F2B7 /* InitPrefTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitPrefTableViewController.swift; sourceTree = "<group>"; };
 		6F40F9D41E72C8EF00FB14C6 /* HoteiW Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HoteiW Extension.entitlements"; sourceTree = "<group>"; };
 		6F40F9D71E72C93800FB14C6 /* Hotei.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hotei.entitlements; sourceTree = "<group>"; };
 		6F43044A1E72E0DD00424B35 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		6FEBD2701E740D0D00C9D5DA /* WatchSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
-		6FEBD2861E7599BF00C9D5DA /* InitialPreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialPreferenceViewController.swift; sourceTree = "<group>"; };
 		6FEBD28A1E759C6900C9D5DA /* InitialTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTableViewCell.swift; sourceTree = "<group>"; };
 		6FEBD28C1E75A9B300C9D5DA /* Activities+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activities+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6FEBD28D1E75A9B300C9D5DA /* History+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "History+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -186,7 +186,7 @@
 				D82A31811E6ED333006FE6F6 /* ProfileViewController.swift */,
 				D82A31831E6EFDC1006FE6F6 /* HeartMonitorViewController.swift */,
 				D8A475391E421F54006CAFEA /* Main.storyboard */,
-				6FEBD2861E7599BF00C9D5DA /* InitialPreferenceViewController.swift */,
+				0115BC9A1E76DFF50000F2B7 /* InitPrefTableViewController.swift */,
 				91B629B51E76409500476D28 /* EmotionViewController.swift */,
 				6FEBD2701E740D0D00C9D5DA /* WatchSessionManager.swift */,
 				D8FEB89C1E67174000E19F8E /* CoreData */,
@@ -396,7 +396,6 @@
 				D8A475381E421F54006CAFEA /* SecondViewController.swift in Sources */,
 				D8A475341E421F54006CAFEA /* AppDelegate.swift in Sources */,
 				6FEBD28B1E759C6900C9D5DA /* InitialTableViewCell.swift in Sources */,
-				6FEBD2871E7599BF00C9D5DA /* InitialPreferenceViewController.swift in Sources */,
 				D8FEB8981E67173600E19F8E /* Activities+CoreDataClass.swift in Sources */,
 				D82A31841E6EFDC1006FE6F6 /* HeartMonitorViewController.swift in Sources */,
 				D8FEB89A1E67173600E19F8E /* History+CoreDataClass.swift in Sources */,
@@ -406,6 +405,7 @@
 				D8E00E371E658CF8003D2E4C /* hotei.xcdatamodeld in Sources */,
 				D824E3671E646E8100727B05 /* CustomCell.swift in Sources */,
 				D8B715021E6E024B00FD93B2 /* LoginViewController.swift in Sources */,
+				0115BC9B1E76DFF50000F2B7 /* InitPrefTableViewController.swift in Sources */,
 				6FEBD28E1E75A9B300C9D5DA /* Activities+CoreDataProperties.swift in Sources */,
 				91B629B41E763C0D00476D28 /* HomeUserViewController.swift in Sources */,
 				D8A475361E421F54006CAFEA /* FirstViewController.swift in Sources */,
