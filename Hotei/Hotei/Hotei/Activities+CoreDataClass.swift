@@ -26,4 +26,7 @@ public class Activities: NSManagedObject {
         newAct.name = name
         return newAct
     }
+    
+
+    
 }

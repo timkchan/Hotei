@@ -54,8 +54,6 @@ class PopUpViewController: UIViewController {
     
     @IBAction func hapinessLevel(_ sender: UIButton) {
         
-        context.reset()
-
         if ((activityInput.text?.isEmpty)! && !activityInput.isHidden){
             
             DispatchQueue.main.async {
@@ -69,6 +67,12 @@ class PopUpViewController: UIViewController {
         
             if(!(activityInput.text?.isEmpty)!){
                 currentActivity = activityInput.text
+                
+                //add this activity to Actvity DB
+                let act = Activities(context: context)
+                act.setAll(name: currentActivity!)
+                (UIApplication.shared.delegate as! AppDelegate).saveContext()
+                
             }
             
             let date = Date()

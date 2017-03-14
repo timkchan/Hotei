@@ -69,26 +69,13 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
 			activities = activities.filter({(act) -> Bool in
 				return (act.name?.lowercased().contains(searchText.lowercased()))!
 			})
-			
-			if activities.isEmpty{
-				
-				let act1 = Activities(context: context)
-				act1.setAll(name: "Add Activity")
-				
-				activities = [act1]
-				
-			}
-			
+
 		}
 		self.tableView.reloadData()
 		
 	}
 	
-	
 
-	
-	
-	
 	
 	override func viewWillAppear(_ animated: Bool) {
 		id = def.object(forKey: "userID") as! Int32
@@ -123,5 +110,18 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
 		popovervc.didMove(toParentViewController: self)
 
 	}
+	
+    @IBAction func addActivity(_ sender: Any) {
+        let popovervc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbpopupid") as! PopUpViewController
+        popovervc.id = id
+        popovervc.currentActivity = "Add Activity"
+        self.addChildViewController(popovervc)
+        popovervc.view.frame = self.view.frame
+        self.view.addSubview(popovervc.view)
+        popovervc.didMove(toParentViewController: self)
+
+        
+    }
+	
 
 }
