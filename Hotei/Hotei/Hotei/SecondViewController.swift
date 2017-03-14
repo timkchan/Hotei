@@ -31,8 +31,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        emotionNotificationAction()
-        
+
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -58,23 +57,12 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-    func emotionNotificationAction(){
-        let content = UNMutableNotificationContent()
-        content.title = "How Are You Feeling?"
-        content.sound = UNNotificationSound.default()
-        content.body = " "
-        content.categoryIdentifier = "emotionRequest"
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3600, repeats: true)
-        
-        let request = UNNotificationRequest(identifier: "timeUp", content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-    }
-    
-    func stressNotification(_ activity: String, verb: String){
+    func stressNotification(_ activity: String){
         let content = UNMutableNotificationContent()
         content.title = "You Seem Stressed"
-        content.body = "Why don't you try \(verb + activity)"
+        content.sound = UNNotificationSound.default()
+        content.body = "Why don't you try \(activity)"
         content.categoryIdentifier = "stressDetection"
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.5, repeats: false)

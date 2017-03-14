@@ -12,7 +12,7 @@ import CoreData
 
 class BarViewController: UIViewController , UINavigationBarDelegate{
 
-    
+    let def = UserDefaults.standard
     @IBOutlet weak var navBar: UINavigationBar!
 
     
@@ -59,8 +59,14 @@ class BarViewController: UIViewController , UINavigationBarDelegate{
         
         do{
             //let queryResult = try context.execute(request) as! [History]
-            let result = try context.fetch(request)
-            for task in result as! [NSManagedObject]{
+            let id = def.object(forKey: "userID") as! Int32
+            var results = try context.fetch(request)
+            results = results.filter({(result) -> Bool in
+                return ((result as! History).userID == id)
+                
+            })
+            
+            for task in results as! [NSManagedObject]{
                 dates.append(task.value(forKey: "dateTime")! as! Date)
                 emotions.append(task.value(forKey: "rating")! as! Double)
                 print("\(task.value(forKey: "activity")!)")

@@ -7,11 +7,12 @@
 //
 import UIKit
 import CoreData
+import UserNotifications
 
-class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
 	
 	let def = UserDefaults.standard
-	var id: Int32 = 0
+	var id : Int32 = 0
 	
 	
 	// Context for CoreDate
@@ -92,6 +93,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 		print("Frequency", frequency)
 		print("User Id", id)
 		//print("Times so far: ", String(Int((history.activity?.frequency)!)))
+		cancelNotification()
 	}
 	
 	// Function to POST user activity record
@@ -137,11 +139,17 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 		
 		id = def.object(forKey: "userID") as! Int32
 		activities = initActivitiesInDataBase()
+		emotionNotificationAction()
+		
+
 	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		print("loaded")
+		UNUserNotificationCenter.current().delegate = self
 		// Do any additional setup after loading the view, typically from a nib.
+		
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -183,6 +191,72 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		currentActivity = activities[indexPath.row].name!
 		print("Selected: ", currentActivity)
+	}
+	
+	func setEmotionFromNotif(date: Date, rating: Int16){
+		
+		// Creating History entry and saving it
+		let history = History(context: context)
+		history.dateTime = date as NSDate
+		history.activity = "none"
+		history.rating = rating
+		history.userID = id
+		(UIApplication.shared.delegate as! AppDelegate).saveContext()
+		
+		// Post the record to server (userID is decleared in to top of FirstViewController)
+		postToDataBase(UserId: id, activity: "none", Rating: Int(rating))
+		print("emotion registered and app not open")
+	}
+	
+	func emotionNotificationAction(){
+		let content = UNMutableNotificationContent()
+		//content.subtitle = "How Are You Feeling?"
+		content.sound = UNNotificationSound.default()
+		content.body = "How Are You Feeling?"
+		content.categoryIdentifier = "emotionRequest"
+		
+		let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3600, repeats: true)
+		
+		let request = UNNotificationRequest(identifier: "timeUp", content: content, trigger: trigger)
+		UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+	}
+	
+	//Called to reset timer for "emotion rating notification"
+	func cancelNotification(){
+		//Removes repeating notifications
+		UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+		//Restarts repeating
+		emotionNotificationAction()
+	}
+
+	
+	
+}
+
+extension FirstViewController: UNUserNotificationCenterDelegate{
+//	func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+//		completionHandler([.alert])
+//	}
+	
+	func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+		let date = Date()
+		switch response.actionIdentifier {
+			
+		case "happy":
+			setEmotionFromNotif(date: date, rating: 1)
+			//
+		case "neutral":
+			setEmotionFromNotif(date: date, rating: 0)
+
+		case "sad":
+			setEmotionFromNotif(date: date, rating: -1)
+			
+		default:
+			break
+		}
+		
+		completionHandler()
+		
 	}
 	
 	

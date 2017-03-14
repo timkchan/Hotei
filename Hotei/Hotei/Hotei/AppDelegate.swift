@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { granted, error in
         })
@@ -27,10 +28,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let happy = UNNotificationAction(identifier: "happy", title: "Happy" )
         let neutral = UNNotificationAction(identifier: "neutral", title: "Ok")
         let sad = UNNotificationAction(identifier: "sad", title: "Sad")
+        let rate = UNNotificationAction(identifier: "rate", title: "Rate an Activity", options:  [.foreground ])
         
-        let emotionRequest = UNNotificationCategory(identifier: "emotionRequest", actions: [happy, neutral, sad], intentIdentifiers: [], options: [])
+//        let view = UNNotificationAction(identifier: "view", title: "View Activity", options: [])
         
-        UNUserNotificationCenter.current().setNotificationCategories([emotionRequest])
+        let emotionRequest = UNNotificationCategory(identifier: "emotionRequest", actions: [happy, neutral, sad, rate], intentIdentifiers: [], options: [])
+        
+        let stressDetect = UNNotificationCategory(identifier: "stressDetect", actions: [], intentIdentifiers: [], options: [])
+
+        UNUserNotificationCenter.current().setNotificationCategories([emotionRequest, stressDetect])
+        
         // Override point for customization after application launch.
         return true
     }
