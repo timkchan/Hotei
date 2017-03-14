@@ -89,11 +89,47 @@ class InitPrefTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         id = def.object(forKey: "userID") as! Int32
-        try? activities = context.fetch(Activities.fetchRequest())
+        activities = initActivitiesInDataBase()
 
         
         
     }
+    
+    func initActivitiesInDataBase() -> [Activities]{
+        
+        var activities : [Activities] = []
+        try? activities = context.fetch(Activities.fetchRequest())
+        
+        print(activities.count)
+        
+        if activities.count > 0 {
+            
+            print("Database: Activities not empty")
+            return activities
+            
+        } else {
+            guard let csvPath = Bundle.main.path(forResource: "activities", ofType: "csv") else { return []}
+            
+            do {
+                let csvData = try String(contentsOfFile: csvPath, encoding: String.Encoding.utf8)
+                let array = csvData.components(separatedBy: "\n")
+                
+                for item in array{
+                    let act = Activities(context: context)
+                    act.setAll(name: item)
+                    (UIApplication.shared.delegate as! AppDelegate).saveContext()
+                }
+                try? activities = context.fetch(Activities.fetchRequest())
+                return activities
+                
+            }catch{
+                print(error)
+            }
+            
+        }
+        return []
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

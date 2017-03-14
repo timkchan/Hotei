@@ -16,6 +16,7 @@
 		6FEBD28F1E75A9B300C9D5DA /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD28D1E75A9B300C9D5DA /* History+CoreDataProperties.swift */; };
 		91B629B41E763C0D00476D28 /* HomeUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B629B31E763C0D00476D28 /* HomeUserViewController.swift */; };
 		91B629B61E76409500476D28 /* EmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B629B51E76409500476D28 /* EmotionViewController.swift */; };
+		91BDD53D1E77FE9200802370 /* activities.csv in Resources */ = {isa = PBXBuildFile; fileRef = 91BDD53C1E77FE9200802370 /* activities.csv */; };
 		D824E3671E646E8100727B05 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824E3661E646E8100727B05 /* CustomCell.swift */; };
 		D82A31821E6ED333006FE6F6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82A31811E6ED333006FE6F6 /* ProfileViewController.swift */; };
 		D82A31841E6EFDC1006FE6F6 /* HeartMonitorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82A31831E6EFDC1006FE6F6 /* HeartMonitorViewController.swift */; };
@@ -95,6 +96,7 @@
 		6FEBD28D1E75A9B300C9D5DA /* History+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "History+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		91B629B31E763C0D00476D28 /* HomeUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeUserViewController.swift; sourceTree = "<group>"; };
 		91B629B51E76409500476D28 /* EmotionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionViewController.swift; sourceTree = "<group>"; };
+		91BDD53C1E77FE9200802370 /* activities.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = activities.csv; path = ../../../../../../Downloads/activities.csv; sourceTree = "<group>"; };
 		D824E3661E646E8100727B05 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		D82A31811E6ED333006FE6F6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D82A31831E6EFDC1006FE6F6 /* HeartMonitorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartMonitorViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 		D8A475321E421F54006CAFEA /* Hotei */ = {
 			isa = PBXGroup;
 			children = (
+				91BDD53C1E77FE9200802370 /* activities.csv */,
 				6F40F9D71E72C93800FB14C6 /* Hotei.entitlements */,
 				D8A475331E421F54006CAFEA /* AppDelegate.swift */,
 				D8B715011E6E024B00FD93B2 /* LoginViewController.swift */,
@@ -366,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8A475401E421F54006CAFEA /* LaunchScreen.storyboard in Resources */,
+				91BDD53D1E77FE9200802370 /* activities.csv in Resources */,
 				D8A4753D1E421F54006CAFEA /* Assets.xcassets in Resources */,
 				D8A4753B1E421F54006CAFEA /* Main.storyboard in Resources */,
 			);

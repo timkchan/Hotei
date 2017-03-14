@@ -37,26 +37,26 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
 			return activities
 			
 		} else {
-			let act1 = Activities(context: context)
-			act1.setAll(name: "Running")
-			let act2 = Activities(context: context)
-			act2.setAll(name: "Swimming")
-			let act3 = Activities(context: context)
-			act3.setAll(name: "Racing")
-			let act4 = Activities(context: context)
-			act4.setAll(name: "Archery")
-			let act5 = Activities(context: context)
-			act5.setAll(name: "Badminton")
-			let act6 = Activities(context: context)
-			act6.setAll(name: "Ballet")
-			let act7 = Activities(context: context)
-			act7.setAll(name: "Fencing")
-			(UIApplication.shared.delegate as! AppDelegate).saveContext()
+			guard let csvPath = Bundle.main.path(forResource: "activities", ofType: "csv") else { return []}
 			
-			print("Database: Activities Added")
-			print(id);
-			return [act1, act2, act3, act4, act5, act6, act7]
+			do {
+				let csvData = try String(contentsOfFile: csvPath, encoding: String.Encoding.utf8)
+				let array = csvData.components(separatedBy: "\n")
+				
+				for item in array{
+					let act = Activities(context: context)
+					act.setAll(name: item)
+					(UIApplication.shared.delegate as! AppDelegate).saveContext()
+				}
+				try? activities = context.fetch(Activities.fetchRequest())
+				return activities
+			
+			}catch{
+				print(error)
+			}
+			
 		}
+		return []
 	}
 	
 	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
