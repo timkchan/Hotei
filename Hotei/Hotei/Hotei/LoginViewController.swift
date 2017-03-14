@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     // User Defaults for UserID
     let defaults = UserDefaults.standard
@@ -43,8 +43,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBOutlet weak var loadingSign: UIActivityIndicatorView!
-    @IBOutlet weak var userName: UITextField!
     
+    @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
     
     
@@ -143,10 +143,19 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadingSign.isHidden = true;
+        self.userName.delegate = self;
+        self.password.delegate = self;
         // Do any additional setup after loading the view.
         
     }
     
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
+    {
+        textField.resignFirstResponder()
+        return true;
+    }
+
 
 
     override func viewDidAppear(_ animated: Bool) {
@@ -167,19 +176,6 @@ class LoginViewController: UIViewController {
         }
     }
 
-    
-    // Tap away to hide keyboard.
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
-    // Tap return to hide keyboard.
-    func textFieldShouldReturn(textField: UITextField!) -> Bool // called when 'return' key pressed. return NO to ignore.
-    {
-        textField.resignFirstResponder()
-        return true;
-    }
-    
 
     
 
