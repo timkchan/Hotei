@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0115BC9B1E76DFF50000F2B7 /* InitPrefTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0115BC9A1E76DFF50000F2B7 /* InitPrefTableViewController.swift */; };
 		0115BCA91E771AD40000F2B7 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0115BCA81E771AD40000F2B7 /* PopUpViewController.swift */; };
+		01979FAB1E7808D900293B7E /* activities.csv in Resources */ = {isa = PBXBuildFile; fileRef = 01979FAA1E7808D900293B7E /* activities.csv */; };
 		6F43044B1E72E0DD00424B35 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F43044A1E72E0DD00424B35 /* HealthKit.framework */; };
 		6FEBD2711E740D0D00C9D5DA /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD2701E740D0D00C9D5DA /* WatchSessionManager.swift */; };
 		6FEBD28B1E759C6900C9D5DA /* InitialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD28A1E759C6900C9D5DA /* InitialTableViewCell.swift */; };
@@ -16,7 +17,6 @@
 		6FEBD28F1E75A9B300C9D5DA /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD28D1E75A9B300C9D5DA /* History+CoreDataProperties.swift */; };
 		91B629B41E763C0D00476D28 /* HomeUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B629B31E763C0D00476D28 /* HomeUserViewController.swift */; };
 		91B629B61E76409500476D28 /* EmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B629B51E76409500476D28 /* EmotionViewController.swift */; };
-		91BDD53D1E77FE9200802370 /* activities.csv in Resources */ = {isa = PBXBuildFile; fileRef = 91BDD53C1E77FE9200802370 /* activities.csv */; };
 		D824E3671E646E8100727B05 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824E3661E646E8100727B05 /* CustomCell.swift */; };
 		D82A31821E6ED333006FE6F6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82A31811E6ED333006FE6F6 /* ProfileViewController.swift */; };
 		D82A31841E6EFDC1006FE6F6 /* HeartMonitorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82A31831E6EFDC1006FE6F6 /* HeartMonitorViewController.swift */; };
@@ -87,6 +87,7 @@
 /* Begin PBXFileReference section */
 		0115BC9A1E76DFF50000F2B7 /* InitPrefTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitPrefTableViewController.swift; sourceTree = "<group>"; };
 		0115BCA81E771AD40000F2B7 /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		01979FAA1E7808D900293B7E /* activities.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = activities.csv; sourceTree = "<group>"; };
 		6F40F9D41E72C8EF00FB14C6 /* HoteiW Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HoteiW Extension.entitlements"; sourceTree = "<group>"; };
 		6F40F9D71E72C93800FB14C6 /* Hotei.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hotei.entitlements; sourceTree = "<group>"; };
 		6F43044A1E72E0DD00424B35 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -96,7 +97,6 @@
 		6FEBD28D1E75A9B300C9D5DA /* History+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "History+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		91B629B31E763C0D00476D28 /* HomeUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeUserViewController.swift; sourceTree = "<group>"; };
 		91B629B51E76409500476D28 /* EmotionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionViewController.swift; sourceTree = "<group>"; };
-		91BDD53C1E77FE9200802370 /* activities.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = activities.csv; path = ../../../../../../Downloads/activities.csv; sourceTree = "<group>"; };
 		D824E3661E646E8100727B05 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		D82A31811E6ED333006FE6F6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D82A31831E6EFDC1006FE6F6 /* HeartMonitorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartMonitorViewController.swift; sourceTree = "<group>"; };
@@ -180,7 +180,7 @@
 		D8A475321E421F54006CAFEA /* Hotei */ = {
 			isa = PBXGroup;
 			children = (
-				91BDD53C1E77FE9200802370 /* activities.csv */,
+				01979FAA1E7808D900293B7E /* activities.csv */,
 				6F40F9D71E72C93800FB14C6 /* Hotei.entitlements */,
 				D8A475331E421F54006CAFEA /* AppDelegate.swift */,
 				D8B715011E6E024B00FD93B2 /* LoginViewController.swift */,
@@ -368,8 +368,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01979FAB1E7808D900293B7E /* activities.csv in Resources */,
 				D8A475401E421F54006CAFEA /* LaunchScreen.storyboard in Resources */,
-				91BDD53D1E77FE9200802370 /* activities.csv in Resources */,
 				D8A4753D1E421F54006CAFEA /* Assets.xcassets in Resources */,
 				D8A4753B1E421F54006CAFEA /* Main.storyboard in Resources */,
 			);
