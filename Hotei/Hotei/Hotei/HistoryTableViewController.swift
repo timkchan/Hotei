@@ -11,6 +11,7 @@ import UIKit
 class HistoryTableViewController: UITableViewController {
 
     let def = UserDefaults.standard
+    var id : Int32 = 0;
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var history : [History] = []
@@ -26,7 +27,10 @@ class HistoryTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getData()
+        id = def.object(forKey: "userID") as! Int32
+        print(id)
+        history = getData()
+        history.sort { $0.dateTime.timeIntervalSince1970 > $1.dateTime.timeIntervalSince1970 }
         
     }
     
@@ -39,8 +43,9 @@ class HistoryTableViewController: UITableViewController {
     
     
     
-    func getData(){
-        let id = def.object(forKey: "userID") as! Int32
+    func getData() -> [History]{
+        var history : [History] = []
+        
         do {
             try history = context.fetch(History.fetchRequest())
             
@@ -52,8 +57,7 @@ class HistoryTableViewController: UITableViewController {
             print("Fetch Failed")
         }
         
-        
-        self.tableView.reloadData()
+        return history
         
     }
     

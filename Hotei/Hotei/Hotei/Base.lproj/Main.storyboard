@@ -656,10 +656,10 @@
             </objects>
             <point key="canvasLocation" x="-552" y="413"/>
         </scene>
-        <!--History List Table View Controller-->
+        <!--History Table View Controller-->
         <scene sceneID="9Wf-cF-Igd">
             <objects>
-                <tableViewController id="WnI-zM-23r" customClass="HistoryListTableViewController" customModule="Hotei" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="WnI-zM-23r" customClass="HistoryTableViewController" customModule="Hotei" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="58" sectionHeaderHeight="28" sectionFooterHeight="28" id="Cat-h6-Zhk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
