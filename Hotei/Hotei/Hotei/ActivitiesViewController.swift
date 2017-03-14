@@ -7,6 +7,7 @@
 //
 import UIKit
 import CoreData
+import UserNotifications
 
 
 class ActivitiesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
@@ -86,11 +87,26 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
 		id = def.object(forKey: "userID") as! Int32
 		activities = initActivitiesInDataBase()
 		activities.sort { $0.name! < $1.name! }
+		emotionNotificationAction()
 	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		UNUserNotificationCenter.current().delegate = self
 		// Do any additional setup after loading the view, typically from a nib.
+	}
+	
+	func emotionNotificationAction(){
+		let content = UNMutableNotificationContent()
+		//content.subtitle = "How Are You Feeling?"
+		content.sound = UNNotificationSound.default()
+		content.body = "How Are You Feeling?"
+		content.categoryIdentifier = "emotionRequest"
+		
+		let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+		
+		let request = UNNotificationRequest(identifier: "timeUp", content: content, trigger: trigger)
+		UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
 	}
 	
     
@@ -133,5 +149,92 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
         
     }
 	
+	func setEmotionFromNotif(date: Date, rating: Int16){
+		
+		// Creating History entry and saving it
+		let history = History(context: context)
+		history.dateTime = date as NSDate
+		history.activity = "none"
+		history.rating = rating
+		history.userID = id
+		(UIApplication.shared.delegate as! AppDelegate).saveContext()
+		
+		// Post the record to server (userID is decleared in to top of FirstViewController)
+		postToDataBase(UserId: id, activity: "none", Rating: Int(rating))
+		print("emotion registered and app not open")
+	}
+	
+	func postToDataBase(UserId: Int32, activity: String, Rating: Int) {
+		
+		let json: [String: Any] = ["UserId": UserId,
+		                           "Activity": activity,
+		                           "Rating": Rating]
+		
+		let jsonData = try? JSONSerialization.data(withJSONObject: json)
+		
+		// create post request
+		let url = URL(string: "http://hoteiapi20170303100733.azurewebsites.net/UserPerformActivity")!
+		var request = URLRequest(url: url)
+		request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")  // the request is JSON
+		request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
+		request.httpMethod = "POST"
+		
+		// insert json data to the request
+		request.httpBody = jsonData
+		
+		let task = URLSession.shared.dataTask(with: request) { data, response, error in
+			guard let data = data, error == nil else {
+				print(error?.localizedDescription ?? "No data")
+				return
+			}
+			let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+			if let responseJSON = responseJSON as? [String: Any] {
+				print(responseJSON)
+			}
+		}
+		task.resume()
+	}
+
+	
 
 }
+
+
+extension ActivitiesViewController: UNUserNotificationCenterDelegate{
+	//	func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+	//		completionHandler([.alert])
+	//	}
+	
+	func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+		let date = Date()
+		switch response.actionIdentifier {
+			
+		case "happy":
+			setEmotionFromNotif(date: date, rating: 1)
+		//
+		case "neutral":
+			setEmotionFromNotif(date: date, rating: 0)
+			
+		case "sad":
+			setEmotionFromNotif(date: date, rating: -1)
+			
+			
+		default:
+			//			let sb = UIStoryboard(name: "Main", bundle: nil)
+			//			let otherVC = sb.instantiateViewController(withIdentifier: "tabVC") as! UITabBarController
+			//			let window = UIApplication.shared.keyWindow
+			//
+			//			window?.rootViewController = otherVC
+			
+			
+			break
+		}
+		
+		completionHandler()
+		
+	}
+	
+	
+}
+
+

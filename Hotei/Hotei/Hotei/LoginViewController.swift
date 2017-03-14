@@ -162,7 +162,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         print("Trying Auto Login")
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         // If user has logged in (userID exist in UserDefaults)
-        //login()
+        login()
     }
     
     // Function to AutoLogin (if user hasn't signed out)
