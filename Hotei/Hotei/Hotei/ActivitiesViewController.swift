@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 
+
 class ActivitiesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 	
 	let def = UserDefaults.standard
@@ -16,6 +17,7 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
 	@IBOutlet weak var searchBar: UISearchBar!
 	@IBOutlet weak var tableView: UITableView!
 
+    @IBOutlet weak var customActivityButton: UIButton!
 	
 	
 	// Context for CoreDate
@@ -29,6 +31,7 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
 		var activities : [Activities] = []
 		try? activities = context.fetch(Activities.fetchRequest())
 		
+	
 		print(activities.count)
 		
 		if activities.count > 0 {
@@ -44,9 +47,11 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
 				let array = csvData.components(separatedBy: "\n")
 				
 				for item in array{
+					if(item != ""){
 					let act = Activities(context: context)
 					act.setAll(name: item)
 					(UIApplication.shared.delegate as! AppDelegate).saveContext()
+					}
 				}
 				try? activities = context.fetch(Activities.fetchRequest())
 				return activities
@@ -80,6 +85,7 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
 	override func viewWillAppear(_ animated: Bool) {
 		id = def.object(forKey: "userID") as! Int32
 		activities = initActivitiesInDataBase()
+		activities.sort { $0.name! < $1.name! }
 	}
 	
 	override func viewDidLoad() {
@@ -87,18 +93,20 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
 		// Do any additional setup after loading the view, typically from a nib.
 	}
 	
-	
+    
 	// Number of Rows
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return activities.count
 	}
 	
 	// Return Cells
-	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomCell
-		cell.textLabel?.text = activities[indexPath.row].name
-		return cell
-	}
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = activities[indexPath.row].name
+        return cell
+    }
+    
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let popovervc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbpopupid") as! PopUpViewController

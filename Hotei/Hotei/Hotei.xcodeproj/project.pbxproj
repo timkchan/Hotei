@@ -15,9 +15,9 @@
 		6FEBD28B1E759C6900C9D5DA /* InitialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD28A1E759C6900C9D5DA /* InitialTableViewCell.swift */; };
 		6FEBD28E1E75A9B300C9D5DA /* Activities+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD28C1E75A9B300C9D5DA /* Activities+CoreDataProperties.swift */; };
 		6FEBD28F1E75A9B300C9D5DA /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD28D1E75A9B300C9D5DA /* History+CoreDataProperties.swift */; };
+		8BE6156281802DCEA0D0053F /* Pods_Hotei.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB2D8FA5815169A99AECEDF0 /* Pods_Hotei.framework */; };
 		91B629B41E763C0D00476D28 /* HomeUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B629B31E763C0D00476D28 /* HomeUserViewController.swift */; };
 		91B629B61E76409500476D28 /* EmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B629B51E76409500476D28 /* EmotionViewController.swift */; };
-		D824E3671E646E8100727B05 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824E3661E646E8100727B05 /* CustomCell.swift */; };
 		D82A31821E6ED333006FE6F6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82A31811E6ED333006FE6F6 /* ProfileViewController.swift */; };
 		D82A31841E6EFDC1006FE6F6 /* HeartMonitorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82A31831E6EFDC1006FE6F6 /* HeartMonitorViewController.swift */; };
 		D82A31871E6EFE9D006FE6F6 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82A31861E6EFE9D006FE6F6 /* CoreBluetooth.framework */; };
@@ -97,7 +97,7 @@
 		6FEBD28D1E75A9B300C9D5DA /* History+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "History+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		91B629B31E763C0D00476D28 /* HomeUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeUserViewController.swift; sourceTree = "<group>"; };
 		91B629B51E76409500476D28 /* EmotionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionViewController.swift; sourceTree = "<group>"; };
-		D824E3661E646E8100727B05 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		AA9DC7A845BE2088DC96F857 /* Pods-Hotei.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hotei.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hotei/Pods-Hotei.debug.xcconfig"; sourceTree = "<group>"; };
 		D82A31811E6ED333006FE6F6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D82A31831E6EFDC1006FE6F6 /* HeartMonitorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartMonitorViewController.swift; sourceTree = "<group>"; };
 		D82A31861E6EFE9D006FE6F6 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
@@ -125,14 +125,24 @@
 		D8EDBFBB1E65EA1100CE05F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8FEB8941E67173600E19F8E /* Activities+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activities+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D8FEB8961E67173600E19F8E /* History+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "History+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DC0FBF65D5B895517AF4C685 /* Pods-Hotei.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hotei.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hotei/Pods-Hotei.release.xcconfig"; sourceTree = "<group>"; };
+		FB2D8FA5815169A99AECEDF0 /* Pods_Hotei.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hotei.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		095FB55CD09E7352FD56166F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D8A4752D1E421F54006CAFEA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D82A31871E6EFE9D006FE6F6 /* CoreBluetooth.framework in Frameworks */,
+				8BE6156281802DCEA0D0053F /* Pods_Hotei.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,11 +157,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		884D4F77B0FDF1776CA8DCF0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AA9DC7A845BE2088DC96F857 /* Pods-Hotei.debug.xcconfig */,
+				DC0FBF65D5B895517AF4C685 /* Pods-Hotei.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D82A31851E6EFE9C006FE6F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				6F43044A1E72E0DD00424B35 /* HealthKit.framework */,
 				D82A31861E6EFE9D006FE6F6 /* CoreBluetooth.framework */,
+				FB2D8FA5815169A99AECEDF0 /* Pods_Hotei.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -164,6 +184,7 @@
 				D8EDBFAE1E65EA1100CE05F9 /* HoteiW Extension */,
 				D8A475311E421F54006CAFEA /* Products */,
 				D82A31851E6EFE9C006FE6F6 /* Frameworks */,
+				884D4F77B0FDF1776CA8DCF0 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,7 +211,6 @@
 				D82A31831E6EFDC1006FE6F6 /* HeartMonitorViewController.swift */,
 				D8A475391E421F54006CAFEA /* Main.storyboard */,
 				0115BCA81E771AD40000F2B7 /* PopUpViewController.swift */,
-				D824E3661E646E8100727B05 /* CustomCell.swift */,
 				0115BC9A1E76DFF50000F2B7 /* InitPrefTableViewController.swift */,
 				6FEBD28A1E759C6900C9D5DA /* InitialTableViewCell.swift */,
 				91B629B51E76409500476D28 /* EmotionViewController.swift */,
@@ -256,10 +276,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8A475441E421F54006CAFEA /* Build configuration list for PBXNativeTarget "Hotei" */;
 			buildPhases = (
+				A638654FA9C9CB8102C18869 /* [CP] Check Pods Manifest.lock */,
 				D8A4752C1E421F54006CAFEA /* Sources */,
 				D8A4752D1E421F54006CAFEA /* Frameworks */,
 				D8A4752E1E421F54006CAFEA /* Resources */,
 				D8EDBFC61E65EA1100CE05F9 /* Embed Watch Content */,
+				E8FE38266BE53219CFD017CA /* [CP] Embed Pods Frameworks */,
+				C2749BE7891E9E61CA3D157B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -277,6 +300,7 @@
 			buildPhases = (
 				D8EDBF9C1E65EA1000CE05F9 /* Resources */,
 				D8EDBFC41E65EA1100CE05F9 /* Embed App Extensions */,
+				095FB55CD09E7352FD56166F /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -394,6 +418,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A638654FA9C9CB8102C18869 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C2749BE7891E9E61CA3D157B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hotei/Pods-Hotei-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8FE38266BE53219CFD017CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hotei/Pods-Hotei-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D8A4752C1E421F54006CAFEA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -411,7 +483,6 @@
 				D82A31821E6ED333006FE6F6 /* ProfileViewController.swift in Sources */,
 				6FEBD2711E740D0D00C9D5DA /* WatchSessionManager.swift in Sources */,
 				D8E00E371E658CF8003D2E4C /* hotei.xcdatamodeld in Sources */,
-				D824E3671E646E8100727B05 /* CustomCell.swift in Sources */,
 				D8B715021E6E024B00FD93B2 /* LoginViewController.swift in Sources */,
 				0115BC9B1E76DFF50000F2B7 /* InitPrefTableViewController.swift in Sources */,
 				6FEBD28E1E75A9B300C9D5DA /* Activities+CoreDataProperties.swift in Sources */,
@@ -569,6 +640,7 @@
 		};
 		D8A475451E421F54006CAFEA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA9DC7A845BE2088DC96F857 /* Pods-Hotei.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -587,6 +659,7 @@
 		};
 		D8A475461E421F54006CAFEA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC0FBF65D5B895517AF4C685 /* Pods-Hotei.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

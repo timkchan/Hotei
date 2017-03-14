@@ -8,5 +8,4 @@ target 'Hotei' do
   # Pods for Hotei
 pod 'Charts', '~> 3.0.1'
 
-
 end

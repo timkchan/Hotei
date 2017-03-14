@@ -34,6 +34,10 @@ class PopUpViewController: UIViewController {
     }
     
 
+    @IBAction func closeView(_ sender: Any) {
+        removeAnimate()
+    }
+
     @IBOutlet weak var activityInput: UITextField!
 
     override func viewWillAppear(_ animated: Bool) {
