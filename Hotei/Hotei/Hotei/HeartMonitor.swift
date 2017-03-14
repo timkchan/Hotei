@@ -1,89 +1,78 @@
 //
-//  HeartMonitorViewController.swift
+//  HeartMonitor.swift
 //  Hotei
 //
-//  Created by Mac on 02/03/2017.
+//  Created by Ryan Dowse on 11/03/2017.
 //  Copyright © 2017 AppBee. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import CoreBluetooth
-import WatchConnectivity
-
+import NotificationCenter
 
 /*
-source: https://github.com/jayliew/bluetoothPolarH7Swift/blob/master/bluetoothPolarH7/ViewController.swift#L10
-*/
- 
-class HeartMonitorViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate, WCSessionDelegate {
-    @IBOutlet weak var bpmLabel: UILabel!
-    @IBOutlet weak var deviceInfo: UITextView!
-    @IBOutlet weak var stressState: UISwitch!
-    @IBOutlet weak var exportDataButton: UIButton!
-    @IBOutlet weak var submitButton: UIButton!
-    
-    @IBOutlet weak var stepCount: UILabel!
-    
-    
+ source: https://github.com/jayliew/bluetoothPolarH7Swift/blob/master/bluetoothPolarH7/ViewController.swift#L10
+ */
+
+class HeartMonitor: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
+    // Central manager and peripheral for bluetooth device
     var centralManager:CBCentralManager!
     var connectingPeripheral:CBPeripheral!
     
-    var session: WCSession!
-    
-    
+    // Device UUID info
     let POLARH7_HRM_HEART_RATE_SERVICE_UUID = "180D"
     let POLARH7_HRM_DEVICE_INFO_SERVICE_UUID = "180A"
     
-    struct hrData{
-        var label:Bool
-        var hr:Int
-        var hrv:Double
-    }
+    // Buffer storing current RR intervals within a set time frame
+    var rrIntervalBuffer = Array(repeating:0.0,count:10000) // Estimated the memory space required
+    var rrIntervalBufferIndex = 0 // Keep track of latest new sample
     
-    // HRV calc
-    var rrIntervalBuffer = Array(repeating:0.0,count:10000)
-    var rrIntervalBufferIndex = 0
+    // Buffer storing all of the current HR sample
+    var hrBuffer = Array(repeating:0.0,count:10000) // Estimated the memory space required
+    var hrBufferIndex = 0 // Keep track of latest new sample
+    
+    // Time between feature calculations, in seconds
+    let updateCalcInterval = 60.0
+    
+    // Current states for the user
     var sdnn = 0.0 // HRV value
     var hr = 0
-    var state = false
-    var dataBuffer:[hrData] = []
+    var mean_hr = 0.0;
     
-    @IBAction func onExportPressed(_ sender: Any) {
-        print("Exporting data to file\n")
-        writeFile()
-    }
-
-    @IBAction func onSubmitPressed(_ sender: Any) {
-        if(dataBuffer.count == 1000){
-            print("Warning data buffer full\n")
-        }else{
-            state = stressState.isOn
-            let d = hrData(label: state, hr: hr, hrv: sdnn)
-            dataBuffer.append(d)
-        }
-    }
-    
-    func writeFile(){
-        print("Writefile not implemented\n")
-    }
-    
+    // Flags for reading heartrate characteristics data
     struct hrflags{
+        // Flags
         var _hr_format_bit:UInt8 // bits 1
         var _sensor_contact_bit:UInt8 // bits 2
         var _energy_expended_bit:UInt8 // bits 1
         var _rr_interval_bit:UInt8 // bits 1
         
+        // Read flags from byte.
         init(flag: UInt8) {
-            // get values of all flags
             _hr_format_bit = flag & 0x1
             _sensor_contact_bit = (flag >> 1) & 0x3
             _energy_expended_bit = (flag >> 3) & 0x1
             _rr_interval_bit = (flag >> 4) & 0x1
         }
         
+        // Return if HR is 8 or 16 bit
         func getHRSize() -> Int {
             return Int(_hr_format_bit) + 1
         }
+    }
+    
+    // Mark: update calculations for features
+    
+    func updateCalc(){
+        /*
+         *   Features to calc:
+         *   eg. HRV, Mean HR.
+         */
+        calcHRV()
+        calcMeanHR()
+        
+        // Notify that the feature calculations have been updated
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refreshFeatures"), object: nil)
     }
     
     func calcHRV(){
@@ -101,62 +90,49 @@ class HeartMonitorViewController: UIViewController, CBCentralManagerDelegate, CB
         }
         sdnn = sqrt(sdnnTotal/Double(rrIntervalBufferIndex))
         
-        rrIntervalBufferIndex=0;
+        // Refill buffer
+        rrIntervalBufferIndex=0
     }
     
+    func calcMeanHR(){
+        var hrTotal = 0.0
+        for i in 0...hrBufferIndex{
+            hrTotal += hrBuffer[i]
+        }
+        mean_hr = hrTotal/Double(hrBufferIndex)
+        hrBufferIndex = 0
+    }
+    
+    // Mark: getter functions
+    
     func getHRV()-> Double{
-        return sdnn
+        return self.sdnn
+    }
+    
+    func getMeanHR()->Double{
+        return self.mean_hr
     }
     
     func getHR() -> Int{
-        return hr
+        return self.hr
     }
     
-    var connected: NSString = "";
-    var bodyData: NSString = "";
-    var manufacturer: NSString = "";
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print("--- Loading heartmonitor view")
-        
-        self.connected = "false"
-        self.bodyData = "null"
-        self.manufacturer = "null"
-        
-        bpmLabel.text = " "
-        
+    // Run function to connect to the device.
+    func scanForDevices(){
+        // Services to search
         let heartRateServiceUUID = CBUUID(string: POLARH7_HRM_HEART_RATE_SERVICE_UUID)
         let deviceInfoServiceUUID = CBUUID(string: POLARH7_HRM_DEVICE_INFO_SERVICE_UUID)
-        
         let services = [heartRateServiceUUID, deviceInfoServiceUUID];
         
+        // CBCentralManager init
         let centralManager = CBCentralManager(delegate: self, queue: nil)
-        
         centralManager.scanForPeripherals(withServices: services, options: nil)
-
         self.centralManager = centralManager;
-        
-        self.deviceInfo.text = String(format:"%@\n%@\n%@\n", self.connected,self.bodyData, self.manufacturer)
-        
-        if(WCSession.isSupported()){
-            self.session = WCSession.default()
-            self.session.delegate = self //assign delegate methods to view controller
-            self.session.activate()
-            
-        }
-
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        centralManager = CBCentralManager(delegate: self, queue: DispatchQueue.main)
-        
-        // Reserve buffer memory
-        self.dataBuffer.reserveCapacity(1000)
-    }
-    
-    // Mark -- Bluetooth code
+    /*
+     *   Mark -- Bluetooth code
+     */
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         print("--- centralManagerDidUpdateState")
@@ -174,7 +150,6 @@ class HeartMonitorViewController: UIViewController, CBCentralManagerDelegate, CB
             }
             else {
                 centralManager.scanForPeripherals(withServices: serviceUUIDs as? [CBUUID], options: nil)
-                
             }
         case .poweredOff:
             print("--- central state is powered off")
@@ -205,18 +180,20 @@ class HeartMonitorViewController: UIViewController, CBCentralManagerDelegate, CB
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         print("--- didConnectPeripheral")
-        self.connected = "Connected: true"
         peripheral.delegate = self
         peripheral.discoverServices(nil)
         print("--- peripheral state is \(peripheral.state)")
         
-        // set timer for HRV calculation
-        let date = Date().addingTimeInterval(60)
-        let timer = Timer(fireAt: date, interval: 60, target: self, selector:  #selector(calcHRV), userInfo: nil, repeats: false)
+        /* TIMERS
+         * set timer for the frequency of feature calculations, eg. HRV
+         */
+        let date = Date().addingTimeInterval(self.updateCalcInterval)
+        let timer = Timer(fireAt: date, interval: self.updateCalcInterval, target: self, selector:  #selector(updateCalc), userInfo: nil, repeats: true)
         RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
     }
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+        print("--- Peripheral error")
         if (error) != nil{
             print("!!!--- error in didDiscoverServices: \(error?.localizedDescription)")
         }
@@ -278,34 +255,47 @@ class HeartMonitorViewController: UIViewController, CBCentralManagerDelegate, CB
     }
     
     func update(heartRateData:Data){
+        /*
+         https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.characteristic.heart_rate_measurement.xml
+         Information for reading heart rate measurement characteristic data.
+        */
+        
         print("--- UPDATING ..")
+        // Copy data into buffer
         var buffer = [UInt8](repeating: 0x00, count: heartRateData.count)
         heartRateData.copyBytes(to: &buffer, count: buffer.count)
         
+        // Read
         let flags:UInt8 = buffer[0]
         let heartRateFlags = hrflags(flag: flags)
         
         var offset:Int = 1 // track current byte
         var bpm:UInt16?
         
+        // Read heart rate
         if(heartRateFlags._hr_format_bit==1){ // 16bit format
             bpm = getUInt16Format(data: buffer, offset: offset)
-            if bpmLabel != nil{
-                bpmLabel.text = ("BPM: \(bpm)")
-            }
             print("--- BPM: \(bpm)")
-            hr = Int(bpm!)
+            // save current heart rate
+            self.hr = Int(bpm!)
             offset+=2
         } else { // 8bit format
             bpm = UInt16(buffer[offset]);
-            if bpmLabel != nil{
-                bpmLabel.text = ("BPM: \(bpm)")
-            }
             print("--- BPM: \(bpm)")
-            hr = Int(bpm!)
+            self.hr = Int(bpm!)
+            
             offset+=1
         }
         
+        // Store latest hr sample
+        if(hrBufferIndex < hrBuffer.count){
+            hrBuffer[hrBufferIndex] = Double(self.hr)
+            hrBufferIndex += 1
+        } else {
+            print("Error: hrBuffer index exceeded")
+        }
+        
+        // Read devices current energy level
         if(heartRateFlags._energy_expended_bit==1){
             // process energy value if needed
             offset+=2
@@ -328,31 +318,8 @@ class HeartMonitorViewController: UIViewController, CBCentralManagerDelegate, CB
             }
         }
         
-        /*
-        print("--- UPDATING ..")
-        var buffer = [UInt8](repeating: 0x00, count: heartRateData.count)
-        heartRateData.copyBytes(to: &buffer, count: buffer.count)
-        
-        var bpm:UInt16?
-        if (buffer.count >= 2){
-            if (buffer[0] & 0x01 == 0){
-                bpm = UInt16(buffer[1]);
-            }else {
-                bpm = UInt16(buffer[1]) << 8
-                bpm =  bpm! | UInt16(buffer[2])
-            }
-        }
-        
-        if let bpmReal = bpm{
-            if bpmLabel != nil{
-                bpmLabel.text = ("BPM: \(bpmReal)")
-            }
-            print(bpmReal)
-        } else {
-            print(bpm!)
-            bpmLabel.text = ("BPM: \(bpm!)")
-        }
-         */
+        // Notify that the HR value has been updated
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refresh"), object: nil)
     }
     
     // called on every update of the peripheral
@@ -371,26 +338,4 @@ class HeartMonitorViewController: UIViewController, CBCentralManagerDelegate, CB
         }
     }
     
-    
-    func sessionDidDeactivate(_ session: WCSession) {
-    }
-    
-    func sessionDidBecomeInactive(_ session: WCSession) {
-
-    }
-    
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        self.stepCount.text = message["count"]! as? String
-    }
-    
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-
-    }
-    
-    
-    
-    
-    
-    
- 
 }

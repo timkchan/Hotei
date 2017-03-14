@@ -37,6 +37,7 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
 		if activities.count > 0 {
 			
 			print("Database: Activities not empty")
+			activities.sort { $0.name! < $1.name! }
 			return activities
 			
 		} else {
@@ -54,6 +55,7 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
 					}
 				}
 				try? activities = context.fetch(Activities.fetchRequest())
+				activities.sort { $0.name! < $1.name! }
 				return activities
 			
 			}catch{

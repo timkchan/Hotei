@@ -10,6 +10,9 @@
 		0115BC9B1E76DFF50000F2B7 /* InitPrefTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0115BC9A1E76DFF50000F2B7 /* InitPrefTableViewController.swift */; };
 		0115BCA91E771AD40000F2B7 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0115BCA81E771AD40000F2B7 /* PopUpViewController.swift */; };
 		01979FAB1E7808D900293B7E /* activities.csv in Resources */ = {isa = PBXBuildFile; fileRef = 01979FAA1E7808D900293B7E /* activities.csv */; };
+		01979FB11E7854C200293B7E /* DataGatheringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01979FAE1E7854C200293B7E /* DataGatheringViewController.swift */; };
+		01979FB21E7854C200293B7E /* HeartMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01979FAF1E7854C200293B7E /* HeartMonitor.swift */; };
+		01979FB31E7854C200293B7E /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 01979FB01E7854C200293B7E /* OpenCVWrapper.mm */; };
 		6F43044B1E72E0DD00424B35 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F43044A1E72E0DD00424B35 /* HealthKit.framework */; };
 		6FEBD2711E740D0D00C9D5DA /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD2701E740D0D00C9D5DA /* WatchSessionManager.swift */; };
 		6FEBD28B1E759C6900C9D5DA /* InitialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEBD28A1E759C6900C9D5DA /* InitialTableViewCell.swift */; };
@@ -19,7 +22,6 @@
 		91B629B41E763C0D00476D28 /* HomeUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B629B31E763C0D00476D28 /* HomeUserViewController.swift */; };
 		91B629B61E76409500476D28 /* EmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B629B51E76409500476D28 /* EmotionViewController.swift */; };
 		D82A31821E6ED333006FE6F6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82A31811E6ED333006FE6F6 /* ProfileViewController.swift */; };
-		D82A31841E6EFDC1006FE6F6 /* HeartMonitorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82A31831E6EFDC1006FE6F6 /* HeartMonitorViewController.swift */; };
 		D82A31871E6EFE9D006FE6F6 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82A31861E6EFE9D006FE6F6 /* CoreBluetooth.framework */; };
 		D8A475341E421F54006CAFEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A475331E421F54006CAFEA /* AppDelegate.swift */; };
 		D8A475361E421F54006CAFEA /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A475351E421F54006CAFEA /* ActivitiesViewController.swift */; };
@@ -88,6 +90,11 @@
 		0115BC9A1E76DFF50000F2B7 /* InitPrefTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitPrefTableViewController.swift; sourceTree = "<group>"; };
 		0115BCA81E771AD40000F2B7 /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		01979FAA1E7808D900293B7E /* activities.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = activities.csv; sourceTree = "<group>"; };
+		01979FAC1E78540A00293B7E /* Hotei-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hotei-Bridging-Header.h"; sourceTree = "<group>"; };
+		01979FAD1E7854C200293B7E /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
+		01979FAE1E7854C200293B7E /* DataGatheringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataGatheringViewController.swift; sourceTree = "<group>"; };
+		01979FAF1E7854C200293B7E /* HeartMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartMonitor.swift; sourceTree = "<group>"; };
+		01979FB01E7854C200293B7E /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
 		6F40F9D41E72C8EF00FB14C6 /* HoteiW Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HoteiW Extension.entitlements"; sourceTree = "<group>"; };
 		6F40F9D71E72C93800FB14C6 /* Hotei.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hotei.entitlements; sourceTree = "<group>"; };
 		6F43044A1E72E0DD00424B35 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -99,7 +106,6 @@
 		91B629B51E76409500476D28 /* EmotionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionViewController.swift; sourceTree = "<group>"; };
 		AA9DC7A845BE2088DC96F857 /* Pods-Hotei.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hotei.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hotei/Pods-Hotei.debug.xcconfig"; sourceTree = "<group>"; };
 		D82A31811E6ED333006FE6F6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		D82A31831E6EFDC1006FE6F6 /* HeartMonitorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartMonitorViewController.swift; sourceTree = "<group>"; };
 		D82A31861E6EFE9D006FE6F6 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		D8A475301E421F54006CAFEA /* Hotei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hotei.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A475331E421F54006CAFEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -208,7 +214,6 @@
 				D8A475351E421F54006CAFEA /* ActivitiesViewController.swift */,
 				D8A475371E421F54006CAFEA /* SecondViewController.swift */,
 				D82A31811E6ED333006FE6F6 /* ProfileViewController.swift */,
-				D82A31831E6EFDC1006FE6F6 /* HeartMonitorViewController.swift */,
 				D8A475391E421F54006CAFEA /* Main.storyboard */,
 				0115BCA81E771AD40000F2B7 /* PopUpViewController.swift */,
 				0115BC9A1E76DFF50000F2B7 /* InitPrefTableViewController.swift */,
@@ -220,6 +225,11 @@
 				D8A4753E1E421F54006CAFEA /* LaunchScreen.storyboard */,
 				D8A475411E421F54006CAFEA /* Info.plist */,
 				91B629B31E763C0D00476D28 /* HomeUserViewController.swift */,
+				01979FAC1E78540A00293B7E /* Hotei-Bridging-Header.h */,
+				01979FAD1E7854C200293B7E /* OpenCVWrapper.h */,
+				01979FAE1E7854C200293B7E /* DataGatheringViewController.swift */,
+				01979FAF1E7854C200293B7E /* HeartMonitor.swift */,
+				01979FB01E7854C200293B7E /* OpenCVWrapper.mm */,
 			);
 			path = Hotei;
 			sourceTree = "<group>";
@@ -471,12 +481,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01979FB31E7854C200293B7E /* OpenCVWrapper.mm in Sources */,
+				01979FB21E7854C200293B7E /* HeartMonitor.swift in Sources */,
 				6FEBD28F1E75A9B300C9D5DA /* History+CoreDataProperties.swift in Sources */,
 				D8A475381E421F54006CAFEA /* SecondViewController.swift in Sources */,
 				D8A475341E421F54006CAFEA /* AppDelegate.swift in Sources */,
 				6FEBD28B1E759C6900C9D5DA /* InitialTableViewCell.swift in Sources */,
 				D8FEB8981E67173600E19F8E /* Activities+CoreDataClass.swift in Sources */,
-				D82A31841E6EFDC1006FE6F6 /* HeartMonitorViewController.swift in Sources */,
 				D8FEB89A1E67173600E19F8E /* History+CoreDataClass.swift in Sources */,
 				0115BCA91E771AD40000F2B7 /* PopUpViewController.swift in Sources */,
 				91B629B61E76409500476D28 /* EmotionViewController.swift in Sources */,
@@ -487,6 +498,7 @@
 				0115BC9B1E76DFF50000F2B7 /* InitPrefTableViewController.swift in Sources */,
 				6FEBD28E1E75A9B300C9D5DA /* Activities+CoreDataProperties.swift in Sources */,
 				91B629B41E763C0D00476D28 /* HomeUserViewController.swift in Sources */,
+				01979FB11E7854C200293B7E /* DataGatheringViewController.swift in Sources */,
 				D8A475361E421F54006CAFEA /* ActivitiesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -652,6 +664,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Hotei/Hotei-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -669,6 +682,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Gar1G.Hotei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Hotei/Hotei-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
