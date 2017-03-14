@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class PopUpViewController: UIViewController {
 
@@ -91,13 +92,35 @@ class PopUpViewController: UIViewController {
             
             
             postToDataBase(UserId: id!, activity: currentActivity!, Rating: sender.tag)
-            
+            cancelNotification()
             removeAnimate()
         
         
         }
         
     }
+    
+    func cancelNotification(){
+        //Removes repeating notifications
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        //Restarts repeating
+        emotionNotificationAction()
+    }
+    
+    func emotionNotificationAction(){
+        let content = UNMutableNotificationContent()
+        //content.subtitle = "How Are You Feeling?"
+        content.sound = UNNotificationSound.default()
+        content.body = "How Are You Feeling?"
+        content.categoryIdentifier = "emotionRequest"
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3600, repeats: true)
+        
+        let request = UNNotificationRequest(identifier: "timeUp", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+    
+    
     
     
     // Function to POST user activity record
