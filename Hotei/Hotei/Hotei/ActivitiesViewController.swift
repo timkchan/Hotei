@@ -77,10 +77,8 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
 
 		}
 		self.tableView.reloadData()
-		
 	}
-	
-
+ 
 	
 	override func viewWillAppear(_ animated: Bool) {
 		id = def.object(forKey: "userID") as! Int32
@@ -99,11 +97,13 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
 		return activities.count
 	}
 	
+	
 	// Return Cells
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = activities[indexPath.row].name
+		cell.selectionStyle = .none
+		cell.textLabel?.text = activities[indexPath.row].name
         return cell
     }
     

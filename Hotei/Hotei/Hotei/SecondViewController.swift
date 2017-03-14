@@ -46,6 +46,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         getData()
         tableView2.reloadData()
+        history.sort { $0.dateTime.timeIntervalSince1970 > $1.dateTime.timeIntervalSince1970 }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
