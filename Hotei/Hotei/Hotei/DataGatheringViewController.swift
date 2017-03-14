@@ -36,8 +36,11 @@ class DataGatheringViewController: UIViewController {
     }
     
     // Wrapper for opencv in objc
-    let opencv_wrapper = OpenCVWrapper();
-    var readyToPredict:Bool = false;
+    let opencv_wrapper = OpenCVWrapper()
+    var readyToPredict:Bool = false
+    
+    // Timer
+    let timeIntervalNotification:Double = 60*5
     
     // Misc Params
     var dataBuffer:[hrData] = []    // Contains all data samples stored
@@ -99,7 +102,7 @@ class DataGatheringViewController: UIViewController {
         let imageView = UIImageView(image: resized_image)
         
         // Position image
-        let pos_w = Double((screenWidth-200)/2)
+        let pos_w = Double((screenWidth-resized_image.size.width)/2)
         let pos_h = Double((screenHeight)/2)
         imageView.frame = CGRect(x: pos_w, y: pos_h,
                                  width: Double(image.size.width)*scale,
@@ -152,6 +155,11 @@ class DataGatheringViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(DataGatheringViewController.updateLabels), name: NSNotification.Name(rawValue: "refresh"), object: nil)
         // Observe refresh notification for when features have been recalculated eg. HRV
         NotificationCenter.default.addObserver(self, selector: #selector(DataGatheringViewController.updateData), name: NSNotification.Name(rawValue: "refreshFeatures"), object: nil)
+        
+        // Timer for stressed notification
+        let date = Date().addingTimeInterval(self.timeIntervalNotification)
+        let timer = Timer(fireAt: date, interval: self.timeIntervalNotification, target: self, selector:  #selector(resetStateFlag), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
     }
 
     override func didReceiveMemoryWarning() {
@@ -174,6 +182,7 @@ class DataGatheringViewController: UIViewController {
     func updateData(){
         storeSample()
         if(readyToPredict){
+            readyToPredict = false
             predict()
         }
     }
@@ -205,9 +214,14 @@ class DataGatheringViewController: UIViewController {
         print("--- Making prediction")
         let predicted_state:Bool = opencv_wrapper.predict(self.hm.getMeanHR(), andHRV: self.hm.getHRV())
         // send notification if predicted as stressed
+        print("--- PREDICTION: \(predicted_state)")
         if(predicted_state){
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stressed"), object: nil)
         }
+    }
+    
+    func resetStateFlag(){
+        readyToPredict = true
     }
     
     /*

@@ -88,6 +88,7 @@ class HeartMonitor: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
         for i in 0...rrIntervalBufferIndex{
             sdnnTotal+=pow(rrIntervalBuffer[i]-mrr,2)
         }
+        // standard deviation of nn intervals
         sdnn = sqrt(sdnnTotal/Double(rrIntervalBufferIndex))
         
         // Refill buffer

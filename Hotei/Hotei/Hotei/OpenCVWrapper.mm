@@ -58,12 +58,12 @@ Ptr<ml::SVM> curr_svm;
     curr_svm = svm;
     
     // --- Visualize data ---
-    int width = 200, height = 200; // Max scale for heart rate and HRV
+    // x - HRV, y - Mean HR
+    int width = 300, height = 200; // Max scale for heart rate and HRV
     Mat image = Mat::zeros(height, width, CV_8UC3);
     
-    
-    Vec3b pos_area_color(135,206,250); // Color: light blue
-    Vec3b neg_area_color (132,112,255); // Color: lilac
+    Vec3b pos_area_color(135,206,250);  // Color: light blue, stressed
+    Vec3b neg_area_color (132,112,255); // Color: lilac, not stressed
     // Show the decision regions given by the SVM
     for(int i = 0; i < image.rows; ++i) {
         for(int j = 0; j < image.cols; ++j)
@@ -109,8 +109,8 @@ Ptr<ml::SVM> curr_svm;
 }
 
 - (bool)predict: (double) hr andHRV: (double) hrv;{
-    //curr_svm->predict(arr samples)
-    return true;
+    Mat sampleMat = (Mat_<float>(1,2) << hrv, hr);
+    return curr_svm->predict(sampleMat);
 }
 
 /*

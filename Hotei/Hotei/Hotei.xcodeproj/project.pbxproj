@@ -226,10 +226,10 @@
 				D8A475411E421F54006CAFEA /* Info.plist */,
 				91B629B31E763C0D00476D28 /* HomeUserViewController.swift */,
 				01979FAC1E78540A00293B7E /* Hotei-Bridging-Header.h */,
-				01979FAD1E7854C200293B7E /* OpenCVWrapper.h */,
 				01979FAE1E7854C200293B7E /* DataGatheringViewController.swift */,
 				01979FAF1E7854C200293B7E /* HeartMonitor.swift */,
 				01979FB01E7854C200293B7E /* OpenCVWrapper.mm */,
+				01979FAD1E7854C200293B7E /* OpenCVWrapper.h */,
 			);
 			path = Hotei;
 			sourceTree = "<group>";
