@@ -54,7 +54,8 @@ class PopUpViewController: UIViewController {
     
     @IBAction func hapinessLevel(_ sender: UIButton) {
         
-        
+        context.reset()
+
         if ((activityInput.text?.isEmpty)! && !activityInput.isHidden){
             
             DispatchQueue.main.async {
