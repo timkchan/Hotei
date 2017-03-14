@@ -15,6 +15,7 @@
 		01979FB31E7854C200293B7E /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 01979FB01E7854C200293B7E /* OpenCVWrapper.mm */; };
 		01F1E0741E78A02C00649365 /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F1E0711E78A02C00649365 /* History+CoreDataProperties.swift */; };
 		01F1E0751E78A02C00649365 /* Activities+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F1E0721E78A02C00649365 /* Activities+CoreDataProperties.swift */; };
+		01F1E07C1E78AC0900649365 /* sagarActivityData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 01F1E07B1E78AC0900649365 /* sagarActivityData.csv */; };
 		6F43044B1E72E0DD00424B35 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F43044A1E72E0DD00424B35 /* HealthKit.framework */; };
 		6FD850611E7881F500AA05F9 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD850601E7881F500AA05F9 /* HistoryTableViewController.swift */; };
 		6FD850631E78822300AA05F9 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD850621E78822300AA05F9 /* HistoryTableViewCell.swift */; };
@@ -100,6 +101,7 @@
 		01979FB01E7854C200293B7E /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
 		01F1E0711E78A02C00649365 /* History+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "History+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		01F1E0721E78A02C00649365 /* Activities+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activities+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		01F1E07B1E78AC0900649365 /* sagarActivityData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sagarActivityData.csv; sourceTree = "<group>"; };
 		6F40F9D41E72C8EF00FB14C6 /* HoteiW Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HoteiW Extension.entitlements"; sourceTree = "<group>"; };
 		6F40F9D71E72C93800FB14C6 /* Hotei.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hotei.entitlements; sourceTree = "<group>"; };
 		6F43044A1E72E0DD00424B35 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -213,6 +215,7 @@
 		D8A475321E421F54006CAFEA /* Hotei */ = {
 			isa = PBXGroup;
 			children = (
+				01F1E07B1E78AC0900649365 /* sagarActivityData.csv */,
 				01979FAA1E7808D900293B7E /* activities.csv */,
 				6F40F9D71E72C93800FB14C6 /* Hotei.entitlements */,
 				D8A475331E421F54006CAFEA /* AppDelegate.swift */,
@@ -413,6 +416,7 @@
 			files = (
 				01979FAB1E7808D900293B7E /* activities.csv in Resources */,
 				D8A475401E421F54006CAFEA /* LaunchScreen.storyboard in Resources */,
+				01F1E07C1E78AC0900649365 /* sagarActivityData.csv in Resources */,
 				D8A4753D1E421F54006CAFEA /* Assets.xcassets in Resources */,
 				D8A4753B1E421F54006CAFEA /* Main.storyboard in Resources */,
 			);

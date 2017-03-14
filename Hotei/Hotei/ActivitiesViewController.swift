@@ -82,11 +82,50 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
 		self.tableView.reloadData()
 	}
  
+	func initUserHistory(){
+		
+		guard let csvPath = Bundle.main.path(forResource: "sagarActivityData", ofType: "csv") else { return }
+		
+		do {
+			let csvData = try String(contentsOfFile: csvPath, encoding: String.Encoding.utf8)
+			let array = csvData.components(separatedBy: "\r")
+			
+			for item in array{
+				
+				let subarray = item.components(separatedBy: "\t")
+				
+				let dateFormatter = DateFormatter()
+				dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+				let date = dateFormatter.date(from:subarray[0])!
+
+				
+				let history = History(context: context)
+				history.dateTime = date as NSDate
+				history.activity = subarray[3]
+				history.rating = Int16(subarray[1])!
+				history.userID = Int32(subarray[2])!
+				(UIApplication.shared.delegate as! AppDelegate).saveContext()
+
+				
+			}
+			
+			
+			
+			
+		}catch{
+			print(error)
+		}
+		
+		
+		
+	}
 	
 	override func viewWillAppear(_ animated: Bool) {
 		id = def.object(forKey: "userID") as! Int32
 		activities = initActivitiesInDataBase()
 		activities.sort { $0.name! < $1.name! }
+	
+		initUserHistory()
 		emotionNotificationAction()
 	}
 	

@@ -20,7 +20,6 @@ class GraphViewController: UIViewController {
     
     @IBOutlet weak var barChartView: BarChartView!
  
-    @IBOutlet weak var lineChartView: LineChartView!
     
     
     var history = [History]()
@@ -89,15 +88,11 @@ class GraphViewController: UIViewController {
         
         if(emotions.count > 0){
             setRatingGraph(dataPoints: dates, values: emotions)
-            setHRGraph(dataPoints: dates, values: emotions)
-            
         }
         barChartView.noDataText = "No Emotion Data Available"
-        lineChartView.noDataText = "No Heart Rate Data Available"
         
         barChartView.animate(xAxisDuration: 0.1, yAxisDuration: 4.0)
         
-        lineChartView.animate(xAxisDuration: 1, yAxisDuration: 1)
     }
     
     override func didReceiveMemoryWarning() {
@@ -130,25 +125,6 @@ class GraphViewController: UIViewController {
         
     }
     
-    func setHRGraph(dataPoints: [Date], values: [Double]){
-        var dataEntries: [ChartDataEntry] = [ChartDataEntry]()
-        
-        for i in 0..<dataPoints.count{
-            let timeIntervalForDate: TimeInterval = dataPoints[i].timeIntervalSince1970
-            let dataEntry = ChartDataEntry(x: Double(timeIntervalForDate), y: values[i])
-            dataEntries.append(dataEntry)
-        }
-        
-        let chartDataSet = LineChartDataSet(values: dataEntries, label: "Heart Rate")
-        chartDataSet.drawCirclesEnabled = false
-        let chartData = LineChartData(dataSet: chartDataSet)
-        lineChartView.data = chartData
-        
-        let xaxis = lineChartView.xAxis
-        xaxis.valueFormatter = axisFormatDelegate
-        
-    }
-
 
 }
 

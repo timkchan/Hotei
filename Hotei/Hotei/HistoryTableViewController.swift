@@ -53,6 +53,10 @@ class HistoryTableViewController: UITableViewController {
                 return (hist.userID == id)
                 
             })
+            
+            history = history.filter({(hist) -> Bool in
+                return (hist.activity != "none")
+            })
         } catch {
             print("Fetch Failed")
         }
