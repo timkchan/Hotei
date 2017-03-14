@@ -194,6 +194,66 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
 		}
 		task.resume()
 	}
+	
+	
+	@IBAction func getRecommendation(_ sender: Any) {
+		self.getRecommendation()
+	}
+	
+	func getRecommendation() {
+		
+		let userURL: String = "http://hoteiapi20170303100733.azurewebsites.net/GetUserRecommendation?userID=\(id)&numRec=1"
+		
+		var urlRequest = URLRequest(url: URL(string: userURL)!)
+		
+		var responses = [String]()
+		urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")  // the request is JSON
+		urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
+		
+		let task = URLSession.shared.dataTask(with: urlRequest){ (data, response, error) in
+			if error != nil{
+				print(error!)
+				return
+			}
+			
+			do{
+				let json = try JSONSerialization.jsonObject(with: data!) as! [String]
+				responses = json
+				
+				if(responses.isEmpty){
+					DispatchQueue.main.async {
+                        let popovervc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbpopupid") as! PopUpViewController
+                        popovervc.id = self.id
+                        popovervc.currentActivity = "Add Activity"
+                        self.addChildViewController(popovervc)
+                        popovervc.view.frame = self.view.frame
+                        self.view.addSubview(popovervc.view)
+                        popovervc.didMove(toParentViewController: self)                 }
+				}
+				else{
+					
+					DispatchQueue.main.async {
+                        let popovervc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbpopupid") as! PopUpViewController
+                        popovervc.id = self.id
+                        popovervc.currentActivity = responses[0]
+                        self.addChildViewController(popovervc)
+                        popovervc.view.frame = self.view.frame
+                        self.view.addSubview(popovervc.view)
+                        popovervc.didMove(toParentViewController: self)
+					}
+					
+				}
+			}
+			catch let error{
+				print(error)
+			}
+		}
+		
+		
+		task.resume()
+		
+	}
+
 
 	
 

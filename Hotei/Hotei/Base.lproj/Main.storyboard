@@ -23,17 +23,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g7A-VA-121">
-                                <rect key="frame" x="0.0" y="569" width="375" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <tabBarItem systemItem="favorites" id="TA7-80-Thr"/>
-                                    <tabBarItem systemItem="more" id="pCl-tb-7m6"/>
-                                </items>
-                            </tabBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6dh-hC-iZy">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="514"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="9pv-A4-QxB" id="hN0-Ms-sUL"/>
@@ -49,7 +40,7 @@
                                 </connections>
                             </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWR-1V-zOP">
-                                <rect key="frame" x="335" y="24.5" width="35" height="35"/>
+                                <rect key="frame" x="335" y="25" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="8fc-dh-nSS"/>
                                     <constraint firstAttribute="height" constant="35" id="rRw-Za-Hv2"/>
@@ -59,15 +50,28 @@
                                     <action selector="addActivity:" destination="9pv-A4-QxB" eventType="touchUpInside" id="0eu-K7-MfY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gci-VY-Hrd">
+                                <rect key="frame" x="30" y="583" width="315" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Get Recommendation">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getRecommendation:" destination="9pv-A4-QxB" eventType="touchUpInside" id="af8-34-t2K"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="6dh-hC-iZy" secondAttribute="bottom" id="30l-5D-Idf"/>
+                            <constraint firstItem="gci-VY-Hrd" firstAttribute="top" secondItem="6dh-hC-iZy" secondAttribute="bottom" constant="5" id="0au-KM-dLg"/>
                             <constraint firstItem="0gm-Hc-o3W" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="3MI-8m-V5L"/>
+                            <constraint firstItem="gci-VY-Hrd" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="30" id="6Ul-S5-er5"/>
                             <constraint firstItem="EWR-1V-zOP" firstAttribute="centerY" secondItem="0gm-Hc-o3W" secondAttribute="centerY" id="8U4-P6-102"/>
+                            <constraint firstAttribute="trailing" secondItem="gci-VY-Hrd" secondAttribute="trailing" constant="30" id="JPj-PX-Lcu"/>
                             <constraint firstAttribute="trailing" secondItem="EWR-1V-zOP" secondAttribute="trailing" constant="5" id="MXl-Sh-Yzt"/>
                             <constraint firstItem="6dh-hC-iZy" firstAttribute="top" secondItem="0gm-Hc-o3W" secondAttribute="bottom" id="PvV-z1-PGR"/>
                             <constraint firstAttribute="trailing" secondItem="6dh-hC-iZy" secondAttribute="trailing" id="a2r-iP-orj"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="gci-VY-Hrd" secondAttribute="bottom" constant="5" id="fXO-je-zwl"/>
                             <constraint firstItem="6dh-hC-iZy" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="l2g-ex-KK6"/>
                             <constraint firstItem="0gm-Hc-o3W" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="md2-sy-NEi"/>
                             <constraint firstItem="EWR-1V-zOP" firstAttribute="leading" secondItem="0gm-Hc-o3W" secondAttribute="trailing" constant="5" id="vEk-sD-6ug"/>
@@ -82,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1049" y="-342"/>
+            <point key="canvasLocation" x="1048.8" y="-342.27886056971516"/>
         </scene>
         <!--Pop Up View Controller-->
         <scene sceneID="8YB-6N-DGX">
@@ -238,7 +242,7 @@
             </objects>
             <point key="canvasLocation" x="225" y="413"/>
         </scene>
-        <!--Data Gathering View Controller-->
+        <!--HeartRate Debug-->
         <scene sceneID="tkt-nL-uQs">
             <objects>
                 <viewController id="NU2-ff-a5x" customClass="DataGatheringViewController" customModule="Hotei" customModuleProvider="target" sceneMemberID="viewController">
@@ -332,7 +336,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Zbw-wU-dPV" secondAttribute="trailing" constant="10" id="xGB-GQ-Jne"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="i9l-9P-wzM"/>
+                    <tabBarItem key="tabBarItem" title="HeartRate Debug" image="heart-7" id="i9l-9P-wzM"/>
                     <connections>
                         <outlet property="hrLabel" destination="3nk-EA-yWy" id="Mfx-4V-Mna"/>
                         <outlet property="hrvLabel" destination="NMD-Iq-XpA" id="eDQ-TJ-xH2"/>
@@ -375,13 +379,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLM-7r-CLD">
-                                <rect key="frame" x="113" y="538" width="149" height="30"/>
-                                <state key="normal" title="Get Recommendation"/>
-                                <connections>
-                                    <action selector="getRecommendation:" destination="GMB-OG-tps" eventType="touchUpInside" id="QFK-RC-eWm"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkY-jh-CxW">
                                 <rect key="frame" x="-64" y="-41" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -390,8 +387,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gc8-ap-Mfl">
-                                <rect key="frame" x="163" y="578" width="48" height="30"/>
-                                <state key="normal" title="Logout"/>
+                                <rect key="frame" x="30" y="563" width="315" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="lcH-62-BNH"/>
+                                </constraints>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="8"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="0"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColorFromUIColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="logout:" destination="GMB-OG-tps" eventType="touchUpInside" id="rfV-fY-Tcd"/>
                                 </connections>
@@ -429,7 +439,7 @@
                             <constraint firstItem="vpT-Nq-bAR" firstAttribute="leading" secondItem="Miz-y7-RTl" secondAttribute="leadingMargin" constant="10" id="Gw8-V0-0gE"/>
                             <constraint firstAttribute="trailing" secondItem="ZWY-Ge-5vn" secondAttribute="trailing" id="KvL-2Q-I5j"/>
                             <constraint firstItem="Gc8-ap-Mfl" firstAttribute="centerX" secondItem="Miz-y7-RTl" secondAttribute="centerX" id="PSZ-tS-luA"/>
-                            <constraint firstItem="HLM-7r-CLD" firstAttribute="centerX" secondItem="Miz-y7-RTl" secondAttribute="centerX" id="TfT-hp-4Xm"/>
+                            <constraint firstAttribute="trailing" secondItem="Gc8-ap-Mfl" secondAttribute="trailing" constant="30" id="TDO-jH-K2c"/>
                             <constraint firstItem="ZWY-Ge-5vn" firstAttribute="centerX" secondItem="Miz-y7-RTl" secondAttribute="centerX" id="Ti1-QN-ko9"/>
                             <constraint firstItem="ZWY-Ge-5vn" firstAttribute="leading" secondItem="Miz-y7-RTl" secondAttribute="leading" id="WSX-ek-aDW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qxY-rG-Gwv" secondAttribute="trailing" constant="10" id="Y7B-Yk-CsA"/>
@@ -437,8 +447,8 @@
                             <constraint firstItem="qxY-rG-Gwv" firstAttribute="top" secondItem="vpT-Nq-bAR" secondAttribute="bottom" constant="8" id="c2O-Jn-j1M"/>
                             <constraint firstItem="An4-wg-5zk" firstAttribute="leading" secondItem="Miz-y7-RTl" secondAttribute="leadingMargin" constant="10" id="cKb-VR-vsB"/>
                             <constraint firstItem="ZWY-Ge-5vn" firstAttribute="top" secondItem="ccS-SZ-5IC" secondAttribute="bottom" constant="8" id="cgN-LG-liW"/>
-                            <constraint firstItem="Gc8-ap-Mfl" firstAttribute="top" secondItem="HLM-7r-CLD" secondAttribute="bottom" constant="10" id="nYb-Mk-UMF"/>
                             <constraint firstItem="qxY-rG-Gwv" firstAttribute="leading" secondItem="Miz-y7-RTl" secondAttribute="leadingMargin" constant="10" id="oOs-50-iaK"/>
+                            <constraint firstItem="Gc8-ap-Mfl" firstAttribute="leading" secondItem="Miz-y7-RTl" secondAttribute="leading" constant="30" id="vxk-G5-0hB"/>
                             <constraint firstItem="Mkz-9E-a5Y" firstAttribute="top" secondItem="Gc8-ap-Mfl" secondAttribute="bottom" constant="10" id="wBo-Na-bOk"/>
                         </constraints>
                     </view>
@@ -611,9 +621,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="edY-PX-hO7"/>
+                        <segue destination="QbW-N1-shI" kind="relationship" relationship="viewControllers" id="SeP-sr-Nrd"/>
                         <segue destination="GMB-OG-tps" kind="relationship" relationship="viewControllers" id="aa9-xy-gfH"/>
                         <segue destination="NU2-ff-a5x" kind="relationship" relationship="viewControllers" id="S3r-BP-G9M"/>
-                        <segue destination="QbW-N1-shI" kind="relationship" relationship="viewControllers" id="SeP-sr-Nrd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -664,33 +674,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tablecell" rowHeight="58" id="VRd-cr-X2o" customClass="HistoryTableViewCell" customModule="Hotei" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="58"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VRd-cr-X2o" id="xnQ-Ys-LPn">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="57"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oiR-xB-Skb">
-                                            <rect key="frame" x="8" y="8" width="49" height="41"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNr-YU-N2o">
-                                            <rect key="frame" x="93" y="18" width="207" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="activityImage" destination="oiR-xB-Skb" id="360-7w-rIP"/>
-                                    <outlet property="activityLabel" destination="zNr-YU-N2o" id="frC-cC-LYe"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="WnI-zM-23r" id="A6I-3w-kE2"/>
                             <outlet property="delegate" destination="WnI-zM-23r" id="py9-J8-ooa"/>
@@ -751,11 +734,11 @@
             </objects>
             <point key="canvasLocation" x="3684" y="411.544227886057"/>
         </scene>
-        <!--Item-->
+        <!--Data-->
         <scene sceneID="Kwv-O7-Qq3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QbW-N1-shI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="R9u-H5-qLJ"/>
+                    <tabBarItem key="tabBarItem" title="Data" image="pie-chart-7" id="R9u-H5-qLJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jhk-tH-Kfn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -774,8 +757,10 @@
     <resources>
         <image name="circle-user-7" width="30" height="30"/>
         <image name="clock-7" width="30" height="30"/>
+        <image name="heart-7" width="30" height="30"/>
         <image name="logoinv" width="200" height="284"/>
         <image name="phil" width="618" height="401"/>
+        <image name="pie-chart-7" width="30" height="30"/>
         <image name="table-tennis-7" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>

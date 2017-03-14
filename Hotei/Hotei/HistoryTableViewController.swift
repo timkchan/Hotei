@@ -30,7 +30,7 @@ class HistoryTableViewController: UITableViewController {
         id = def.object(forKey: "userID") as! Int32
         print(id)
         history = getData()
-        history.sort { $0.dateTime.timeIntervalSince1970 > $1.dateTime.timeIntervalSince1970 }
+        //history.sort { $0.dateTime?.timeIntervalSince1970 > $1.dateTime?.timeIntervalSince1970 }
         
     }
     
@@ -72,10 +72,15 @@ class HistoryTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tablecell", for: indexPath) as! HistoryTableViewCell
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "tablecell", for: indexPath) as! HistoryTableViewCell
         
-        cell.activityLabel.text = history[indexPath.row].activity
-        cell.activityImage.image = UIImage(named: history[indexPath.row].activity!)
+        let cell = UITableViewCell()
+        cell.selectionStyle = .none
+        cell.textLabel?.text = history[indexPath.row].activity
+        return cell
+        
+        //cell.activityLabel.text = history[indexPath.row].activity
+        //cell.activityImage.image = UIImage(named: history[indexPath.row].activity!)
         //let date = history[indexPath.row].dateTime as! Date
         //cell.timeLabel.text = date.timeIntervalSince197
         

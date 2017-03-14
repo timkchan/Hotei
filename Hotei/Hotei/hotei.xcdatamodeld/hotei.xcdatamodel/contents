@@ -11,6 +11,6 @@
     </entity>
     <elements>
         <element name="Activities" positionX="-18" positionY="-9" width="128" height="58"/>
-        <element name="History" positionX="-234" positionY="-16" width="128" height="103"/>
+        <element name="History" positionX="-234" positionY="-16" width="128" height="105"/>
     </elements>
 </model>

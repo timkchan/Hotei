@@ -2,7 +2,7 @@
 //  Activities+CoreDataProperties.swift
 //  Hotei
 //
-//  Created by Akshay  on 12/03/2017.
+//  Created by Nick Robertson on 14/03/2017.
 //  Copyright © 2017 AppBee. All rights reserved.
 //
 
