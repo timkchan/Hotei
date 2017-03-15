@@ -710,7 +710,11 @@
                                 <rect key="frame" x="16" y="64" width="343" height="554"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xya-v9-g3g" customClass="BarChartView" customModule="Charts">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="554"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="277"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qwo-Fe-NmE" customClass="LineChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="277" width="343" height="277"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
@@ -733,6 +737,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="barChartView" destination="Xya-v9-g3g" id="qdY-al-mUv"/>
+                        <outlet property="lineChartView" destination="Qwo-Fe-NmE" id="9oR-Gd-At4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UuE-0W-iBQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

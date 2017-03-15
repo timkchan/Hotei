@@ -84,6 +84,15 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
  
 	func initUserHistory(){
 		
+		var history : [History] = []
+		try? history = context.fetch(History.fetchRequest())
+		
+		
+		if history.count > 0 {
+			
+			
+		} else {
+		
 		guard let csvPath = Bundle.main.path(forResource: "sagarActivityData", ofType: "csv") else { return }
 		
 		do {
@@ -91,6 +100,8 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
 			let array = csvData.components(separatedBy: "\r")
 			
 			for item in array{
+				
+				if(item != ""){
 				
 				let subarray = item.components(separatedBy: "\t")
 				
@@ -105,6 +116,10 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
 				history.rating = Int16(subarray[1])!
 				history.userID = Int32(subarray[2])!
 				(UIApplication.shared.delegate as! AppDelegate).saveContext()
+					print(subarray[3])
+					print(Int16(subarray[1])!)
+
+				}
 
 				
 			}
@@ -119,12 +134,12 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
 		
 		
 	}
+	}
 	
 	override func viewWillAppear(_ animated: Bool) {
 		id = def.object(forKey: "userID") as! Int32
 		activities = initActivitiesInDataBase()
 		activities.sort { $0.name! < $1.name! }
-	
 		initUserHistory()
 		emotionNotificationAction()
 	}
@@ -133,6 +148,7 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
 		super.viewDidLoad()
 		UNUserNotificationCenter.current().delegate = self
 		// Do any additional setup after loading the view, typically from a nib.
+		
 	}
 	
 	func emotionNotificationAction(){
