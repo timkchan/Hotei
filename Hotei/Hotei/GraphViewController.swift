@@ -113,7 +113,8 @@ class GraphViewController: UIViewController {
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "Emotions (1: Happy, 0: Ok, -1: Sad)")
         let chartData = BarChartData(dataSet: chartDataSet)
         chartDataSet.colors = [UIColor.init(red: 87/255, green: 203/255, blue: 207/255, alpha: 1)]
-        chartData.barWidth = 100
+        chartData.barWidth = 2000
+        chartData.setDrawValues(false)
         barChartView.data = chartData
         
         let xaxis = barChartView.xAxis

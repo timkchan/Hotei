@@ -14,6 +14,7 @@
 		01979FB11E7854C200293B7E /* DataGatheringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01979FAE1E7854C200293B7E /* DataGatheringViewController.swift */; };
 		01979FB21E7854C200293B7E /* HeartMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01979FAF1E7854C200293B7E /* HeartMonitor.swift */; };
 		01979FB31E7854C200293B7E /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 01979FB01E7854C200293B7E /* OpenCVWrapper.mm */; };
+		01A743891E79345A00B21751 /* PopUpViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A743881E79345A00B21751 /* PopUpViewController2.swift */; };
 		01F1E0741E78A02C00649365 /* History+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F1E0711E78A02C00649365 /* History+CoreDataProperties.swift */; };
 		01F1E0751E78A02C00649365 /* Activities+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F1E0721E78A02C00649365 /* Activities+CoreDataProperties.swift */; };
 		01F1E07C1E78AC0900649365 /* sagarActivityData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 01F1E07B1E78AC0900649365 /* sagarActivityData.csv */; };
@@ -101,6 +102,7 @@
 		01979FAE1E7854C200293B7E /* DataGatheringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataGatheringViewController.swift; sourceTree = "<group>"; };
 		01979FAF1E7854C200293B7E /* HeartMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartMonitor.swift; sourceTree = "<group>"; };
 		01979FB01E7854C200293B7E /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
+		01A743881E79345A00B21751 /* PopUpViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController2.swift; sourceTree = "<group>"; };
 		01F1E0711E78A02C00649365 /* History+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "History+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		01F1E0721E78A02C00649365 /* Activities+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activities+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		01F1E07B1E78AC0900649365 /* sagarActivityData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sagarActivityData.csv; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				6FD850641E78827900AA05F9 /* GraphViewController.swift */,
 				D8A475391E421F54006CAFEA /* Main.storyboard */,
 				0115BCA81E771AD40000F2B7 /* PopUpViewController.swift */,
+				01A743881E79345A00B21751 /* PopUpViewController2.swift */,
 				0115BC9A1E76DFF50000F2B7 /* InitPrefTableViewController.swift */,
 				6FEBD28A1E759C6900C9D5DA /* InitialTableViewCell.swift */,
 				91B629B51E76409500476D28 /* EmotionViewController.swift */,
@@ -500,6 +503,7 @@
 			files = (
 				01979FB31E7854C200293B7E /* OpenCVWrapper.mm in Sources */,
 				01979FB21E7854C200293B7E /* HeartMonitor.swift in Sources */,
+				01A743891E79345A00B21751 /* PopUpViewController2.swift in Sources */,
 				D8A475381E421F54006CAFEA /* SecondViewController.swift in Sources */,
 				6FD850611E7881F500AA05F9 /* HistoryTableViewController.swift in Sources */,
 				D8A475341E421F54006CAFEA /* AppDelegate.swift in Sources */,

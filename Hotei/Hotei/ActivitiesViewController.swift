@@ -159,7 +159,7 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
 		content.body = "How Are You Feeling?"
 		content.categoryIdentifier = "emotionRequest"
 		
-		let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+		let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 120, repeats: true)
 		
 		let request = UNNotificationRequest(identifier: "timeUp", content: content, trigger: trigger)
 		UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)

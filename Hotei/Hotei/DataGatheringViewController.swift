@@ -180,6 +180,7 @@ class DataGatheringViewController: UIViewController {
         // Observe refresh notification for when a new HR value is available
         
         NotificationCenter.default.addObserver(self, selector: #selector(DataGatheringViewController.updateLabels), name: NSNotification.Name(rawValue: "refresh"), object: nil)
+        UNUserNotificationCenter.current().delegate = self
         readyToPredict = true
         loaded = true
     }
@@ -242,6 +243,7 @@ class DataGatheringViewController: UIViewController {
         if(predicted_state){
             if(loaded){
                 stressStateLabel.text = "Stressed"
+                getRecommendation()
             }
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stressed"), object: nil)
         } else {
@@ -249,6 +251,18 @@ class DataGatheringViewController: UIViewController {
                 stressStateLabel.text = "Not Stressed"
             }
         }
+    }
+    
+    func stressNotification(_ activity: String){
+        let content = UNMutableNotificationContent()
+        content.title = "You Seem Stressed..."
+        content.body = "Why don't you try \(activity)"
+        content.categoryIdentifier = "stressDetection"
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.5, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "stressDetect", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
     
     func resetStateFlag(){
@@ -341,6 +355,55 @@ class DataGatheringViewController: UIViewController {
         
         return newImage
     }
+    
+    
+    
+    func getRecommendation() {
+        var activity : String = " "
+        let id = UserDefaults.standard.object(forKey: "userID")!
+        
+        let userURL: String = "http://hoteiapi20170303100733.azurewebsites.net/GetUserRecommendation?userID=\(id)&numRec=1"
+        
+        var urlRequest = URLRequest(url: URL(string: userURL)!)
+        
+        var responses = [String]()
+        urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")  // the request is JSON
+        urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
+        
+        let task = URLSession.shared.dataTask(with: urlRequest){ (data, response, error) in
+            if error != nil{
+                print(error!)
+                return
+            }
+            
+            do{
+                let json = try JSONSerialization.jsonObject(with: data!) as! [String]
+                responses = json
+                
+                if(responses.isEmpty){
+                    
+                    activity = " "
+                }
+                else{
+                    activity = responses[0]
+                    self.stressNotification(activity)
+                }
+                
+                
+                
+            }
+            catch let error{
+                print(error)
+            }
+        }
+        
+        
+        task.resume()
+        print("notification")
+        //self.stressNotification(activity)
+        
+    }
+
 }
 
 
