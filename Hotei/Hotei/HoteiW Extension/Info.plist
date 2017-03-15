@@ -42,6 +42,10 @@
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.watchkit</string>
 	</dict>
+	<key>NSMotionUsageDescription</key>
+	<string>YES</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This App Needs to fuck you</string>
 	<key>WKExtensionDelegateClassName</key>
 	<string>$(PRODUCT_MODULE_NAME).ExtensionDelegate</string>
 </dict>

@@ -8,13 +8,14 @@
 
 import UIKit
 import CoreBluetooth
+import WatchConnectivity
 
 
 /*
 source: https://github.com/jayliew/bluetoothPolarH7Swift/blob/master/bluetoothPolarH7/ViewController.swift#L10
 */
  
-class HeartMonitorViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
+class HeartMonitorViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate, WCSessionDelegate {
     @IBOutlet weak var bpmLabel: UILabel!
     @IBOutlet weak var deviceInfo: UITextView!
     @IBOutlet weak var stressState: UISwitch!
@@ -111,6 +112,15 @@ class HeartMonitorViewController: UIViewController, CBCentralManagerDelegate, CB
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if (WCSession.isSupported()) {
+            self.session = WCSession.default()
+            self.session.delegate = self;
+            self.session.activate()
+        }
+        
+        
+        
         print("--- Loading heartmonitor view")
         
         self.connected = "false"
@@ -131,7 +141,13 @@ class HeartMonitorViewController: UIViewController, CBCentralManagerDelegate, CB
         self.centralManager = centralManager;
         
         self.deviceInfo.text = String(format:"%@\n%@\n%@\n", self.connected,self.bodyData, self.manufacturer)
+        
+        
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("HIHIHIHIHIHIHIHI: ", isExercising())
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -357,4 +373,41 @@ class HeartMonitorViewController: UIViewController, CBCentralManagerDelegate, CB
         }
     }
  
+    
+    
+    // MARK: - WatchConnectivity
+    var session: WCSession!
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        //
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        //
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        //
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        //
+    }
+    
+    func isExercising() -> Bool {
+        let messageToSend = ["isExercising":"Is user exercising?"]
+        var value = false
+        print("sending msg")
+        session.sendMessage(messageToSend, replyHandler: { replyMessage in
+            if let received = replyMessage["isExercising"] as? Bool {
+                value = received
+                //use dispatch_asynch to present immediately on screen
+                DispatchQueue.main.async {
+                    print(value)
+                }
+            }
+
+        }, errorHandler: nil)
+        return value
+    }
 }

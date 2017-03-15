@@ -15,7 +15,12 @@
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HoteiW" customModuleProvider="target">
                     <items>
                         <label alignment="left" text="NotABot" id="WCh-2r-QxG"/>
+                        <label alignment="left" text="Label" id="MUo-o1-S41"/>
                     </items>
+                    <connections>
+                        <outlet property="currentActivityLabel" destination="MUo-o1-S41" id="JAR-zo-pnQ"/>
+                        <outlet property="debugLabel" destination="WCh-2r-QxG" id="5xl-Aa-w3p"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
