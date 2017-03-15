@@ -116,8 +116,7 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
 				history.rating = Int16(subarray[1])!
 				history.userID = Int32(subarray[2])!
 				(UIApplication.shared.delegate as! AppDelegate).saveContext()
-					print(subarray[3])
-					print(Int16(subarray[1])!)
+					print(subarray[2])
 
 				}
 
