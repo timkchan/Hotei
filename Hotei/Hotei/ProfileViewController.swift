@@ -13,6 +13,14 @@ class ProfileViewController: UIViewController {
     let defaults = UserDefaults.standard
     var loggedIn = true
     var id: Int32 = 0
+    
+    @IBOutlet weak var picture: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var age: UILabel!
+    @IBOutlet weak var height: UILabel!
+    @IBOutlet weak var weight: UILabel!
+    @IBOutlet weak var bpm: UILabel!
+    @IBOutlet weak var perWeek: UILabel!
 
     @IBAction func logoutBtn(_ sender: UIBarButtonItem) {
         print("Logging out")
@@ -31,6 +39,15 @@ class ProfileViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         id = defaults.object(forKey: "userID") as! Int32
+        if(id != 4533){
+            name.text = "NA"
+            age.text = "NA"
+            height.text = "NA"
+            weight.text = "NA"
+            bpm.text = "NA"
+            perWeek.text = "NA"
+            picture.image = UIImage(named: "unknown")
+        }
     }
     
     @IBOutlet weak var recommendation: UILabel!

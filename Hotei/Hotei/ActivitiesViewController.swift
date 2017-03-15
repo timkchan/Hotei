@@ -137,6 +137,8 @@ class ActivitiesViewController: UIViewController, UITableViewDataSource, UITable
 	
 	override func viewWillAppear(_ animated: Bool) {
 		id = def.object(forKey: "userID") as! Int32
+		print("USERID:")
+		print(id)
 		activities = initActivitiesInDataBase()
 		activities.sort { $0.name! < $1.name! }
 		initUserHistory()
