@@ -25,6 +25,7 @@
 		8BE6156281802DCEA0D0053F /* Pods_Hotei.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB2D8FA5815169A99AECEDF0 /* Pods_Hotei.framework */; };
 		91B629B41E763C0D00476D28 /* HomeUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B629B31E763C0D00476D28 /* HomeUserViewController.swift */; };
 		91B629B61E76409500476D28 /* EmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B629B51E76409500476D28 /* EmotionViewController.swift */; };
+		91EE2A141E78CA3B00645305 /* data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 91EE2A131E78CA3B00645305 /* data.csv */; };
 		D82A31821E6ED333006FE6F6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82A31811E6ED333006FE6F6 /* ProfileViewController.swift */; };
 		D82A31871E6EFE9D006FE6F6 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82A31861E6EFE9D006FE6F6 /* CoreBluetooth.framework */; };
 		D8A475341E421F54006CAFEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A475331E421F54006CAFEA /* AppDelegate.swift */; };
@@ -112,6 +113,7 @@
 		6FEBD28A1E759C6900C9D5DA /* InitialTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTableViewCell.swift; sourceTree = "<group>"; };
 		91B629B31E763C0D00476D28 /* HomeUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeUserViewController.swift; sourceTree = "<group>"; };
 		91B629B51E76409500476D28 /* EmotionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionViewController.swift; sourceTree = "<group>"; };
+		91EE2A131E78CA3B00645305 /* data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.csv; sourceTree = "<group>"; };
 		AA9DC7A845BE2088DC96F857 /* Pods-Hotei.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hotei.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hotei/Pods-Hotei.debug.xcconfig"; sourceTree = "<group>"; };
 		D82A31811E6ED333006FE6F6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D82A31861E6EFE9D006FE6F6 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
@@ -215,6 +217,7 @@
 		D8A475321E421F54006CAFEA /* Hotei */ = {
 			isa = PBXGroup;
 			children = (
+				91EE2A131E78CA3B00645305 /* data.csv */,
 				01F1E07B1E78AC0900649365 /* sagarActivityData.csv */,
 				01979FAA1E7808D900293B7E /* activities.csv */,
 				6F40F9D71E72C93800FB14C6 /* Hotei.entitlements */,
@@ -416,6 +419,7 @@
 			files = (
 				01979FAB1E7808D900293B7E /* activities.csv in Resources */,
 				D8A475401E421F54006CAFEA /* LaunchScreen.storyboard in Resources */,
+				91EE2A141E78CA3B00645305 /* data.csv in Resources */,
 				01F1E07C1E78AC0900649365 /* sagarActivityData.csv in Resources */,
 				D8A4753D1E421F54006CAFEA /* Assets.xcassets in Resources */,
 				D8A4753B1E421F54006CAFEA /* Main.storyboard in Resources */,
