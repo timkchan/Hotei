@@ -42,7 +42,7 @@ class DataGatheringViewController: UIViewController {
     var loaded:Bool = false
     
     // Timer
-    let timeIntervalNotification:Double = 60*5
+    let timeIntervalNotification:Double = 30//60*5
     
     // Misc Params
     var dataBuffer:[hrData] = []    // Contains all data samples stored
@@ -268,6 +268,7 @@ class DataGatheringViewController: UIViewController {
         var text:String = ""
         for data in dataBuffer{
             text += data.getCSVFormat()
+            print("\(data.getCSVFormat())")
         }
         
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
