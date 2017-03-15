@@ -16,5 +16,7 @@
                andSize:(int) size;
 - (UIImage *) getPlot;
 - (UIImage *)plotData;
+- (UIImage *) posLabel;
+- (UIImage *) negLabel;
 - (bool)predict: (double) hr andHRV: (double) hrv;
 @end

@@ -110,7 +110,11 @@ Ptr<ml::SVM> curr_svm;
 
 - (bool)predict: (double) hr andHRV: (double) hrv;{
     Mat sampleMat = (Mat_<float>(1,2) << hrv, hr);
-    return curr_svm->predict(sampleMat);
+    if(curr_svm){
+        return curr_svm->predict(sampleMat);
+    } else{
+        return false;
+    }
 }
 
 /*
@@ -177,6 +181,18 @@ Ptr<ml::SVM> curr_svm;
         circle( image,  cv::Point( (int) v[0], (int) v[1]),   6,  sv_color, thickness, lineType);
     }
     
+    return [self UIImageFromCVMat:image];
+}
+
+- (UIImage *) posLabel{
+    Vec3b pos_color(135,206,250);
+    Mat image(30,30, CV_8UC3, pos_color);
+    return [self UIImageFromCVMat:image];
+}
+
+- (UIImage *) negLabel{
+    Vec3b neg_color (132,112,255);
+    Mat image(30,30, CV_8UC3, neg_color);
     return [self UIImageFromCVMat:image];
 }
 

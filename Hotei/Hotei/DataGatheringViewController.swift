@@ -9,6 +9,7 @@
 
 import UIKit
 import NotificationCenter
+import UserNotifications
 
 class DataGatheringViewController: UIViewController {
 
@@ -31,13 +32,14 @@ class DataGatheringViewController: UIViewController {
         }
         
         func getCSVFormat()->String{
-            return "\(self.time),\(self.label),\(self.mean_hr),\(self.hrv)\n"
+            return "\(self.label),\(self.mean_hr),\(self.hrv)\n"
         }
     }
     
     // Wrapper for opencv in objc
     let opencv_wrapper = OpenCVWrapper()
     var readyToPredict:Bool = false
+    var loaded:Bool = false
     
     // Timer
     let timeIntervalNotification:Double = 60*5
@@ -53,14 +55,21 @@ class DataGatheringViewController: UIViewController {
     @IBOutlet weak var meanHRLabel: UILabel!
     @IBOutlet weak var hrLabel: UILabel!
     @IBOutlet weak var hrvLabel: UILabel!
-
+    @IBOutlet weak var stressStateLabel: UILabel!
+    
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var mlButton: UIButton!
     @IBOutlet weak var stateSwitch: UISwitch!
+    
     
     /*
      *  Mark - keypress actions
      */
     
+    @IBAction func saveData(_ sender: Any) {
+        print("--- Saving data")
+        writeFile()
+    }
     @IBAction func onTrainPressed(_ sender: Any) {
         print("--- Training SVM model")
         if(dataBuffer.isEmpty){
@@ -114,6 +123,12 @@ class DataGatheringViewController: UIViewController {
         // Add image to current view
         view.addSubview(imageView)
         print("--- SVM Model trained")
+        
+        // HIDDEN LABELS
+        /*let neg_image:UIImage = opencv_wrapper.negLabel()
+        let pos_image:UIImage = opencv_wrapper.posLabel()
+        posLabel = UIImageView(image: pos_image)
+        negLabel = UIImageView(image: neg_image)*/
     }
     
     // function for the opencv tutorial SVM
@@ -145,21 +160,28 @@ class DataGatheringViewController: UIViewController {
         
         // Search for bluetooth device
         hm.scanForDevices()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-        // Observe refresh notification for when a new HR value is available
-        NotificationCenter.default.addObserver(self, selector: #selector(DataGatheringViewController.updateLabels), name: NSNotification.Name(rawValue: "refresh"), object: nil)
-        // Observe refresh notification for when features have been recalculated eg. HRV
-        NotificationCenter.default.addObserver(self, selector: #selector(DataGatheringViewController.updateData), name: NSNotification.Name(rawValue: "refreshFeatures"), object: nil)
+        // Load initial csv data
+        loadFile()
         
         // Timer for stressed notification
         let date = Date().addingTimeInterval(self.timeIntervalNotification)
         let timer = Timer(fireAt: date, interval: self.timeIntervalNotification, target: self, selector:  #selector(resetStateFlag), userInfo: nil, repeats: true)
         RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
+        
+        // Observe refresh notification for when features have been recalculated eg. HRV
+        NotificationCenter.default.addObserver(self, selector: #selector(DataGatheringViewController.updateData), name: NSNotification.Name(rawValue: "refreshFeatures"), object: nil)
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        // Observe refresh notification for when a new HR value is available
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(DataGatheringViewController.updateLabels), name: NSNotification.Name(rawValue: "refresh"), object: nil)
+        readyToPredict = true
+        loaded = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -173,9 +195,11 @@ class DataGatheringViewController: UIViewController {
     
     // receive notification from hrmonitor when there is a value update
     func updateLabels(notification:Notification){
+        if(loaded){
         self.hrLabel.text = String(format:"%d",hm.getHR())
         self.hrvLabel.text = String(format:"%.1f",hm.getHRV())
         self.meanHRLabel.text = String(format:"%.1f",hm.getMeanHR())
+        }
     }
     
     // called when refreshFeatures notification is received
@@ -216,24 +240,32 @@ class DataGatheringViewController: UIViewController {
         // send notification if predicted as stressed
         print("--- PREDICTION: \(predicted_state)")
         if(predicted_state){
+            if(loaded){
+                stressStateLabel.text = "Stressed"
+            }
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "stressed"), object: nil)
+        } else {
+            if(loaded){
+                stressStateLabel.text = "Not Stressed"
+            }
         }
     }
     
     func resetStateFlag(){
         readyToPredict = true
     }
-    
+
     /*
      *  Mark - helper functions
      */
     
     // Currently not used
-    func writeToFile(){
+    func writeFile(){
+        print("--- WRITING TO FILE")
         let file = "data.csv" //this is the file. we will write to and read from it
         
-        var text = hrData.getCSVHeader()
-        
+        //var text = hrData.getCSVHeader()
+        var text:String = ""
         for data in dataBuffer{
             text += data.getCSVFormat()
         }
@@ -249,6 +281,35 @@ class DataGatheringViewController: UIViewController {
             catch {
                 print("Error writing to file %s\n", file)
             }
+        }
+    }
+    
+    // source: http://stackoverflow.com/a/24098149
+    func loadFile(){
+        print("--- LOADING DATA")
+        guard let csvPath = Bundle.main.path(forResource: "data", ofType: "csv") else {
+            print("--- CSV NOT FOUND")
+            return
+        }
+        
+        do {
+            let csvData = try String(contentsOfFile: csvPath, encoding: String.Encoding.utf8)
+            let array = csvData.components(separatedBy: "\n")
+            
+            for item in array{
+                let sub_array = item.components(separatedBy: ",")
+                if(sub_array.count == 3){
+                    self.dataBuffer.append(
+                        hrData(time: NSDate().timeIntervalSince1970,
+                               label: (sub_array[0] as NSString).integerValue,
+                               hr: (sub_array[1] as NSString).doubleValue,
+                               hrv: (sub_array[2] as NSString).doubleValue
+                                )
+                    )
+                }
+            }
+        }catch{
+            print(error)
         }
     }
     
@@ -280,3 +341,11 @@ class DataGatheringViewController: UIViewController {
         return newImage
     }
 }
+
+
+extension DataGatheringViewController: UNUserNotificationCenterDelegate{
+    	func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    		completionHandler([.alert, .sound])
+    	}
+}
+
