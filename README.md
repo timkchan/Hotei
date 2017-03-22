@@ -12,9 +12,9 @@ The issues of stress and general emotional well being are important in the conte
 
 ### 3. Files
 
-The main project source code is stored under `/Hotei'
 
-Files under /Hotei (not all are shown):
+#### Files under /Hotei (not all are shown):
+The main project source code resides here.
 
 * `Hotei.xcworkspace`:                  Entry point for iOS project. (Open this instead of .xcodeproj)
 
@@ -33,26 +33,29 @@ Files under /Hotei (not all are shown):
 
 * `Podfile`:                            CocoaPod setup file (Instrustion for CocoaPods to install external lib correctly)
 
-Files under /Database (not all are shown):  // To be completed
+#### Files under /Database (not all are shown):  // To be completed
+The database source code resides here.
 
 * `???`:                  ???
 
 * `???/`:                             ??
     * `???`:                ??
 
-Files in the root directory (not all are shown):
-* `survey_results.ods`:					Training data for recommendations
+#### Files in the root directory (not all are shown):
+Auxiliary files go in here.
+
 * `Coursework Instructions.pdf`:        Goal and instruction for this project
 
-* `README.md`:                          This file (readme)
+* `figures/`:                  			Subdirectory holding figures used in the report:
+    * `System-overview.jpg`:   			High-level view of the ststem
+    * `sysdia.jpg`:       				Flowchart of the Feedback State
+    * `database.jpg`:    				Database relationships
+    * `context.png`:          			Context fitering
+    * `conf_user.PNG`:   				Confusion matrix
 
-<!-- * `figures/`:                  Subdirectory holding figures used in the report:
-    * `BlockDiagram.pdf`:   Modular view of the ststem
-    * `feedback.pdf`:       Flowchart of the Feedback State
-    * `pumpCircuit.png`:    The circuit used to control the pumps
-    * `setup.jpg`:          Picture showing the physical setup
-    * `StateMachine.png`:   Illustrates the state of the system
-    * `Survey.pdf`:         Questionnaire used to gather user findings -->
+* `survey_results.ods`:					Training data for recommendations
+
+* `README.md`:                          This file (readme)
 
 
 ### 4. Dependency
