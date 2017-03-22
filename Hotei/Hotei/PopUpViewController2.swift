@@ -9,13 +9,13 @@
 import UIKit
 import UserNotifications
 
-class PopUpViewController: UIViewController {
-
+class PopUpViewController2: UIViewController {
+    
     var currentActivity : String?
     var id : Int32?
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
+    
     
     @IBOutlet weak var titleActivity: UILabel!
     
@@ -28,31 +28,31 @@ class PopUpViewController: UIViewController {
         self.view.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     @IBAction func closeView(_ sender: Any) {
         removeAnimate()
     }
-
+    
     @IBOutlet weak var activityInput: UITextField!
-
+    
     override func viewWillAppear(_ animated: Bool) {
         if(currentActivity == "Add Activity"){
             activityInput.isHidden = false;
-        
+            
         }else{
             activityInput.isHidden = true;
-        
+            
         }
         errormsg.isHidden = true
         titleActivity.text = currentActivity
-
-
+        
+        
     }
     
     @IBOutlet weak var errormsg: UILabel!
@@ -64,12 +64,12 @@ class PopUpViewController: UIViewController {
             DispatchQueue.main.async {
                 
                 self.errormsg.text = "Please enter an activity"
-            
+                
             }
             
         }
         else{
-        
+            
             if(!(activityInput.text?.isEmpty)!){
                 currentActivity = activityInput.text
                 
@@ -94,8 +94,8 @@ class PopUpViewController: UIViewController {
             postToDataBase(UserId: id!, activity: currentActivity!, Rating: sender.tag)
             cancelNotification()
             removeAnimate()
-        
-        
+            
+            
         }
         
     }
@@ -154,11 +154,11 @@ class PopUpViewController: UIViewController {
         }
         task.resume()
     }
-
-
- 
-    func showAnimate(){
     
+    
+    
+    func showAnimate(){
+        
         self.view.transform = CGAffineTransform(scaleX: 1.3,y: 1.3)
         self.view.alpha = 0.0;
         UIView.animate(withDuration: 0.25, animations: {
@@ -166,12 +166,12 @@ class PopUpViewController: UIViewController {
             self.view.transform = CGAffineTransform(scaleX: 1.3,y: 1.3)
             
         });
-    
+        
     }
     
     func removeAnimate(){
         UIView.animate(withDuration: 0.25, animations: {
-        
+            
             self.view.transform = CGAffineTransform(scaleX: 1.3,y: 1.3)
             self.view.alpha = 0.0;
         }, completion:{(finished: Bool) in
@@ -183,13 +183,13 @@ class PopUpViewController: UIViewController {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
