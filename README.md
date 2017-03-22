@@ -46,6 +46,11 @@ Auxiliary files go in here.
 
 * `Coursework Instructions.pdf`:        Goal and instruction for this project
 
+* `Data/`:                  			Subdirectory holding training and learnt data:
+    * `survey_results.ods`:				Training data for recommendations
+    * `user?.csv`:       				Users heart rate data
+    * `user?_test.csv`:    				Test data for users
+
 * `figures/`:                  			Subdirectory holding figures used in the report:
     * `System-overview.jpg`:   			High-level view of the ststem
     * `sysdia.jpg`:       				Flowchart of the Feedback State
@@ -53,8 +58,6 @@ Auxiliary files go in here.
     * `context.png`:          			Context fitering
     * `conf_user.PNG`:   				Confusion matrix
     * `screen.png`:   					Screenshots of the app on iPhone and AppleWatch
-
-* `survey_results.ods`:					Training data for recommendations
 
 * `README.md`:                          This file (readme)
 
