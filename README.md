@@ -33,8 +33,15 @@ Files under /Hotei (not all are shown):
 
 * `Podfile`:                            CocoaPod setup file (Instrustion for CocoaPods to install external lib correctly)
 
-Files in the root directory (not all are shown):
+Files under /Database (not all are shown):  // To be completed
 
+* `???`:                  ???
+
+* `???/`:                             ??
+    * `???`:                ??
+
+Files in the root directory (not all are shown):
+* `survey_results.ods`:					Training data for recommendations
 * `Coursework Instructions.pdf`:        Goal and instruction for this project
 
 * `README.md`:                          This file (readme)
