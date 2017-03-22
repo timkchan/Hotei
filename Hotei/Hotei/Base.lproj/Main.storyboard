@@ -227,11 +227,11 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6LL-1p-l6w" id="PDw-gP-kTq">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ifU-Kx-ehH">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -754,7 +754,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="registerButton:" destination="mmv-RI-I51" eventType="touchUpInside" id="jR1-UC-smH"/>
-                                    <segue destination="pPe-Uq-4Fr" kind="show" identifier="coldstart" id="UvH-9O-QT1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -792,6 +791,7 @@
                         <outlet property="password" destination="k9a-wM-kMA" id="mVi-SX-Wje"/>
                         <outlet property="userName" destination="Dme-va-iDD" id="JND-mr-Nty"/>
                         <segue destination="49e-Tb-3d3" kind="show" identifier="loginSegue" id="3qe-bq-Lmt"/>
+                        <segue destination="pPe-Uq-4Fr" kind="show" identifier="coldstart" id="UDO-ht-EFe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WK9-66-Daq" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -28,27 +28,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let userID  =  abs(name.hash) / 4294967296
         let pass = password.text
         
-        let userURL: String = "http://hoteiapi20170303100733.azurewebsites.net/getUserProfile?userId=\(userID)&password=\(pass!)&register=true"
+        // Storing UserID
         defaults.set(userID, forKey: "userID")
         
+        let userURL: String = "http://hoteiapi20170303100733.azurewebsites.net/getUserProfile?userId=\(userID)&password=\(pass!)&register=true"
         completeLogin(userURL: userURL, sender: sender)
-        
-
     }
-    
-    // Storing UserID
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
     @IBOutlet weak var loadingSign: UIActivityIndicatorView!
-    
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
     
-    
-    //let urlString = String("http://hoteiapi20170303100733.azurewebsites.net/getUserProfile?userId=\(id)&password=\(pass)&")
     
     
     // When Login button is tapped.
@@ -115,10 +109,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     default:
                         //case 0
                         if(status == 0){
+                            let loggedIn = 1
+                            self.defaults.set(loggedIn, forKey: "loggedIn")
                             self.performSegue(withIdentifier: "coldstart", sender: self)
+                            
                             
                         }
                         else{
+                            let loggedIn = 1
+                            self.defaults.set(loggedIn, forKey: "loggedIn")
                             self.performSegue(withIdentifier: "loginSegue", sender: sender)
                         }
                     }
@@ -162,22 +161,31 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         //print("Trying Auto Login")
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         // If user has logged in (userID exist in UserDefaults)
-        //login()
+        //autoLogin()
     }
     
     // Function to AutoLogin (if user hasn't signed out)
-    func login() {
-        if let userID = defaults.object(forKey: "userID") {
+    func autoLogin() {
+        if defaults.object(forKey: "loggedIn") != nil {
             print("Logged in!")
-            print("userID: \(userID)")
             performSegue(withIdentifier: "loginSegue", sender: self)
         } else {
             print("userID: not set")
         }
     }
 
-
+    // Tap away to hide keyboard.
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
+    // Tap return to hide keyboard.
+    func textFieldShouldClear(_ textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
+    {
+        textField.resignFirstResponder()
+        return true;
+    }
+
 
     // MARK: - Navigation
     

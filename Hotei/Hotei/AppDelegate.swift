@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
@@ -25,17 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.shared.applicationIconBadgeNumber = 0
         
+        // Notification Actions
         let happy = UNNotificationAction(identifier: "happy", title: "Happy" )
         let neutral = UNNotificationAction(identifier: "neutral", title: "Ok")
         let sad = UNNotificationAction(identifier: "sad", title: "Sad")
         let rate = UNNotificationAction(identifier: "rate", title: "Rate an Activity", options:  [.foreground ])
-        
-        //        let view = UNNotificationAction(identifier: "view", title: "View Activity", options: [])
-        
         let wrong = UNNotificationAction(identifier: "wrong", title: "I'm Not Stressed")
-        
         let emotionRequest = UNNotificationCategory(identifier: "emotionRequest", actions: [happy, neutral, sad, rate], intentIdentifiers: [], options: [])
-        
         let stressDetect = UNNotificationCategory(identifier: "stressDetect", actions: [wrong], intentIdentifiers: [], options: [])
         
         UNUserNotificationCenter.current().setNotificationCategories([emotionRequest, stressDetect])

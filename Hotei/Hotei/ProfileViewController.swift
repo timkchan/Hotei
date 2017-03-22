@@ -25,6 +25,7 @@ class ProfileViewController: UIViewController {
     @IBAction func logoutBtn(_ sender: UIBarButtonItem) {
         print("Logging out")
         defaults.removeObject(forKey: "userID")
+        defaults.removeObject(forKey: "loggedIn")
         loggedIn = false
         print("Logged out")
         performSegue(withIdentifier: "logoutSegue", sender: sender)
