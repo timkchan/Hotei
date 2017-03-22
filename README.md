@@ -34,7 +34,7 @@ The main project source code resides here.
 
 * `Podfile`:                            CocoaPod setup file (Instrustion for CocoaPods to install external lib correctly)
 
-#### Files under /Database (not all are shown):  // To be completed
+#### Files under /Database (not all are shown):
 The database source code resides here.
 
 * `HoteiApi/`:                          Subdirectory holding database source code
