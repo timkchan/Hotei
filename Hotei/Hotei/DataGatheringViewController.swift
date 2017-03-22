@@ -171,7 +171,6 @@ class DataGatheringViewController: UIViewController {
         
         // Observe refresh notification for when features have been recalculated eg. HRV
         NotificationCenter.default.addObserver(self, selector: #selector(DataGatheringViewController.updateData), name: NSNotification.Name(rawValue: "refreshFeatures"), object: nil)
-        
     }
     
     override func viewDidLoad() {
@@ -388,9 +387,6 @@ class DataGatheringViewController: UIViewController {
                     activity = responses[0]
                     self.stressNotification(activity)
                 }
-                
-                
-                
             }
             catch let error{
                 print(error)
@@ -403,13 +399,12 @@ class DataGatheringViewController: UIViewController {
         //self.stressNotification(activity)
         
     }
-
 }
 
 
 extension DataGatheringViewController: UNUserNotificationCenterDelegate{
-    	func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-    		completionHandler([.alert, .sound])
-    	}
+//    	func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+//    		completionHandler([.alert, .sound])
+//    	}
 }
 

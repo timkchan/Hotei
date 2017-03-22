@@ -10,16 +10,12 @@ import UIKit
 import Charts
 import CoreData
 
-
 class GraphViewController: UIViewController {
-
+    
+    // User default
     let def = UserDefaults.standard
     
-    //Outlets needed
-    
-    
     @IBOutlet weak var barChartView: BarChartView!
-    
     
     var history = [History]()
     
@@ -27,17 +23,12 @@ class GraphViewController: UIViewController {
     var dates: [Date] = []
     var emotions: [Double] = []
     
-    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     weak var axisFormatDelegate: IAxisValueFormatter?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,14 +41,13 @@ class GraphViewController: UIViewController {
         var components = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: dateFrom)
         components.day! += 1
         
-        let dateTo = calendar.date(from: components)
+        _ = calendar.date(from: components)
         
         //let datePredicate = NSPredicate(format: "(%@ <= dateTime) AND (dateTime < %@)", argumentArray: [dateFrom, dateTo!])
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "History")
         
         //request.predicate = datePredicate
-        
         
         do{
             //let queryResult = try context.execute(request) as! [History]
@@ -100,7 +90,6 @@ class GraphViewController: UIViewController {
     }
     
     
-    
     func setRatingGraph(dataPoints: [Date], values: [Double]){
         var dataEntries: [BarChartDataEntry] = []
         
@@ -121,11 +110,7 @@ class GraphViewController: UIViewController {
         xaxis.valueFormatter = axisFormatDelegate
         barChartView.chartDescription?.text = "Emotion"
         barChartView.xAxis.labelPosition = .bottom
-        
-        
     }
-    
-
 }
 
 

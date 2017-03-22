@@ -44,7 +44,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, CLLocationM
     var session: WCSession!
     
     
-    
 //    func initWCSession(){
 //        session.delegate = self
 //        session.activate()

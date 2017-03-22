@@ -31,7 +31,6 @@ class HistoryTableViewController: UITableViewController {
         print(id)
         history = getData()
         //history.sort { $0.dateTime?.timeIntervalSince1970 > $1.dateTime?.timeIntervalSince1970 }
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -60,9 +59,7 @@ class HistoryTableViewController: UITableViewController {
         } catch {
             print("Fetch Failed")
         }
-        
         return history
-        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -87,13 +84,6 @@ class HistoryTableViewController: UITableViewController {
         //cell.activityImage.image = UIImage(named: history[indexPath.row].activity!)
         //let date = history[indexPath.row].dateTime as! Date
         //cell.timeLabel.text = date.timeIntervalSince197
-        
-        
-        
-        
-        // Configure the cell...
-        
-        return cell
     }
 
 }

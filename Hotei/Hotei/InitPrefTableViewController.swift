@@ -14,8 +14,6 @@ class InitPrefTableViewController: UIViewController,UITableViewDataSource, UITab
     var id: Int32 = 0
     let def = UserDefaults.standard
     var activities : [Activities] = []
-
-
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
@@ -91,9 +89,6 @@ class InitPrefTableViewController: UIViewController,UITableViewDataSource, UITab
     override func viewWillAppear(_ animated: Bool) {
         id = def.object(forKey: "userID") as! Int32
         activities = initActivitiesInDataBase()
-
-        
-        
     }
     
     func initActivitiesInDataBase() -> [Activities]{
@@ -169,6 +164,4 @@ class InitPrefTableViewController: UIViewController,UITableViewDataSource, UITab
         tableView.cellForRow(at: indexPath)?.accessoryType = .none
         self.preferences.remove(at: preferences.index(of: activities[indexPath.row].name!)!)
     }
-    
-   
 }

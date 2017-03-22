@@ -9,7 +9,7 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
+    
     let defaults = UserDefaults.standard
     var loggedIn = true
     var id: Int32 = 0
@@ -21,8 +21,6 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var weight: UILabel!
     @IBOutlet weak var bpm: UILabel!
     @IBOutlet weak var perWeek: UILabel!
-
-    
     
     @IBAction func logoutBtn(_ sender: UIButton) {
         print("Logging out")
@@ -32,13 +30,11 @@ class ProfileViewController: UIViewController {
         print("Logged out")
         performSegue(withIdentifier: "logoutSegue", sender: sender)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    
-    
     
     override func viewWillAppear(_ animated: Bool) {
         id = defaults.object(forKey: "userID") as! Int32
@@ -54,15 +50,9 @@ class ProfileViewController: UIViewController {
     }
     
     @IBOutlet weak var recommendation: UILabel!
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-}
-    
-    
-    
-    // MARK: - Navigation
-
-
+    }
 }

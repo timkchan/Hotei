@@ -16,9 +16,7 @@ class PopUpViewController2: UIViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    
     @IBOutlet weak var titleActivity: UILabel!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,33 +49,27 @@ class PopUpViewController2: UIViewController {
         }
         errormsg.isHidden = true
         titleActivity.text = currentActivity
-        
-        
     }
     
     @IBOutlet weak var errormsg: UILabel!
     
     @IBAction func hapinessLevel(_ sender: UIButton) {
         
-        if ((activityInput.text?.isEmpty)! && !activityInput.isHidden){
+        if ((activityInput.text?.isEmpty)! && !activityInput.isHidden) {
             
             DispatchQueue.main.async {
-                
                 self.errormsg.text = "Please enter an activity"
-                
             }
-            
         }
-        else{
+        else {
             
-            if(!(activityInput.text?.isEmpty)!){
+            if(!(activityInput.text?.isEmpty)!) {
                 currentActivity = activityInput.text
                 
                 //add this activity to Actvity DB
                 let act = Activities(context: context)
                 act.setAll(name: currentActivity!)
                 (UIApplication.shared.delegate as! AppDelegate).saveContext()
-                
             }
             
             let date = Date()
@@ -94,10 +86,7 @@ class PopUpViewController2: UIViewController {
             postToDataBase(UserId: id!, activity: currentActivity!, Rating: sender.tag)
             cancelNotification()
             removeAnimate()
-            
-            
         }
-        
     }
     
     func cancelNotification(){
@@ -156,17 +145,13 @@ class PopUpViewController2: UIViewController {
     }
     
     
-    
     func showAnimate(){
-        
         self.view.transform = CGAffineTransform(scaleX: 1.3,y: 1.3)
         self.view.alpha = 0.0;
         UIView.animate(withDuration: 0.25, animations: {
             self.view.alpha = 1
             self.view.transform = CGAffineTransform(scaleX: 1.3,y: 1.3)
-            
         });
-        
     }
     
     func removeAnimate(){

@@ -10,14 +10,7 @@ import UIKit
 
 class HistoryTableViewCell: UITableViewCell {
     
-    
-    //Outlets needed!
-    
-    
-       
     @IBOutlet weak var activityLabel: UILabel!
-    
-    
     @IBOutlet weak var activityImage: UIImageView!
     
     override func awakeFromNib() {
@@ -30,5 +23,4 @@ class HistoryTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }
