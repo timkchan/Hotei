@@ -22,7 +22,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var bpm: UILabel!
     @IBOutlet weak var perWeek: UILabel!
 
-    @IBAction func logoutBtn(_ sender: UIBarButtonItem) {
+    
+    
+    @IBAction func logoutBtn(_ sender: UIButton) {
         print("Logging out")
         defaults.removeObject(forKey: "userID")
         defaults.removeObject(forKey: "loggedIn")
@@ -58,10 +60,6 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
 }
     
-    @IBAction func logout(_ sender: Any) {
-        self.performSegue(withIdentifier: "logoutSegue", sender: sender)
-
-    }
     
     
     // MARK: - Navigation

@@ -513,7 +513,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="mmv-RI-I51" kind="show" id="W89-Gi-sI9"/>
+                                            <action selector="logoutBtn:" destination="Ca2-DE-ZCx" eventType="touchUpInside" id="535-UC-JS7"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="on8-sr-YKI">
@@ -653,6 +653,7 @@
                         <outlet property="perWeek" destination="6Ku-bF-Uku" id="WQP-cS-xxC"/>
                         <outlet property="picture" destination="4y4-Q6-HUe" id="mfe-ST-d8x"/>
                         <outlet property="weight" destination="mwe-M1-PJu" id="WlY-Jh-Jgf"/>
+                        <segue destination="mmv-RI-I51" kind="show" identifier="logoutSegue" id="s8Z-K5-RBu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P7w-z9-bTa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1045,7 +1046,7 @@
         <image name="table-tennis-7" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="W89-Gi-sI9"/>
         <segue reference="3qe-bq-Lmt"/>
+        <segue reference="s8Z-K5-RBu"/>
     </inferredMetricsTieBreakers>
 </document>
