@@ -61,7 +61,7 @@ Auxiliary files go in here.
 
 * `Reports/`:                  			Subdirectory holding reports:
     * `DesignReport.pdf`:   			First stage design report
-    * `Individual Component Report - *`:       Individual reports
+    * `Individual Component Report - *.pdf`:       Individual reports
     * `FinalReport.pdf`:    			Final report
 
 * `README.md`:                          This file (readme)
