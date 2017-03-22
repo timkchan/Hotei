@@ -366,7 +366,7 @@
 				TargetAttributes = {
 					D8A4752F1E421F54006CAFEA = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = WH8NU3AA25;
+						DevelopmentTeam = 26YF898FTD;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -377,12 +377,12 @@
 					};
 					D8EDBF9D1E65EA1000CE05F9 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = WH8NU3AA25;
+						DevelopmentTeam = 26YF898FTD;
 						ProvisioningStyle = Automatic;
 					};
 					D8EDBFA91E65EA1100CE05F9 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = WH8NU3AA25;
+						DevelopmentTeam = 26YF898FTD;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.HealthKit.watchos = {
@@ -677,10 +677,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = WH8NU3AA25;
+				DEVELOPMENT_TEAM = 26YF898FTD;
 				INFOPLIST_FILE = Hotei/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Gar1G.Hotei;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appbee.Hotei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -697,10 +697,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = WH8NU3AA25;
+				DEVELOPMENT_TEAM = 26YF898FTD;
 				INFOPLIST_FILE = Hotei/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Gar1G.Hotei;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appbee.Hotei;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Hotei/Hotei-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -712,10 +712,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = WH8NU3AA25;
+				DEVELOPMENT_TEAM = 26YF898FTD;
 				IBSC_MODULE = HoteiW_Extension;
 				INFOPLIST_FILE = HoteiW/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Gar1G.Hotei.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appbee.Hotei.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -730,10 +730,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = WH8NU3AA25;
+				DEVELOPMENT_TEAM = 26YF898FTD;
 				IBSC_MODULE = HoteiW_Extension;
 				INFOPLIST_FILE = HoteiW/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Gar1G.Hotei.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appbee.Hotei.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -749,10 +749,10 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "HoteiW Extension/HoteiW Extension.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = WH8NU3AA25;
+				DEVELOPMENT_TEAM = 26YF898FTD;
 				INFOPLIST_FILE = "HoteiW Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Gar1G.Hotei.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appbee.Hotei.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -770,10 +770,10 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "HoteiW Extension/HoteiW Extension.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = WH8NU3AA25;
+				DEVELOPMENT_TEAM = 26YF898FTD;
 				INFOPLIST_FILE = "HoteiW Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Gar1G.Hotei.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appbee.Hotei.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;

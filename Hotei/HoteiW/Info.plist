@@ -27,7 +27,7 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>com.Gar1G.Hotei</string>
+	<string>com.appbee.Hotei</string>
 	<key>WKWatchKitApp</key>
 	<true/>
 </dict>
