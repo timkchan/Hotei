@@ -59,6 +59,11 @@ Auxiliary files go in here.
     * `conf_user.PNG`:   				Confusion matrix
     * `screen.png`:   					Screenshots of the app on iPhone and AppleWatch
 
+* `Reports/`:                  			Subdirectory holding reports:
+    * `DesignReport.pdf`:   			First stage design report
+    * `Individual Component Report - *`:       Individual reports
+    * `FinalReport.pdf`:    			Final report
+
 * `README.md`:                          This file (readme)
 
 
