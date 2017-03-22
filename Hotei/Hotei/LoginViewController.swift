@@ -44,7 +44,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var password: UITextField!
     
     
-    
     // When Login button is tapped.
     @IBAction func loginBtn(_ sender: UIButton) {
         self.loadingSign.isHidden = false;
@@ -62,20 +61,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         let userURL: String = "http://hoteiapi20170303100733.azurewebsites.net/getUserProfile?userId=\(userID)&password=\(pass!)&register=false"
         
+        // Save userID to UserDefault
         defaults.set(userID, forKey: "userID")
 
         completeLogin(userURL: userURL, sender: sender)
-        
-        
-        // Save userID to UserDefault
-        
-        
-//        // Perform Segue to Activity page
-//        print("userID: \(userID)")
-//        performSegue(withIdentifier: "loginSegue", sender: sender)
     }
     
-    
+    // Loggin in (register if needed)
     func completeLogin(userURL: String, sender: UIButton){
         
         var code: Int = 1
@@ -86,13 +78,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")  // the request is JSON
         urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
         
-        
         let task = URLSession.shared.dataTask(with: urlRequest){ (data, response, error) in
             if error != nil{
                 print(error!)
                 return
             }
-            
             do{
                 let json = try JSONSerialization.jsonObject(with: data!) as! [String: AnyObject]
                 code = json["code"] as! Int
@@ -106,18 +96,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     case 2:
                         self.errorMessage.text = "User Already Exists, Try Another Login"
                         break
-                    default:
-                        //case 0
+                    default:    //case 0
+                        
+                        // For auto login
+                        let loggedIn = 1
+                        self.defaults.set(loggedIn, forKey: "loggedIn")
+                        
                         if(status == 0){
-                            let loggedIn = 1
-                            self.defaults.set(loggedIn, forKey: "loggedIn")
+                            
                             self.performSegue(withIdentifier: "coldstart", sender: self)
-                            
-                            
                         }
                         else{
-                            let loggedIn = 1
-                            self.defaults.set(loggedIn, forKey: "loggedIn")
                             self.performSegue(withIdentifier: "loginSegue", sender: sender)
                         }
                     }
@@ -131,11 +120,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
             
         }
-        
         task.resume()
-        
-
-        
     }
 
     
@@ -145,8 +130,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.userName.delegate = self;
         self.password.delegate = self;
         // Do any additional setup after loading the view.
-        
     }
+
+    
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
@@ -156,13 +142,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
 
-
     override func viewDidAppear(_ animated: Bool) {
-        //print("Trying Auto Login")
+        print("Trying Auto Login")
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        // If user has logged in (userID exist in UserDefaults)
+        // If user has logged in ('loggedIn' exists in UserDefaults)
         autoLogin()
     }
+    
     
     // Function to AutoLogin (if user hasn't signed out)
     func autoLogin() {
@@ -170,7 +156,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             print("Logged in!")
             performSegue(withIdentifier: "loginSegue", sender: self)
         } else {
-            print("userID: not set")
+            print("loggedIn: not set")
         }
     }
 
@@ -179,12 +165,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
-    // Tap return to hide keyboard.
-    func textFieldShouldClear(_ textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
-    {
-        textField.resignFirstResponder()
-        return true;
-    }
+
 
 
     // MARK: - Navigation
