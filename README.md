@@ -5,10 +5,12 @@
 ### 1. Overview of Hotei
 The issues of stress and general emotional well being are important in the context of student life where almost 63% suffer from stress, and 27% of all students suffer from a mental problem of some sort. This project aims to help manage a student’s stress levels whilst helping them become more aware of their emotional well being. This will be done through the development of a smartphone app, making use of heart rate data from a wearable device to automatically detect moments of stress, a recommendation system to provide tailored activity suggestions to help them relieve such stress, and ultimately improve their over all emotional well being.
 
+
 ### 2. Hardware
 * iPhone (iOs 10+)
 * Polar H7 Heart Rate Sensor
 * Apple Watch (Optional)
+
 
 ### 3. Files
 
@@ -35,10 +37,9 @@ The main project source code resides here.
 #### Files under /Database (not all are shown):  // To be completed
 The database source code resides here.
 
-* `???`:                  ???
-
-* `???/`:                             ??
-    * `???`:                ??
+* `HoteiApi/`:                          Subdirectory holding database source code
+* `HoteiClientExample/`:                Subdirectory holding database example code
+	* `HoteiClientExample.csproj/`:     Database API call example
 
 #### Files in the root directory (not all are shown):
 Auxiliary files go in here.
@@ -96,6 +97,7 @@ Project uses CoreData and external libraries. It's recommended to clean and rebu
 ### 6. Demo video   //Will be uploaded on 27thMar, 17
 * Youtube: [View Video]
 * Download: [Download Video]
+
 
 ### 7. Contribution
 This is a 4th year class (EE4.67 – Mobile Healthcare and Machine Learning) project at Imperial College London supervised by prof. Yiannis Demiris
