@@ -1,6 +1,6 @@
 # Hotei - Wellness Activity Recommendation
-<!-- ![](figures/setup.jpg?raw=true)
-![](figures/demo.png?raw=true) -->
+![](figures/screen.jpg?raw=true)
+<!-- ![](figures/demo.png?raw=true) -->
 
 ### 1. Overview of Hotei
 The issues of stress and general emotional well being are important in the context of student life where almost 63% suffer from stress, and 27% of all students suffer from a mental problem of some sort. This project aims to help manage a student’s stress levels whilst helping them become more aware of their emotional well being. This will be done through the development of a smartphone app, making use of heart rate data from a wearable device to automatically detect moments of stress, a recommendation system to provide tailored activity suggestions to help them relieve such stress, and ultimately improve their over all emotional well being.
@@ -52,6 +52,8 @@ Auxiliary files go in here.
     * `database.jpg`:    				Database relationships
     * `context.png`:          			Context fitering
     * `conf_user.PNG`:   				Confusion matrix
+    * `screen.png`:   					Screenshots of the app on iPhone and AppleWatch
+    
 
 * `survey_results.ods`:					Training data for recommendations
 
