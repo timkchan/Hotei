@@ -1,5 +1,5 @@
 # Hotei - Wellness Activity Recommendation
-![](figures/screen.jpg?raw=true)
+![](figures/screen.png?raw=true)
 <!-- ![](figures/demo.png?raw=true) -->
 
 ### 1. Overview of Hotei
@@ -11,7 +11,6 @@ The issues of stress and general emotional well being are important in the conte
 * Apple Watch (Optional)
 
 ### 3. Files
-
 
 #### Files under /Hotei (not all are shown):
 The main project source code resides here.
@@ -53,7 +52,6 @@ Auxiliary files go in here.
     * `context.png`:          			Context fitering
     * `conf_user.PNG`:   				Confusion matrix
     * `screen.png`:   					Screenshots of the app on iPhone and AppleWatch
-    
 
 * `survey_results.ods`:					Training data for recommendations
 
@@ -61,10 +59,10 @@ Auxiliary files go in here.
 
 
 ### 4. Dependency
-Notice that the project uses CocoaPods for installing external library. Please have it installed in advance.
+Notice that the project uses [CocoaPods] for installing external library. Please have it installed in advance.
 
-* `Charts`:                            Charts lib for displaying charts
-* `OpenCV`:                            OpenCV lib for machine learning
+* `Charts`:                            [Charts] lib for displaying charts
+* `OpenCV`:                            [OpenCV] lib for machine learning
 
 
 ### 5. Running Hotei
@@ -85,7 +83,6 @@ Install dependencies (in repo root dir):
 $ cd Hotei
 $ pod install
 ```
-
 
 Open Xcode project (in repo root dir):
 ```sh
