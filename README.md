@@ -102,7 +102,7 @@ $ open Hotei.xcworkspace
 Project uses CoreData and external libraries. It's recommended to clean and rebuild the project. Now the app should be ready to run on a simulator or an actual device.
 
 
-### 6. Demo video   //Will be uploaded on 27thMar, 17
+### 6. Demo video
 * Youtube: [View Video]
 * Download: [Download Video]
 
@@ -118,7 +118,7 @@ Team members:
 * [Nick Robertson](https://github.com/nar213/)
 
 
-[View Video]: <???>
+[View Video]: <https://youtu.be/8RE6FPylAG8>
 [Download Video]: <???>
 [CocoaPods]: <https://cocoapods.org/>
 [Charts]: <https://cocoapods.org/pods/Charts>
