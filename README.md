@@ -119,7 +119,7 @@ Team members:
 
 
 [View Video]: <https://youtu.be/8RE6FPylAG8>
-[Download Video]: <???>
+[Download Video]: <https://drive.google.com/file/d/0B3YnB7rINSuRNFg1VjE2aWpXcUE/>
 [CocoaPods]: <https://cocoapods.org/>
 [Charts]: <https://cocoapods.org/pods/Charts>
 [OpenCV]: <https://cocoapods.org/pods/OpenCV>
